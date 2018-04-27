@@ -1,0 +1,47 @@
+/* 
+    Created on : 26-abr-2018, 17:45:38
+    Author     : danieljimenez
+*/
+
+#content-form-search{
+    background-color: rgba(0,0,0,.6);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#content-form-search img{
+    width: 2em;
+    vertical-align: top;
+    margin-right: 0.5em;
+}
+
+#form-search{
+    display: inline-flex;
+}
+
+#form-search > div{
+    text-align: center;
+    padding: 1em 1em
+}
+
+#form-search input[type="text"]{
+    font-size: 1.3em;
+    width: 7em;
+}
+
+#form-search select{
+    font-size: 1.3em;
+    width: 9em;
+    padding: 0em 0em 0em 0em;
+}
+
+#icon-search{
+    width: 3em;
+    height: 3em;
+    margin-top: 0.8em;
+    margin-left: 2em;
+    border: 2px solid #FFF;
+    padding: 0.5em 0.5em;
+}

@@ -1,0 +1,16 @@
+/* 
+    Created on : 26-abr-2018, 17:51:34
+    Author     : danieljimenez
+*/
+#aside-index{
+    position: relative;
+}
+
+#tu_eliges{
+    width: 100%;
+}
+#register-restaurant{
+    width: 60%;
+    margin-left: 1em;
+    margin-top: 1em;
+}
