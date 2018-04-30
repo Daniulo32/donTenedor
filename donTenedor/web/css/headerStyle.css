@@ -1,0 +1,212 @@
+/* 
+    Created on : 25-abr-2018, 17:37:37
+    Author     : danieljimenez
+*/
+@media only screen and (min-width:800px){
+
+    header{
+        background-color: #E36652 ; 
+    }
+
+    #logoImg{
+        float: left;
+        width: 15em;
+    }
+
+    nav{
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    nav ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: right;
+    }
+
+    nav ul li{
+        display: inline-block;
+    }
+    nav ul li:hover{
+        background: #DFDFDF;
+    }
+
+    #content-icon-user{
+        float: right;
+        margin-top: 0.5em;
+        margin-right: 1em
+    }
+    #icon-user{
+        width: 5em;
+    }
+
+    nav ul li a{
+        color:#fff;
+        display:block;
+        text-decoration:none;
+        text-align: center;
+        padding: 2.3em 1em;
+    }
+    #boton-menu{
+        display: none;
+    }
+
+}/*Estilo para navegador*/
+
+@media only screen and (min-width:432px) and (max-width:800px){
+    header{
+        position: fixed;
+        background-color: #E36652;
+        height: 6em;
+        width: 100%;
+        z-index: 9999999;
+        top: 0;
+    }
+
+    #logoImg{
+        float: left;
+        width: 15em;
+    }
+
+    #content-icon-user{
+        float: right;
+        margin-top: 0.5em;
+        margin-right: 7em
+    }
+    #icon-user{
+        width: 5em;
+    }
+
+    .menu_bar{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 4vw;
+        margin-top: 2vw;
+    }
+    .menu_icon{
+        width: 4em;
+        vertical-align: middle;
+        text-align: right;
+    }
+
+    nav{
+        margin-top: 6em;
+        position: fixed;
+        background: #E36652;
+        border-bottom: 4px solid white;
+        width: 35vw;
+        right: 100%;
+        height: 100vh;
+        border-right: 2px solid #E36652;
+    }
+
+    nav ul{
+        padding: 0;
+    }
+
+    nav ul li{
+        margin: auto;
+        display: block;
+        border-bottom:1px solid rgba(255,255,255,.5);
+    }
+
+    nav ul li:first-child{
+        border-top:1px solid rgba(255,255,255,.5);
+    }
+
+    nav ul li a{
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        padding-top: 2vw;
+        padding-bottom: 2vw;
+    }
+
+    nav ul li a:hover{
+        background: #3EACFA;
+    }
+
+}/*Estilo para tablet*/
+
+@media only screen and (max-width:432px){
+    header{
+        position: fixed;
+        background-color: #E36652;
+        height: 4em;
+        width: 100%;
+        z-index: 9999999;
+        top: 0;
+    }
+
+    #logoImg{
+        float: left;
+        width: 10em;
+    }
+
+    #content-icon-user{
+        float: right;
+        margin-top: 0.5em;
+        margin-right: 7em
+    }
+    #icon-user{
+        width: 3em;
+    }
+
+    .menu_bar{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 4vw;
+        margin-top: 2vw;
+    }
+    .menu_icon{
+        width: 3em;
+        vertical-align: middle;
+        text-align: right;
+    }
+
+    nav{
+        margin-top: 4em;
+        position: fixed;
+        background: #E36652;
+        border-bottom: 4px solid white;
+        width: 35vw;
+        right: 100%;
+        height: 100vh;
+        border-right: 2px solid #E36652;
+    }
+
+    nav ul{
+        padding: 0;
+    }
+
+    nav ul li{
+        margin: auto;
+        display: block;
+        border-bottom:1px solid rgba(255,255,255,.5);
+    }
+
+    nav ul li:first-child{
+        border-top:1px solid rgba(255,255,255,.5);
+    }
+
+    nav ul li a{
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        padding-top: 2vw;
+        padding-bottom: 2vw;
+    }
+
+    nav ul li a:hover{
+        background: #3EACFA;
+    }
+}/*Estilo para movil*/

@@ -1,0 +1,104 @@
+/* 
+    Created on : 30-abr-2018, 15:25:03
+    Author     : danieljimenez
+*/
+
+@media only screen and (min-width:800px){
+
+    footer h1{
+        font-family: 'Spinnaker', sans-serif;
+        text-align: center;
+        margin: 0;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        font-size: 3vw;
+        color: #c5c5c5;        
+    }
+
+    #content-red-social{
+        text-align: center;
+    }
+
+    #content-red-social a img{
+        width: 5em;
+        margin-left: 2em;
+    }
+
+    #content-red-social a:first-child img{
+        margin-left: 0em;
+    }
+
+    #copyright{
+        font-size: 1.2em;
+        text-align: center;
+        margin-bottom: 1em;
+        font-family: 'Ubuntu Condensed', sans-serif;
+    }
+
+}/*Estilo para navegador*/
+
+@media only screen and (min-width:432px) and (max-width:800px){
+    footer h1{
+        font-family: 'Spinnaker', sans-serif;
+        text-align: center;
+        margin: 0;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        font-size: 4vw;
+        color: #c5c5c5;
+    }
+
+    #content-red-social{
+        text-align: center;
+    }
+
+    #content-red-social a img{
+        width: 5em;
+        margin-left: 2em;
+    }
+
+    #content-red-social a:first-child img{
+        margin-left: 0em;
+    }
+
+    #copyright{
+        font-size: 1.2em;
+        text-align: center;
+        margin-bottom: 1em;
+        font-family: 'Ubuntu Condensed', sans-serif;
+    }
+}/*Estilo para tablet*/
+
+@media only screen and (max-width:432px){
+    
+    footer h1{
+        font-family: 'Spinnaker', sans-serif;
+        text-align: center;
+        margin: 0;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        font-size: 4vw;
+        color: #c5c5c5;
+    }
+
+    #content-red-social{
+        text-align: center;
+    }
+
+    #content-red-social a img{
+        width: 4em;
+        margin-left: 1em;
+    }
+
+    #content-red-social a:first-child img{
+        margin-left: 0em;
+    }
+
+    #copyright{
+        font-size: 1em;
+        text-align: center;
+        margin-bottom: 1em;
+        font-family: 'Ubuntu Condensed', sans-serif;
+    }
+}/*Estilo para movil*/
+

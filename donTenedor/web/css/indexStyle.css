@@ -1,0 +1,360 @@
+/* 
+    Created on : 26-abr-2018, 17:51:34
+    Author     : danieljimenez
+*/
+@media only screen and (min-width:800px){
+    #aside-index{
+        position: relative;
+    }
+
+    #tu_eliges{
+        width: 100%;
+    }
+    #register-restaurant{
+        width: 70%;
+        margin-left: 1em;
+        margin-top: 1em;
+    }
+
+    #reserve{
+        width: 27.7%;
+    }
+
+    #presentacion{
+        width: 90%;
+        margin: auto;
+        margin-top: 1em;
+        border-bottom: solid 2px grey;
+        border-top: solid 2px grey;
+        padding-bottom: 1em;
+    }
+    #presentacion h1{
+        font-size: 3vw;
+        color: #c5c5c5;
+        text-align: center;
+        margin:0;
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
+    }
+
+    .face{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        display: inline-block;
+    }
+
+    #presentacion .caracteristicas{
+        display: inline-block;
+        width: 24.5%;
+        height: 25vw;
+        position: relative;
+    }
+
+    #presentacion .caracteristicas:hover .front{
+        opacity: 0;
+    }
+
+    #presentacion .caracteristicas:hover .back{
+        opacity: 1;
+    }
+
+    #presentacion .caracteristicas .back{
+        opacity: 0;
+    }
+
+    .front{
+        transition: opacity 0.8s linear 0.1s;
+    }
+    .back{
+        transition: opacity 0.8s linear 0.01s;
+    }
+
+    #presentacion .caracteristicas .back label{
+        margin-top: 2vw;
+        font-weight: bold;
+    }
+
+    #presentacion .caracteristicas:nth-child(odd) .front, #presentacion .caracteristicas:nth-child(odd) .back{
+        background: #DFDFDF;
+    }
+
+    #presentacion .caracteristicas:nth-child(even) .front, #presentacion .caracteristicas:nth-child(even) .back{
+        background: #F7A89B;
+    }
+
+    #presentacion .caracteristicas .front img{
+        width: 8vw;
+        display: block;
+        margin: auto;
+        margin-top: 3vw;
+        margin-bottom: 3vw;
+    }
+
+    #presentacion .caracteristicas .front label{
+        font-size: 2vw;
+        display: block;
+        text-align: center;
+        margin-bottom: 5vw;
+        margin-top: 3vw;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #presentacion .caracteristicas .back label{
+        font-size: 2vw;
+        display: block;
+        text-align: center;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #presentacion .caracteristicas .back p{
+        font-size: 1.5vw;
+        text-align: center;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        word-wrap: break-word;
+        font-family: 'Handlee', cursive;
+    }
+
+}/*Estilo para navegador*/
+
+@media only screen and (min-width:432px) and (max-width:800px){
+    #aside-index{
+        position: relative;
+        margin-top:6em;
+        width: 100%;
+    }
+
+    #tu_eliges{
+        width: 100%;
+    }
+
+    #register-restaurant{
+        width: 100%;
+    }
+
+    #reserve{
+        display: none;
+    }
+
+    #presentacion{
+        width: 90%;
+        margin: auto;
+        margin-top: 1em;
+        border-bottom: solid 2px grey;
+        border-top: solid 2px grey;
+        padding-bottom: 1em;
+    }
+    #presentacion h1{
+        font-size: 4vw;
+        color: #c5c5c5;
+        text-align: center;
+        margin:0;
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
+    }
+
+    .face{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        display: inline-block;
+    }
+
+    #presentacion .caracteristicas{
+        display: inline-block;
+        width: 49%;
+        height: 25vw;
+        position: relative;
+    }
+
+    #presentacion .caracteristicas:hover .front{
+        opacity: 0;
+    }
+
+    #presentacion .caracteristicas:hover .back{
+        opacity: 1;
+    }
+
+    #presentacion .caracteristicas .back{
+        opacity: 0;
+    }
+
+    .front{
+        transition: opacity 0.8s linear 0.1s;
+    }
+    .back{
+        transition: opacity 0.8s linear 0.01s;
+    }
+
+    #presentacion .caracteristicas .back label{
+        margin-top: 2vw;
+        font-size: 4vw;
+        font-weight: bold;
+    }
+
+    #presentacion .caracteristicas:nth-child(odd) .front, #presentacion .caracteristicas:nth-child(odd) .back{
+        background: #DFDFDF;
+    }
+
+    #presentacion .caracteristicas:nth-child(even) .front, #presentacion .caracteristicas:nth-child(even) .back{
+        background: #F7A89B;
+    }
+
+    #presentacion .caracteristicas .front img{
+        width: 8vw;
+        display: block;
+        margin: auto;
+        margin-top: 3vw;
+        margin-bottom: 3vw;
+    }
+
+    #presentacion .caracteristicas .front label{
+        font-size: 4vw;
+        display: block;
+        text-align: center;
+        margin-bottom: 5vw;
+        margin-top: 3vw;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #presentacion .caracteristicas .back label{
+        font-size: 4vw;
+        display: block;
+        text-align: center;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #presentacion .caracteristicas .back p{
+        font-size: 2.3vw;
+        text-align: center;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        word-wrap: break-word;
+        font-family: 'Handlee', cursive;
+    }
+}/*Estilo para tablet*/
+
+@media only screen and (max-width:432px){
+    #aside-index{
+        position: relative;
+        margin-top:4em;
+        width: 100%;
+    }
+
+    #tu_eliges{
+        width: 100%;
+    }
+
+   #register-restaurant{
+        width: 100%;
+    }
+
+    #reserve{
+        display: none;
+    }
+
+    #presentacion{
+        width: 90%;
+        margin: auto;
+        margin-top: 1em;
+        border-bottom: solid 2px grey;
+        border-top: solid 2px grey;
+        padding-bottom: 1em;
+    }
+    #presentacion h1{
+        font-size: 4vw;
+        color: #c5c5c5;
+        text-align: center;
+        margin:0;
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
+    }
+
+    .face{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        display: inline-block;
+    }
+
+    #presentacion .caracteristicas{
+        display: inline-block;
+        width: 99%;
+        height: 25vw;
+        position: relative;
+    }
+
+    #presentacion .caracteristicas:hover .front{
+        opacity: 0;
+    }
+
+    #presentacion .caracteristicas:hover .back{
+        opacity: 1;
+    }
+
+    #presentacion .caracteristicas .back{
+        opacity: 0;
+    }
+
+    .front{
+        transition: opacity 0.8s linear 0.1s;
+    }
+    .back{
+        transition: opacity 0.8s linear 0.01s;
+    }
+
+    #presentacion .caracteristicas .back label{
+        margin-top: 2vw;
+        font-size: 4vw;
+        font-weight: bold;
+    }
+
+    #presentacion .caracteristicas:nth-child(odd) .front, #presentacion .caracteristicas:nth-child(odd) .back{
+        background: #DFDFDF;
+    }
+
+    #presentacion .caracteristicas:nth-child(even) .front, #presentacion .caracteristicas:nth-child(even) .back{
+        background: #F7A89B;
+    }
+
+    #presentacion .caracteristicas .front img{
+        width: 11vw;
+        display: block;
+        margin: auto;
+        margin-top: 3vw;
+        margin-bottom: 3vw;
+    }
+
+    #presentacion .caracteristicas .front label{
+        font-size: 4vw;
+        display: block;
+        text-align: center;
+        margin-bottom: 5vw;
+        margin-top: 3vw;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #presentacion .caracteristicas .back label{
+        font-size: 4vw;
+        display: block;
+        text-align: center;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #presentacion .caracteristicas .back p{
+        font-size: 3vw;
+        text-align: center;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        word-wrap: break-word;
+        font-family: 'Handlee', cursive;
+    }
+
+}/*Estilo para movil*/

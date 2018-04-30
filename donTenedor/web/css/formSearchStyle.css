@@ -1,0 +1,148 @@
+/* 
+    Created on : 26-abr-2018, 17:45:38
+    Author     : danieljimenez
+*/
+@media only screen and (min-width:800px){
+    #content-form-search{
+        background-color: rgba(0,0,0,.6);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #content-form-search img{
+        width: 2em;
+        vertical-align: top;
+        margin-right: 0.5em;
+    }
+
+    #form-search{
+        display: inline-flex;
+        width: 95%;
+    }
+
+    #form-search > div{
+        text-align: center;
+        padding: 1em 1em;
+
+        width: 30%
+    }
+
+    #form-search input[type="text"]{
+        font-size: 1.3em;
+        width: 70%;
+    }
+
+    #form-search select{
+        font-size: 1.3em;
+        width: 71%;
+        padding: 0em 0em 0em 0em;
+    }
+
+    #icon-search{
+        width: 3em;
+        height: 3em;
+        margin-top: 0.8em;
+        margin-left: 2em;
+        border: 2px solid #FFF;
+        padding: 0.5em 0.5em;
+    }
+}/*Estilo para navegador*/
+
+@media only screen and (min-width:432px) and (max-width:800px){
+    #content-form-search{
+        background-color: rgba(0,0,0,.6);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #content-form-search img{
+        width: 1.5em;
+        vertical-align: top;
+        margin-right: 0.2em;
+    }
+
+    #form-search{
+        display: inline-flex;
+    }
+
+    #form-search > div{
+        text-align: center;
+        padding: 0.5em 0.5em
+    }
+
+    #form-search input[type="text"]{
+        font-size: 1.1em;
+        width: 7em;
+    }
+
+    #form-search select{
+        font-size: 1em;
+        width: 9.4em;
+        background: #FFF;
+        padding: 0.2em 0em;
+    }
+
+    #icon-search{
+        width: 2em;
+        height: 2em;
+        margin-top: 0.3em;
+        margin-left: 2em;
+        border: 2px solid #FFF;
+        padding: 0.5em 0.5em;
+    }
+
+}/*Estilo para tablet*/
+
+@media only screen and (max-width:432px){
+    #content-form-search{
+        background-color: rgba(0,0,0,.6);
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    #content-form-search img{
+        width: 1.5em;
+        vertical-align: top;
+        margin-right: 0.2em;
+    }
+
+    #form-search{
+        display: block;
+    }
+
+    #form-search > div{
+        padding: 0.5em 0.5em;
+        margin-left: 1em;
+    }
+
+    #form-search input[type="text"]{
+        font-size: 1.1em;
+        width: 12em;
+    }
+
+    #form-search select{
+        font-size: 1em;
+        width: 13.5em;
+        background: #FFF;
+        padding: 0.2em 0em;
+    }
+
+    #icon-search{
+        position: absolute;
+        width: 4em;
+        height: 4em;
+        margin-left: 2em;
+        border: 2px solid #FFF;
+        padding: 0.5em 0.5em;
+        top: 0;
+        right: 0;
+        margin-top: 3em;
+        margin-right: 2em;
+    }
+
+}/*Estilo para movil*/
