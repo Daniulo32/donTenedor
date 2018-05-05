@@ -2,18 +2,18 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="donTenedorPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>DAO.Users</class>
-    <class>DAO.Poblacion</class>
-    <class>DAO.Comments</class>
-    <class>DAO.Restaurant</class>
-    <class>DAO.IncidenceErrors</class>
-    <class>DAO.BannedUsers</class>
-    <class>DAO.IncidenceComment</class>
-    <class>DAO.PhotoRestaurant</class>
-    <class>DAO.Reservations</class>
-    <class>DAO.Offers</class>
-    <class>DAO.Provincia</class>
-    <class>DAO.Voting</class>
+    <class>DTO.IncidenceComment</class>
+    <class>DTO.IncidenceErrors</class>
+    <class>DTO.Users</class>
+    <class>DTO.Provincia</class>
+    <class>DTO.Comments</class>
+    <class>DTO.PhotoRestaurant</class>
+    <class>DTO.Voting</class>
+    <class>DTO.Restaurant</class>
+    <class>DTO.Offers</class>
+    <class>DTO.Reservations</class>
+    <class>DTO.BannedUsers</class>
+    <class>DTO.Poblacion</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/donTenedor?zeroDateTimeBehavior=convertToNull"/>

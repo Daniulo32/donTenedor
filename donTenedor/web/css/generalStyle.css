@@ -18,6 +18,14 @@ h1{
     font-family: 'Handlee', cursive;  
 }
 @media only screen and (min-width:800px){
+    hr{
+        width: 90%;
+        margin: auto;
+        border: 0;
+        height: 1.5px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+
     html{
         min-width: 800px
     }
@@ -86,7 +94,7 @@ h1{
     .slideCheck input[type=checkbox]:checked + label {
         left: 28px;
     }
-    
+    /*----------------------------------Estilo para los botones-----------------------------------------------------------*/
     .boton-aceptar{
         background: #44a84a;
         color:white;
@@ -94,14 +102,104 @@ h1{
         padding: 0.5em 2em;
         font-size: 1em;
     }
-    
+
     .boton-aceptar:hover{
         background: #bcbebc;
         color:white;
     }
+
+    .boton-login{
+        background: #4475a8;
+        color: white;
+        border: 0;
+        padding: 0.3em 2.5em;
+        font-size: 1.3em;
+    }
+
+    .boton-login:hover{
+        background: #bcbebc;
+        color:white;
+    }
+    /*----------------------------------Termina el estilo para los botones-----------------------------------------------------------*/
+    /*----------------------------------Estilo para el login-----------------------------------------------------------*/
+
+    #lightBox{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top:0;
+        left: 0;
+        background: rgba(0,0,0,.5);
+        z-index: 999999999;
+        display: none;
+    }
+
+    #login{
+        background: #FFF;
+        width: 30em;
+        height: 23em;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -15em;
+        margin-top: -11.5em;
+    }
+
+    #login h1{
+        text-align: center;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+    }
+
+    #login .campos{
+        text-align: center;
+    }
+
+    #login .campos input{
+        width: 12em;
+        padding: 0.3em 0em;
+        font-size: 1.5em;
+        margin-left: 1em;
+        margin-bottom: 1em;
+    }
+
+    #login .campos img{
+        width: 2.5em;
+        vertical-align: middle;
+    }
+
+    #cerrarLogin img{
+        position: absolute;
+        right: 0;
+        margin-right: 1em;
+        width: 2em;
+        margin-top: 1em;
+    }
+
+    #login .centrar-boton-login{
+        margin: auto;
+        display: block;
+    }
+
+    #login #linkRegistro{
+        font-family: 'Spinnaker', sans-serif;
+        text-align: center;
+        margin-top: 1.5em;
+    }
+
+    /*----------------------------------Termina el estilo para el login-----------------------------------------------------------*/
+
 }
 
 @media only screen and (min-width:432px) and (max-width:800px){
+    hr{
+        width: 90%;
+        margin: auto;
+        border: 0;
+        height: 1.5px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+
     html{
         min-width: 432px;
     }
@@ -112,9 +210,179 @@ h1{
     h1{
         font-family: 'Spinnaker', sans-serif; 
     }
+
+    .slideCheck {/*Estilos para los input checkbox*/
+        width: 55px !important;
+        height: 20px !important;
+        background: #46a8e1 !important;
+        margin-left: 1em !important;
+        margin-top: 0 !important;
+        border-radius: 50px;
+        position: relative;
+        box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+        display: inline-block;
+        vertical-align: middle;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    .slideCheck:after {
+        content: 'NO';
+        font-size: 11px;
+        color: #FFF;;
+        position: absolute;
+        right: 8px;
+        top: 3px;
+        z-index: 0;
+        font-weight: bold;
+        text-shadow: 1px 1px 0px rgba(255,255,255,.15);
+    }
+
+    .slideCheck:before {
+        content: 'SI';
+        font-size: 12px;
+        color: #FFF;;
+        position: absolute;
+        left: 8px;
+        top: 3px;
+        z-index: 0;
+        font-weight: bold;
+    }
+
+    .slideCheck label {
+        display: block;
+        width: 25px;
+        height: 16px;
+        border-radius: 50px;
+        transition: all .4s ease;
+        cursor: pointer;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        z-index: 1;
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+        background: #fcfff4;
+        background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+        background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
+    }
+
+    .slideCheck input[type=checkbox]:checked + label {
+        left: 28px;
+    }
+
+    .error{
+        position: absolute;
+        font-size: 0.8em;
+        margin-top: 0.2em;
+        color: red;
+    }
+    /*----------------------------------Estilo para los botones-----------------------------------------------------------*/
+    .boton-aceptar{
+        background: #44a84a;
+        color:white;
+        border: 0;
+        padding: 0.5em 2em;
+        font-size: 1em;
+    }
+
+    .boton-aceptar:hover{
+        background: #bcbebc;
+        color:white;
+    }
+
+    .boton-login{
+        background: #4475a8;
+        color: white;
+        border: 0;
+        padding: 0.3em 2.5em;
+        font-size: 1.3em;
+    }
+
+    .boton-login:hover{
+        background: #bcbebc;
+        color:white;
+    }
+    /*----------------------------------Termina el estilo para los botones-----------------------------------------------------------*/
+    /*----------------------------------Estilo para el login-----------------------------------------------------------*/
+
+    #lightBox{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top:0;
+        left: 0;
+        background: rgba(0,0,0,.5);
+        z-index: 999999999;
+        display: none;
+    }
+
+    #login{
+        background: #FFF;
+        width: 30em;
+        height: 23em;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -15em;
+        margin-top: -11.5em;
+    }
+
+    #login h1{
+        text-align: center;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+    }
+
+    #login .campos{
+        text-align: center;
+    }
+
+    #login .campos input{
+        width: 12em;
+        padding: 0.3em 0em;
+        font-size: 1.5em;
+        margin-left: 1em;
+        margin-bottom: 1em;
+        border: 1px solid grey;
+    }
+
+    #login .campos img{
+        width: 2.5em;
+        vertical-align: middle;
+    }
+
+    #cerrarLogin img{
+        position: absolute;
+        right: 0;
+        margin-right: 1em;
+        width: 2em;
+        margin-top: 1em;
+    }
+
+    #login .centrar-boton-login{
+        margin: auto;
+        display: block;
+    }
+
+    #login #linkRegistro{
+        font-family: 'Spinnaker', sans-serif;
+        text-align: center;
+        margin-top: 1.5em;
+    }
+
+    /*----------------------------------Termina el estilo para el login-----------------------------------------------------------*/
+
+
 }
 
 @media only screen and (max-width:432px){
+    hr{
+        width: 90%;
+        margin: auto;
+        border: 0;
+        height: 1.5px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
     html{
         min-width: 0px;
     }
@@ -126,4 +394,175 @@ h1{
     h1{
         font-family: 'Spinnaker', sans-serif;
     }
+
+    .slideCheck {/*Estilos para los input checkbox*/
+        width: 55px !important;
+        height: 20px !important;
+        background: #46a8e1 !important;
+        margin-left: 1em !important;
+        margin-top: 0 !important;
+        border-radius: 50px;
+        position: relative;
+        box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+        display: inline-block;
+        vertical-align: middle;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    .slideCheck:after {
+        content: 'NO';
+        font-size: 11px;
+        color: #FFF;;
+        position: absolute;
+        right: 8px;
+        top: 3px;
+        z-index: 0;
+        font-weight: bold;
+        text-shadow: 1px 1px 0px rgba(255,255,255,.15);
+    }
+
+    .slideCheck:before {
+        content: 'SI';
+        font-size: 12px;
+        color: #FFF;;
+        position: absolute;
+        left: 8px;
+        top: 3px;
+        z-index: 0;
+        font-weight: bold;
+    }
+
+    .slideCheck label {
+        display: block;
+        width: 25px;
+        height: 16px;
+        border-radius: 50px;
+        transition: all .4s ease;
+        cursor: pointer;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        z-index: 1;
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+        background: #fcfff4;
+        background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+        background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
+    }
+
+    .slideCheck input[type=checkbox]:checked + label {
+        left: 28px;
+    }
+
+    .error{
+        position: absolute;
+        font-size: 0.8em;
+        margin-top: 0.2em;
+        color: red;
+    }
+
+    /*----------------------------------Estilo para los botones-----------------------------------------------------------*/
+    .boton-aceptar{
+        background: #44a84a;
+        color:white;
+        border: 0;
+        padding: 1em 4em;
+        font-size: 1em;
+    }
+
+    .boton-aceptar:hover{
+        background: #bcbebc;
+        color:white;
+    }
+
+    .boton-login{
+        background: #4475a8;
+        color: white;
+        border: 0;
+        padding: 0.3em 2.5em;
+        font-size: 1.3em;
+    }
+
+    .boton-login:hover{
+        background: #bcbebc;
+        color:white;
+    }
+    /*----------------------------------Termina el estilo para los botones-----------------------------------------------------------*/
+    /*----------------------------------Estilo para el login-----------------------------------------------------------*/
+
+    #lightBox{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top:0;
+        left: 0;
+        background: rgba(0,0,0,.5);
+        z-index: 999999999;
+        display: none;
+    }
+
+    #login{
+        background: #FFF;
+        width: 22em;
+        height: 30em;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -11em;
+        margin-top: -15em;
+    }
+
+    #login h1{
+        text-align: center;
+        margin-top: 2em;
+        margin-bottom: 0em;
+    }
+
+    #login .campos{
+        text-align: center;
+    }
+
+    #login .campos input{
+        width: 12em;
+        padding: 0.5em 0em;
+        font-size: 1.5em;
+        margin-top: 1em;
+        border: 1px solid grey;
+    }
+
+    #login .campos #usuario{
+        background: url("/donTenedor/images/icons/user.png") no-repeat 97% center;
+        background-size: 1.5em;
+    }
+
+    #login .campos #password{
+        background: url("/donTenedor/images/icons/key.png") no-repeat 97% center;
+        background-size: 1.5em;
+    }
+
+    #login .campos img{
+        display: none;
+    }
+
+    #cerrarLogin img{
+        position: absolute;
+        right: 0;
+        margin-right: 1em;
+        width: 2em;
+        margin-top: 1em;
+    }
+
+    #login .centrar-boton-login{
+        margin: auto;
+        display: block;
+        margin-top: 2em;
+    }
+
+    #login #linkRegistro{
+        font-family: 'Spinnaker', sans-serif;
+        text-align: center;
+        margin-top: 1.5em;
+    }
+
+    /*----------------------------------Termina el estilo para el login-----------------------------------------------------------*/
 }

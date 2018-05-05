@@ -9,6 +9,7 @@ $(document).ready(main);
 var contador = 1;
 
 function main() {
+    
     $('#boton-menu').click(function () {
         if (contador == 1) {
             $("nav").animate({
@@ -22,4 +23,39 @@ function main() {
             });
         }
     });
+    
+    $("#linkUser").click(mostrarLightBox);
+    $("#cerrarLogin").click(ocultarLightBox);
+    $("#botonLogin").click(comprobarUsuario);
+    $("#iniciarSesionImg").bind('click', mostrarLightBox);
+
+    function mostrarLightBox() {
+        $("#lightBox").show(1000);
+    }
+
+    function ocultarLightBox() {
+        $("#lightBox").hide(1000);
+    }
+
+    function comprobarUsuario() {
+
+        var password = $("#password").val();
+        var user = $("#usuario").val();
+
+        var usuario = {usuario: user, password: password};
+        
+        $.ajax({
+            url: 'comprobarUsuario',
+            data: usuario,
+            success: function (datos) {
+
+                if (datos === "usuario" || datos === "restaurante") {
+                    location.reload(true);
+                } else {
+                    $("#textoError").text(datos);
+                }
+            }
+        });
+    }
+
 }

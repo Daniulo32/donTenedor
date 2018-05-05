@@ -1,0 +1,358 @@
+/* 
+    Created on : 03-may-2018, 20:25:25
+    Author     : danieljimenez
+*/
+
+@media only screen and (min-width:800px){
+
+    #section-mis-datos h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2vw;
+        color: #c5c5c5;
+        margin: 0;
+        margin-left: 10%;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        border-bottom: 0.1em solid #c5c5c5;
+        width: 80%;
+    }
+
+    #form-update-user article{
+        width: 80%;
+        margin: auto;
+    }
+
+    #form-update-user article div{
+        display: inline-block;
+    }
+
+    #form-update-user div{
+        margin-left: 3em;
+        vertical-align: middle;
+        width: 27%;
+    }
+
+    #form-update-user article{
+        margin-bottom: 2em;
+    }
+
+    #form-update-user article div:first-child{
+        margin-left: 0em;
+    }
+
+    #form-update-user article div label{
+        color: #629B93;
+        font-size: 1em;
+        display: block;
+        padding: 0.2em 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #form-update-user input[type="text"], #form-update-user input[type="password"]{
+        font-size: 1.1em;
+        padding: 0.5em 0.5em;
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #form-update-user input[type="date"]{
+        font-size: 1.1em;
+        padding: 0.35em 0.5em;
+        width: 15em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #content-new-password div label{
+        display: block;
+        margin-top: 0.5em;
+        color: red;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #content-new-password{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        margin-top: 1.5em;
+    }
+
+    #content-new-password input[type="password"]{
+        font-size: 1.1em;
+        padding: 0.5em 0.5em;
+        width: 15em;
+        font-family: 'Spinnaker', sans-serif;
+        margin-bottom: 0.5em;
+    }
+
+    #content-new-password div{
+        margin-bottom: 1em;
+    }
+
+    input[type="submit"]{
+        margin: auto;
+        display: block;
+        margin-bottom: 1em;
+    }
+
+    .change-password-successful{
+        background: #caf3aa;
+        color: green;
+        padding: 0.5em;
+        width: 80%;
+        margin: auto;
+        border: 1px solid green;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    .change-password-error{
+        background: #f3aaaa;
+        color: #ce0808;
+        padding: 0.5em;
+        width: 80%;
+        margin: auto;
+        border: 1px solid #ce0808;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+}
+
+@media only screen and (min-width:432px) and (max-width:800px){
+
+    #section-mis-datos h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2em;
+        color: #c5c5c5;
+        margin: 0;
+        margin-left: 10%;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        border-bottom: 0.1em solid #c5c5c5;
+        width: 80%;
+    }
+
+    #form-update-user article{
+        width: 80%;
+        margin: auto;
+    }
+
+    #form-update-user article div{
+        display: inline-block;
+    }
+
+    #form-update-user div{
+        margin-left: 3em;
+        vertical-align: middle;
+        width: 27%;
+    }
+
+    #form-update-user article{
+        margin-bottom: 2em;
+    }
+
+    #form-update-user article div:first-child{
+        margin-left: 0em;
+    }
+
+    #form-update-user article div label{
+        color: #629B93;
+        font-size: 1em;
+        display: block;
+        padding: 0.2em 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #form-update-user input[type="text"]{
+        font-size: 1.1em;
+        padding: 0.5em 0.5em;
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+        border:1px solid grey;
+    }
+
+    #content-new-password div label{
+        display: block;
+        margin-top: 0.5em;
+        color: red;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #content-new-password{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        margin-top: 1.5em;
+    }
+
+    #content-new-password input[type="password"]{
+        font-size: 1.1em;
+        margin-bottom: 0.2em;
+        padding: 0.5em 0.5em;
+        width: 15em;
+        font-family: 'Spinnaker', sans-serif;
+        border:1px solid grey;
+        position: relative;
+    }
+
+    #content-new-password div{
+        margin-bottom: 1.5em;
+        position: relative;
+    }
+
+    input[type="submit"]{
+        margin: auto;
+        display: block;
+        margin-bottom: 1em;
+    }
+
+    #content-new-password div label[class="error"]{
+        margin: 0;
+        display: block;
+        color: red;
+        font-family: 'Spinnaker', sans-serif;
+        display: block;
+        width: 100%;
+    }
+
+    .change-password-successful{
+        font-size: 0.9em;
+        background: #caf3aa;
+        color: green;
+        padding: 0.5em;
+        width: 80%;
+        margin: auto;
+        border: 1px solid green;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    .change-password-error{
+        font-size: 0.9em;
+        background: #f3aaaa;
+        color: #ce0808;
+        padding: 0.5em;
+        width: 80%;
+        margin: auto;
+        border: 1px solid #ce0808;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+}
+
+@media only screen and (max-width:432px){
+
+    #section-mis-datos h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 1.5em;
+        color: #c5c5c5;
+        margin: 0;
+        margin-left: 10%;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        border-bottom: 0.1em solid #c5c5c5;
+        width: 80%;
+    }
+
+    #form-update-user article{
+        width: 80%;
+        margin: auto;
+    }
+
+    #form-update-user article div{
+        display: inline-block;
+    }
+
+    #form-update-user div{
+        vertical-align: middle;
+        width: 95%;
+    }
+
+    #form-update-user article{
+        margin-bottom: 2em;
+    }
+
+    #form-update-user article div label{
+        color: #629B93;
+        font-size: 1em;
+        display: block;
+        padding: 0.2em 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #form-update-user input[type="text"]{
+        font-size: 1.1em;
+        padding: 0.5em 0.5em;
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+        border:1px solid grey;
+    }
+
+    #content-new-password div label{
+        display: block;
+        margin-top: 0.5em;
+        color: red;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #content-new-password{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        margin-top: 1.5em;
+    }
+
+    #content-new-password input[type="password"]{
+        font-size: 1.1em;
+        padding: 0.5em 0.5em;
+        width: 15em;
+        font-family: 'Spinnaker', sans-serif;
+        margin-bottom: 0.2em;
+        border:1px solid grey;
+        position: relative;
+    }
+
+    #content-new-password div{
+        margin-bottom: 1.5em;
+    }
+
+    input[type="submit"]{
+        margin: auto;
+        display: block;
+        margin-bottom: 1em;
+    }
+
+    .change-password-successful{
+        font-size: 0.9em;
+        background: #caf3aa;
+        color: green;
+        padding: 0.5em;
+        width: 80%;
+        margin: auto;
+        border: 1px solid green;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    .change-password-error{
+        font-size: 0.9em;
+        background: #f3aaaa;
+        color: #ce0808;
+        padding: 0.5em;
+        width: 80%;
+        margin: auto;
+        border: 1px solid #ce0808;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #content-new-password div label[class="error"]{
+        margin: 0;
+        display: block;
+        margin-left: 1em;
+        color: red;
+        font-family: 'Spinnaker', sans-serif;
+    }
+}
+
+
+

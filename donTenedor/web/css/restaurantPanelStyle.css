@@ -1,0 +1,115 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 03-may-2018, 17:53:55
+    Author     : danieljimenez
+*/
+@media only screen and (min-width:800px){
+    #tab-menu-restaurant{
+        padding: 0;
+        margin-top: 0.5em;
+    }
+
+    #tab-menu-restaurant ul{
+        margin: 0;
+        margin-left: 0.2em;
+        border-bottom: 0.3em solid #F7A89B;
+        padding: 0;
+    }
+
+    #tab-menu-restaurant ul li{
+        margin: 0;
+        display: inline-block;
+        background: #DFDFDF;
+        width: 8em;
+        text-align: center;
+        padding: 0.5em 0em;
+        font-family: 'Spinnaker', sans-serif;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+    }
+
+    #tab-menu-restaurant ul li:first-child{
+        background: #F7A89B;
+    }
+
+    #tab-menu-restaurant ul li:hover{
+        cursor: pointer;
+        background: #F7A89B;
+    }
+}
+
+@media only screen and (min-width:432px) and (max-width:800px){
+    #tab-menu-restaurant{
+        padding: 0;
+        margin-top: 0.5em;
+    }
+
+    #tab-menu-restaurant ul{
+        margin: 0;
+        margin-left: 0.2em;
+        border-bottom: 0.3em solid #F7A89B;
+        padding: 0;
+        margin-top: 7em;
+    }
+
+    #tab-menu-restaurant ul li{
+        margin: 0;
+        display: inline-block;
+        background: #DFDFDF;
+        width: 8em;
+        text-align: center;
+        padding: 0.5em 0em;
+        font-family: 'Spinnaker', sans-serif;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+    }
+
+    #tab-menu-restaurant ul li:first-child{
+        background: #F7A89B;
+    }
+
+    #tab-menu-restaurant ul li:hover{
+        cursor: pointer;
+        background: #F7A89B;
+
+    }
+
+}
+
+@media only screen and (max-width:432px){
+    #tab-menu-restaurant{
+        padding: 0;
+        margin-top: 0.5em;
+    }
+
+    #tab-menu-restaurant ul{
+        margin: 0;
+        padding: 0;
+        margin-top: 4em;
+        width: 100%;
+    }
+
+    #tab-menu-restaurant ul li{
+        margin: 0;
+        display: block;
+        background: #DFDFDF;
+        text-align: center;
+        padding: 0.5em 0em;
+        font-family: 'Spinnaker', sans-serif;
+        border-bottom: solid 1px #777777;
+    }
+
+    #tab-menu-restaurant ul li:first-child{
+        background: #F7A89B;
+    }
+
+    #tab-menu-restaurant ul li:hover{
+        cursor: pointer;
+        background: #F7A89B;
+
+    }
+}

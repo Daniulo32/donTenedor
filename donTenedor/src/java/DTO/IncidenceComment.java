@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
+package DTO;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -20,15 +22,13 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author danieljimenez
  */
 @Entity
-@Table(name = "incidence_errors")
+@Table(name = "incidence_comment")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "IncidenceErrors.findAll", query = "SELECT i FROM IncidenceErrors i")
-    , @NamedQuery(name = "IncidenceErrors.findByIdIncidence", query = "SELECT i FROM IncidenceErrors i WHERE i.idIncidence = :idIncidence")
-    , @NamedQuery(name = "IncidenceErrors.findByObservation", query = "SELECT i FROM IncidenceErrors i WHERE i.observation = :observation")
-    , @NamedQuery(name = "IncidenceErrors.findByErrorPlace", query = "SELECT i FROM IncidenceErrors i WHERE i.errorPlace = :errorPlace")
-    , @NamedQuery(name = "IncidenceErrors.findByStatus", query = "SELECT i FROM IncidenceErrors i WHERE i.status = :status")})
-public class IncidenceErrors implements Serializable {
+    @NamedQuery(name = "IncidenceComment.findAll", query = "SELECT i FROM IncidenceComment i")
+    , @NamedQuery(name = "IncidenceComment.findByIdIncidence", query = "SELECT i FROM IncidenceComment i WHERE i.idIncidence = :idIncidence")
+    , @NamedQuery(name = "IncidenceComment.findByObservation", query = "SELECT i FROM IncidenceComment i WHERE i.observation = :observation")})
+public class IncidenceComment implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -38,25 +38,20 @@ public class IncidenceErrors implements Serializable {
     @Basic(optional = false)
     @Column(name = "observation")
     private String observation;
-    @Basic(optional = false)
-    @Column(name = "error_place")
-    private String errorPlace;
-    @Basic(optional = false)
-    @Column(name = "status")
-    private int status;
+    @JoinColumn(name = "id_comment", referencedColumnName = "id_comment")
+    @ManyToOne(optional = false)
+    private Comments idComment;
 
-    public IncidenceErrors() {
+    public IncidenceComment() {
     }
 
-    public IncidenceErrors(Integer idIncidence) {
+    public IncidenceComment(Integer idIncidence) {
         this.idIncidence = idIncidence;
     }
 
-    public IncidenceErrors(Integer idIncidence, String observation, String errorPlace, int status) {
+    public IncidenceComment(Integer idIncidence, String observation) {
         this.idIncidence = idIncidence;
         this.observation = observation;
-        this.errorPlace = errorPlace;
-        this.status = status;
     }
 
     public Integer getIdIncidence() {
@@ -75,20 +70,12 @@ public class IncidenceErrors implements Serializable {
         this.observation = observation;
     }
 
-    public String getErrorPlace() {
-        return errorPlace;
+    public Comments getIdComment() {
+        return idComment;
     }
 
-    public void setErrorPlace(String errorPlace) {
-        this.errorPlace = errorPlace;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
+    public void setIdComment(Comments idComment) {
+        this.idComment = idComment;
     }
 
     @Override
@@ -101,10 +88,10 @@ public class IncidenceErrors implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof IncidenceErrors)) {
+        if (!(object instanceof IncidenceComment)) {
             return false;
         }
-        IncidenceErrors other = (IncidenceErrors) object;
+        IncidenceComment other = (IncidenceComment) object;
         if ((this.idIncidence == null && other.idIncidence != null) || (this.idIncidence != null && !this.idIncidence.equals(other.idIncidence))) {
             return false;
         }
@@ -113,7 +100,7 @@ public class IncidenceErrors implements Serializable {
 
     @Override
     public String toString() {
-        return "DAO.IncidenceErrors[ idIncidence=" + idIncidence + " ]";
+        return "DAO.IncidenceComment[ idIncidence=" + idIncidence + " ]";
     }
     
 }

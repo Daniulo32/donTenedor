@@ -26,7 +26,7 @@
         width: 80%;
         margin: auto;
     }
-    
+
     #politica{
         width: 100% !important;
         font-family: 'Spinnaker', sans-serif;
@@ -40,33 +40,38 @@
         width: 25%;
         margin-left: 3em;
         vertical-align: middle;
+        position: relative;
     }
 
     #form-register article{
-        margin-bottom: 1em;
+        margin-bottom: 2em;
     }
-    
+    #politica label[class="error"]{
+        background: red;
+        top: -1.7em;
+        left: 0
+    }
     #form-register article div:first-child{
         margin-left: 0em;
     }
-    
+
     #form-register article:first-child div:last-child{
         width: 30%;
         margin-left: 3em;
     }
-    
+
     #form-register article:nth-child(2) div:last-child{
         width: 32%;
         margin-left: 3em;
     }
-    
+
     #form-register input[type="text"]{
         font-size: 1.1em;
         padding: 0.5em 0.5em;
         width: 100%;
         font-family: 'Spinnaker', sans-serif;
     }
-    
+
     #form-register input[type="password"]{
         font-size: 1.1em;
         padding: 0.5em 0.5em;
@@ -80,11 +85,11 @@
         width: 100%;
         font-family: 'Spinnaker', sans-serif;
     }
-    
+
     #form-register input[id="slideCheck"]{
         visibility: hidden;
     }
-    
+
     #condiciones-politica{
         width: 80%;
         text-align: center;
@@ -92,13 +97,290 @@
         font-size: 0.8em;
         color: #a6a6a6;
     }
+
+    #form-register article div label[class="error"]{
+        position: absolute;
+        font-size: 0.8em;
+        margin-top: 0.5em;
+        color: red;
+        bottom: 3.4em;
+        font-family: 'Spinnaker', sans-serif;
+    }
 }
 
 @media only screen and (min-width:432px) and (max-width:800px){
 
+    #section-register{
+        margin-top: 7em;
+    }
+
+    #section-register h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 4vw;
+        color: #c5c5c5;
+        margin: 0;
+        margin-left: 10%;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        border-bottom: 0.1em solid #c5c5c5;
+        width: 80%;
+    }
+
+    #text-type-register{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 1em; 
+    }
+
+    #form-register article{
+        width: 80%;
+        margin: auto;
+    }
+
+    #politica{
+        width: 100% !important;
+        font-size: 0.9em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #form-register article div{
+        display: inline-block;
+        position: relative;
+    }
+
+    #form-register div{
+        width: 44%;
+        margin-left: 5%;
+        vertical-align: middle;
+        position: relative;
+    }
+
+    #form-register article{
+        margin-bottom: 1.8em;
+        position: relative;
+    }
+    
+    #politica label[class="error"]{
+        top: -1.7em;
+        left: 0
+    }
+
+    #form-register article div:first-child{
+        position: relative;
+        margin-left: 0em;
+    }
+
+    #form-register article:first-child div:last-child{
+        margin-top: 2%;
+        width: 93.7%;
+        margin-left: 0em;
+        position: relative;
+    }
+
+    #form-register article:nth-child(2) div:last-child{
+        width: 93%;
+        margin-left: 0;
+        margin-top: 2%;
+    }
+
+    #form-register input[type="text"]{
+        font-size: 1.1em;
+        padding: 0.5em 0.5em;
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+        border: 1px solid #DFDFDF;
+        position: relative;
+    }
+
+    #form-register input[type="password"]{
+        font-size: 1.1em;
+        padding: 0.5em 0.5em;
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+        border: 1px solid #DFDFDF;
+        position: relative;
+    }
+
+    #form-register input[type="date"]{
+        font-size: 1.1em;
+        padding: 0.35em 0.5em;
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+        border: 1px solid #DFDFDF;
+        position: relative;
+    }
+
+    #form-register input[type="checkbox"]{
+        -ms-transform: scale(1.5); /* IE */
+        -moz-transform: scale(1.5); /* FF */
+        -webkit-transform: scale(1.5); /* Safari and Chrome */
+        -o-transform: scale(1.5); /* Opera */
+        position: relative;
+    }
+
+    #form-register input[id="slideCheck"]{
+        visibility: hidden;
+    }
+
+    #condiciones-politica{
+        width: 80%;
+        text-align: center;
+        margin: auto;
+        font-size: 0.8em;
+        color: #a6a6a6;
+    }
+
+    #form-register article div label[class="error"]{
+        position: absolute;
+        font-size: 0.8em;
+        margin-top: 0.5em;
+        color: red;
+        bottom: 3.4em;
+        font-family: 'Spinnaker', sans-serif;
+    }
 }
 
 @media only screen and (max-width:432px){
+    #section-register{
+        margin-top: 5em;
+    }
 
+    #section-register h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 6vw;
+        color: #c5c5c5;
+        margin: 0;
+        margin-left: 10%;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        border-bottom: 0.1em solid #c5c5c5;
+        width: 80%;
+    }
+
+    #text-type-register{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 1em; 
+    }
+
+    #form-register article{
+        width: 80%;
+        margin: auto;
+        position: relative;
+        margin-bottom: 1.5em;
+    }
+
+    #politica{
+        width: 100% !important;
+        font-size: 0.9em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #form-register article div{
+        display: inline-block;
+        position: relative;
+        margin-bottom: 1em;
+    }
+
+    #form-register div{
+        width: 95%;
+        margin-left: 0%;
+        margin-top: 2%;
+        vertical-align: middle;
+        position: relative;
+    }
+
+    #form-register article{
+        margin-bottom: 1em;
+        position: relative;
+    }
+    
+    #politica label[class="error"]{
+        background: red;
+        top: -1.7em;
+        left: 0
+    }
+
+    #form-register article div:first-child{
+        margin-left: 0em;
+        position: relative;
+    }
+
+    #form-register article:first-child div:last-child{
+        margin-top: 2%;
+        width: 93.7%;
+        margin-left: 0em;
+        position: relative;
+    }
+
+    #form-register article:nth-child(2) div:last-child{
+        margin-top: 8%;
+        width: 100%;
+        margin-left: 0em;
+        font-size: 0.98em;
+        position: relative;
+    }
+
+    #form-register article:last-child{
+        text-align: center;
+    }
+
+    #form-register input[type="text"]{
+        font-size: 1.1em;
+        padding: 0.5em 0.5em;
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+        border: 1px solid #DFDFDF;
+        position: relative;
+    }
+
+    #form-register input[type="password"]{
+        font-size: 1.1em;
+        padding: 0.5em 0.5em;
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+        border: 1px solid #DFDFDF;
+        position: relative;
+    }
+
+    #form-register input[type="date"]{
+        font-size: 1.1em;
+        padding: 0.35em 0.5em;
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+        border: 1px solid #DFDFDF;
+        position: relative;
+    }
+
+    #form-register input[type="checkbox"]{
+        -ms-transform: scale(1.5); /* IE */
+        -moz-transform: scale(1.5); /* FF */
+        -webkit-transform: scale(1.5); /* Safari and Chrome */
+        -o-transform: scale(1.5); /* Opera */
+        position: relative;
+    }
+
+    #form-register input[type="submit"]{
+        margin: auto;
+        width: auto;
+    }
+
+    #form-register input[id="slideCheck"]{
+        visibility: hidden;
+    }
+
+    #condiciones-politica{
+        width: 80%;
+        text-align: center;
+        margin: auto;
+        font-size: 0.8em;
+        color: #a6a6a6;
+    }
+
+    #form-register article div label[class="error"]{
+        position: absolute;
+        top: -1.3em;
+        font-size: 0.8em;
+        color: red;
+        font-family: 'Spinnaker', sans-serif;
+    }
 }
 
