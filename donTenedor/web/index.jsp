@@ -33,11 +33,7 @@
     <body>
         <jsp:include page="views/header.jsp"/>
 
-        <c:choose>
-            <c:when test="${empty sessionScope.usuario}">
-                <jsp:include page="views/principal.jsp"/>
-            </c:when>
-            <c:otherwise>
+
                 <c:choose>
                     <c:when test="${empty view}">
                         <jsp:include page="views/principal.jsp"/>
@@ -46,8 +42,6 @@
                         <jsp:include page="views/${view}.jsp"/>
                     </c:otherwise>
                 </c:choose>
-            </c:otherwise>
-        </c:choose>
 
         <jsp:include page="views/footer.jsp"/>
     </body>

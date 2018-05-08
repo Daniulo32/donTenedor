@@ -6,6 +6,8 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <jsp:include page="/restaurantSV"/>
 <link href="css/restaurantPanelStyle/restaurantStyle.css" rel="stylesheet" type="text/css"/>
 <script src="js/restaurantJS.js" type="text/javascript"></script>
@@ -15,19 +17,20 @@
         <article>
             <div>
                 <label>Nombre Restaurante</label>
-                <input type="text" name="nameRestaurant" value="${sessionScope.restaurante.name}"/>
+                <input type="text" name="nameRestaurant" value="${sessionScope.restaurante.nameRestaurant}"/>
                 <input type="hidden" name="idRestaurant" value="${sessionScope.restaurante.idRestaurant}"/>
             </div>
             <div>
+                <c:set var="tipo" value="${sessionScope.restaurante.type}"/>
                 <label>Tipo</label>
                 <select name="type" id="type">
-                    <option value="espanol">Español</option>
-                    <option value="tapas">Bar Tapas</option>
-                    <option value="chino">Chino</option>
-                    <option value="italiano">Italiano</option>
-                    <option value="indio">Indio</option>
-                    <option value="rapida">Comida Rápida</option>
-                    <option value="buffet">Buffet</option>
+                    <option value="espanol" ${tipo eq 'espanol' ? 'selected':''}>EspaÃ±ol</option>
+                    <option value="tapas" ${tipo eq 'tapas' ? 'selected':''}>Bar Tapas</option>
+                    <option value="chino" ${tipo eq 'chino' ? 'selected':''}>Chino</option>
+                    <option value="italiano" ${tipo eq 'italiano' ? 'selected':''}>Italiano</option>
+                    <option value="indio" ${tipo eq 'indio' ? 'selected':''}>Indio</option>
+                    <option value="rapida" ${tipo eq 'rapida' ? 'selected':''}>Comida RÃ¡pida</option>
+                    <option value="buffet" ${tipo eq 'buffet' ? 'selected':''}>Buffet</option>
                 </select>
             </div>
         </article>
@@ -37,29 +40,48 @@
                 <label>Provincia</label>
                 <select name="idProvincia" id="provincia">
                     <c:forEach var="provincia" items="${requestScope.listaProvincias}">
-                        <option value="${provincia.idprovincia}">${provincia.provincia}</option>
+                        <c:choose>
+                            <c:when test="${provincia.idprovincia == sessionScope.restaurante.province.idprovincia}">
+                                <option value="${provincia.idprovincia}" selected>${provincia.provincia}</option>
+                            </c:when>
+                            <c:otherwise>
+                                <option value="${provincia.idprovincia}">${provincia.provincia}</option>
+                            </c:otherwise>
+                        </c:choose>
                     </c:forEach>
                 </select>
             </div>
             <div>
                 <label>Localidad</label>
-                <input list="localidad" type="text" name="localidad" id="poblacion" value="${sessionScope.restaurante.town}"/>
+                <input list="localidad" type="text" name="localidad" id="poblacion" value="${sessionScope.restaurante.town.poblacion}"/>
                 <datalist id="localidad"></datalist>
                 <input type="hidden" name="idPoblacion" id="idPoblacion" value=""/>
             </div>
             <div>
                 <label>Precio Medio</label>
-                <input type="number" name="halfPrice" step="0.01" value="0.00"/>
+                <c:choose>
+                    <c:when test="${sessionScope.restaurante.halfPrice == null}">
+                        <input type="number" name="halfPrice" step="0.01" value="0.00"/>
+                    </c:when>
+                    <c:otherwise>
+                        <fmt:formatNumber var="formatQuantity" value="${sessionScope.restaurante.halfPrice}" 
+                                          minFractionDigits="2"/>
+                        <c:set var="dateParts" value="${fn:split(formatQuantity, ',')}" />
+                        <c:set var = "quantity" value = "${fn:join(dateParts, '.')}" />
+                        <input type="number" name="halfPrice" value="${quantity}"/>
+                    </c:otherwise>
+                </c:choose>
+
             </div>
         </article>
 
         <article>
             <div>
-                <label>Teléfono</label>
+                <label>TelÃ©fono</label>
                 <input type="text" name="telefono" value="${sessionScope.restaurante.phone}" maxlength="9"/>
             </div>
             <div>
-                <label>Dirección</label>
+                <label>DirecciÃ³n</label>
                 <input type="text" name="direccion" value="${sessionScope.restaurante.address}"/>
             </div>
             <div>
@@ -154,11 +176,27 @@
             </div>
             <div>
                 <label>Hora Apertura</label>
-                <input type="time" name="hourOpen" />
+                <c:choose>
+                    <c:when test="${!empty sessionScope.restaurante.scheduleOpen}">
+                        <fmt:formatDate var="hourOpen" pattern = "HH:mm" value = "${sessionScope.restaurante.scheduleOpen}" />
+                        <input type="time" name="hourOpen" value="${hourOpen}"/>
+                    </c:when>
+                    <c:otherwise>
+                        <input type="time" name="hourOpen"/>
+                    </c:otherwise>
+                </c:choose>
             </div>
             <div>
                 <label>Hora Cierre</label>
-                <input type="time" name="hourClose" />
+                <c:choose>
+                    <c:when test="${!empty sessionScope.restaurante.scheduleClose}">
+                        <fmt:formatDate var="hourClose" pattern = "HH:mm" value = "${sessionScope.restaurante.scheduleClose}" />
+                        <input type="time" name="hourClose" value="${hourClose}"/>
+                    </c:when>
+                    <c:otherwise>
+                        <input type="time" name="hourClose" />
+                    </c:otherwise>
+                </c:choose>
             </div>
         </article>
 
@@ -166,36 +204,41 @@
             <h2>Servicios</h2>
             <div>
                 <label id="text-type-register">Servicio a Domicilio</label>
-                <div class="slideCheck">	
-                    <input type="checkbox" name="homeService" value ="1" id="homeService"/>
+                <div class="slideCheck">
+                    <c:set var="homeService" value="${sessionScope.restaurante.homeService}"/>
+                    <input type="checkbox" name="homeService" value ="1" id="homeService" ${homeService eq '1' ? 'checked':''}/>
                     <label for="homeService"></label>
                 </div>
             </div>
             <div>
                 <label id="text-type-register">Internet Wifi</label>
-                <div class="slideCheck">	
-                    <input type="checkbox" name="wifi" value ="1" id="wifi"/>
+                <div class="slideCheck">
+                    <c:set var="wifi" value="${sessionScope.restaurante.wifi}"/>
+                    <input type="checkbox" name="wifi" value ="1" id="wifi" ${wifi eq '1' ? 'checked':''}/>
                     <label for="wifi"></label>
                 </div>
             </div>
             <div>
                 <label id="text-type-register">Servicio Terraza</label>
-                <div class="slideCheck">	
-                    <input type="checkbox" name="terrace" value ="1" id="terrace"/>
+                <div class="slideCheck">
+                    <c:set var="terrace" value="${sessionScope.restaurante.terrace}"/>
+                    <input type="checkbox" name="terrace" value ="1" id="terrace" ${terrace eq '1' ? 'checked':''}/>
                     <label for="terrace"></label>
                 </div>
             </div>
             <div>
                 <label id="text-type-register">Pago con Tarjeta</label>
-                <div class="slideCheck">	
-                    <input type="checkbox" name="tarjeta" value ="1" id="tarjeta"/>
+                <div class="slideCheck">
+                    <c:set var="card" value="${sessionScope.restaurante.cardPayment}"/>
+                    <input type="checkbox" name="tarjeta" value ="1" id="tarjeta" ${card eq '1' ? 'checked':''}/>
                     <label for="tarjeta"></label>
                 </div>
             </div>
             <div>
                 <label id="text-type-register">Adaptado Minusvalidos</label>
-                <div class="slideCheck">	
-                    <input type="checkbox" name="minusvalidos" value ="1" id="minusvalidos"/>
+                <div class="slideCheck">
+                    <c:set var="handicapped" value="${sessionScope.restaurante.handicapped}"/>
+                    <input type="checkbox" name="minusvalidos" value ="1" id="minusvalidos" ${handicapped eq '1' ? 'checked':''}/>
                     <label for="minusvalidos"></label>
                 </div>
             </div>
@@ -203,7 +246,7 @@
         <article>
             <div id="content-textArea">
                 <label>Observaciones</label>
-                <textarea id="Observation" name="observation"></textarea>
+                <textarea id="Observation" name="observation">${sessionScope.restaurante.observations}</textarea>
             </div>
         </article>
 

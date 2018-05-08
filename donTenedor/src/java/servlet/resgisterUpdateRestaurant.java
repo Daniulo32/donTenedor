@@ -147,12 +147,10 @@ public class resgisterUpdateRestaurant extends HttpServlet {
             }
             sesion.setAttribute("error", "no");
             sesion.setAttribute("restaurante", restaurante);
-//            response.sendRedirect("index.jsp?view=restaurantPanel");
+            response.sendRedirect("index.jsp?view=restaurantPanel");
         } catch (Exception e) {
-            out.print(e);
-            
             sesion.setAttribute("error", "yes");
-//            response.sendRedirect("index.jsp?view=restaurantPanel);
+            response.sendRedirect("index.jsp?view=restaurantPanel");
         }
 
     }

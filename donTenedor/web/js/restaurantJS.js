@@ -11,7 +11,6 @@ $(function () {
 
     function inserIdPoblacion() {
         var value = $('#poblacion').val();
-        alert($('#localidad [value="' + value + '"]').data('value'));
         $("#idPoblacion").val($('#localidad [value="' + value + '"]').data('value'));
     }
 
