@@ -114,7 +114,7 @@ public class Voting implements Serializable {
 
     @Override
     public String toString() {
-        return "DAO.Voting[ votingPK=" + votingPK + " ]";
+        return "DTO.Voting[ votingPK=" + votingPK + " ]";
     }
     
 }

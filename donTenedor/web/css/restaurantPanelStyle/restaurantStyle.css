@@ -1,0 +1,579 @@
+/* 
+    Created on : 05-may-2018, 20:22:18
+    Author     : danieljimenez
+*/
+
+
+@media only screen and (min-width:800px){
+    #diasAperturaMovil{
+        display: none !important;
+    }
+    #section-restaurante h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2vw;
+        color: #c5c5c5;
+        margin: 0;
+        margin-left: 10%;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        border-bottom: 0.1em solid #c5c5c5;
+        width: 80%;
+    }
+
+    #section-restaurante h2{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 1.2em;
+        color: #4475a8;
+        margin: 0;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        border-bottom: 1px solid #4475a8;
+        width: 100%;
+    }
+
+    #form-restaurant article{
+        width: 80%;
+        margin: auto;
+    }
+
+    #form-restaurant article div{
+        display: inline-block;
+    }
+
+    #form-restaurant div{
+        margin-left: 3em;
+        vertical-align: middle;
+        width: 27%;
+    }
+
+    #form-restaurant article{
+        margin-bottom: 2em;
+    }
+
+    #form-restaurant article div:first-child{
+        margin-left: 0em;
+    }
+
+    #form-restaurant article:first-child div:first-child{
+        width: 58%;
+    }
+
+    #form-restaurant article div{
+        width: 27%;
+    }
+
+    #form-restaurant article:nth-child(3) div:first-child{
+        width: 13%;
+    }
+
+    #form-restaurant article:nth-child(3) div{
+        width: 34%;
+    }
+
+    #form-restaurant article #diasApertura{
+        width: 60%;
+    }
+
+    #form-restaurant article #diasApertura div{
+        margin: 0;
+        display: inline;
+        margin-left: 1em;
+        margin-top: 0.5em;
+    }
+
+    #form-restaurant article #diasApertura div span{
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #form-restaurant article:nth-child(4) div:nth-child(4){
+        width: 15%;
+        margin-left: 0;
+    }
+    #form-restaurant article:nth-child(4) div:nth-child(3){
+        width: 15%;
+    }
+
+    #form-restaurant article #diasApertura div div{
+        width: auto;
+    }
+
+    #form-restaurant select{
+        -webkit-appearance: button;
+        -webkit-border-radius: 0px;
+        -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        -webkit-padding-end: 20px;
+        -webkit-padding-start: 2px;
+        -webkit-user-select: none;
+        background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(white, white 40%, white);
+        background-position: 97% center;
+        background-repeat: no-repeat;
+        border: 1px solid #d8d8d8;
+        color: #555;
+        font-size: inherit;
+        overflow: hidden;
+        padding: 0.7em 0.5em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+    }
+
+    #form-restaurant article div label{
+        color: #629B93;
+        font-size: 1em;
+        display: block;
+        padding: 0.2em 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #form-restaurant article #content-textArea{
+        width: 100% !important;
+    }
+
+    #form-restaurant input[type="text"],#form-restaurant input[type="email"],
+    #form-restaurant input[type="time"],#form-restaurant input[type="number"]{
+        font-size: 1.1em;
+        padding: 0.5em 0.5em;
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #form-restaurant input[type="time"]{
+        font-size: 1.1em;
+        padding: 0.5em 0.5em;
+        width: 72%;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #form-restaurant input[type="date"]{
+        font-size: 1.1em;
+        padding: 0.35em 0.5em;
+        width: 15em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #form-restaurant #article-service input[type="checkbox"]{
+        display: none;
+    }
+
+    #form-restaurant textarea{
+        resize: none;
+        width: 100%;
+        height: 150px;
+        border-radius: 0.5em;
+        border-color: #c5c5c5;
+    }
+
+    input[type="submit"]{
+        display: block;
+        margin-bottom: 1em;
+    }
+
+    #article-service div{
+        margin-top: 1em;
+    }
+
+    .slideCheck{
+        margin: 0 !important;
+        margin-left: 0.5em !important;
+    }
+
+    .change-password-successful{
+        background: #caf3aa;
+        color: green;
+        padding: 0.5em;
+        width: 80%;
+        margin: auto;
+        border: 1px solid green;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    .change-password-error{
+        background: #f3aaaa;
+        color: #ce0808;
+        padding: 0.5em;
+        width: 80%;
+        margin: auto;
+        border: 1px solid #ce0808;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+}
+
+@media only screen and (min-width:432px) and (max-width:800px){
+    #diasAperturaMovil{
+        display: none;
+    }
+    #section-restaurante h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2vw;
+        color: #c5c5c5;
+        margin: 0;
+        margin-left: 10%;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        border-bottom: 0.1em solid #c5c5c5;
+        width: 80%;
+    }
+
+    #section-restaurante h2{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 1.2em;
+        color: #4475a8;
+        margin: 0;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        border-bottom: 1px solid #4475a8;
+        width: 100%;
+    }
+
+    #form-restaurant article{
+        width: 80%;
+        margin: auto;
+    }
+
+    #form-restaurant article div{
+        display: inline-block;
+    }
+
+    #form-restaurant div{
+        margin-left: 3em;
+        vertical-align: middle;
+        width: 27%;
+    }
+
+    #form-restaurant article{
+        margin-bottom: 2em;
+    }
+
+    #form-restaurant article div:first-child{
+        margin-left: 0em;
+    }
+
+    #form-restaurant article:first-child div:first-child{
+        width: 58%;
+    }
+
+    #form-restaurant article div{
+        width: 27%;
+    }
+
+    #form-restaurant article:nth-child(3) div:first-child{
+        width: 13%;
+    }
+
+    #form-restaurant article:nth-child(3) div{
+        width: 34%;
+    }
+
+    #form-restaurant article #diasApertura{
+        width: 100%;
+    }
+
+    #form-restaurant article #diasApertura label{
+        margin-bottom: 1em;
+    }
+
+    #form-restaurant article #diasApertura div{
+        margin: 0;
+        display: inline;
+        margin-left: 2.5em;
+        margin-top: 0.5em;
+        text-align: center;
+    }
+
+    #form-restaurant article #diasApertura div span{
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #form-restaurant article:nth-child(4) div:nth-child(2){
+        width: 45%;
+        margin-left: 0;
+        margin-top: 1.5em;
+    }
+    #form-restaurant article:nth-child(4) div:nth-child(3){
+        width: 45%;
+        margin-top: 1.5em;
+    }
+
+    #form-restaurant article #diasApertura div div{
+        width: auto;
+    }
+
+    #form-restaurant #article-service div{
+        width: 40%;
+    }
+
+    #form-restaurant select{
+        -webkit-appearance: button;
+        -webkit-border-radius: 0px;
+        -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        -webkit-padding-end: 20px;
+        -webkit-padding-start: 2px;
+        -webkit-user-select: none;
+        background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(white, white 40%, white);
+        background-position: 97% center;
+        background-repeat: no-repeat;
+        border: 1px solid #d8d8d8;
+        color: #555;
+        font-size: inherit;
+        overflow: hidden;
+        padding: 0.7em 0.5em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+    }
+
+    #form-restaurant article div label{
+        color: #629B93;
+        font-size: 1em;
+        display: block;
+        padding: 0.2em 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #form-restaurant article #content-textArea{
+        width: 100% !important;
+    }
+
+    #form-restaurant input[type="text"],#form-restaurant input[type="email"],#form-restaurant input[type="time"]{
+        font-size: 1.1em;
+        padding: 0.5em 0.5em;
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+        border: 1px solid grey;
+        border: 1px solid #c5c5c5;
+    }
+
+    #form-restaurant input[type="checkbox"]{
+        -ms-transform: scale(1.5); /* IE */
+        -moz-transform: scale(1.5); /* FF */
+        -webkit-transform: scale(1.5); /* Safari and Chrome */
+        -o-transform: scale(1.5); /* Opera */
+        position: relative;
+    }
+
+    #form-restaurant #article-service input[type="checkbox"]{
+        display: none;
+    }
+
+    #form-restaurant input[type="time"]{
+        font-size: 1.1em;
+        padding: 0.5em 0.5em;
+        width: 72%;
+        font-family: 'Spinnaker', sans-serif;
+        border: 1px solid grey;
+        border: 1px solid #c5c5c5
+    }
+
+    #form-restaurant textarea{
+        resize: none;
+        width: 100%;
+        height: 150px;
+        border-radius: 0.5em;
+        border-color: #c5c5c5;
+    }
+
+    input[type="submit"]{
+        display: block;
+        margin:auto;
+        margin-bottom: 1em;
+    }
+
+    #article-service div{
+        margin-top: 1em;
+    }
+
+    .slideCheck{
+        margin: 0 !important;
+        margin-left: 0.5em !important;
+    }
+
+    .change-password-successful{
+        background: #caf3aa;
+        color: green;
+        padding: 0.5em;
+        width: 80%;
+        margin: auto;
+        border: 1px solid green;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    .change-password-error{
+        background: #f3aaaa;
+        color: #ce0808;
+        padding: 0.5em;
+        width: 80%;
+        margin: auto;
+        border: 1px solid #ce0808;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+}
+
+@media only screen and (max-width:432px){
+
+    #diasApertura{
+        display: none !important;
+    }
+
+    #section-restaurante h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2em;
+        color: #c5c5c5;
+        margin: 0;
+        margin-left: 10%;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        border-bottom: 0.1em solid #c5c5c5;
+        width: 80%;
+    }
+
+    #section-restaurante h2{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 1.2em;
+        color: #4475a8;
+        margin: 0;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        border-bottom: 1px solid #4475a8;
+        width: 100%;
+    }
+
+    #form-restaurant article{
+        width: 80%;
+        margin: auto;
+    }
+
+    #form-restaurant article div{
+        display: inline-block;
+        width: 95%;
+    }
+
+    #form-restaurant #diasAperturaMovil div{
+        display: inline-block;
+        margin-bottom: 0.5em;
+    }
+
+    #form-restaurant #diasAperturaMovil div span{
+        display: inline-block;
+        width: 5%;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #form-restaurant select{
+        -webkit-appearance: button;
+        -webkit-border-radius: 0px;
+        -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        -webkit-padding-end: 20px;
+        -webkit-padding-start: 2px;
+        -webkit-user-select: none;
+        background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(white, white 40%, white);
+        background-position: 97% center;
+        background-repeat: no-repeat;
+        border: 1px solid #d8d8d8;
+        color: #555;
+        font-size: inherit;
+        overflow: hidden;
+        padding: 0.7em 0.5em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 107%;
+    }
+
+    #form-restaurant article div label{
+        color: #629B93;
+        font-size: 1em;
+        display: block;
+        padding: 0.2em 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #form-restaurant article #content-textArea{
+        width: 100% !important;
+    }
+
+    #form-restaurant input[type="text"],#form-restaurant input[type="email"],#form-restaurant input[type="time"]{
+        font-size: 1.1em;
+        padding: 0.5em 0.5em;
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+        border: 1px solid grey;
+        border: 1px solid #c5c5c5;
+    }
+
+    input[type="checkbox"]{
+        display: none;
+    }
+
+    #form-restaurant input[type="checkbox"]{
+        -ms-transform: scale(1.5); /* IE */
+        -moz-transform: scale(1.5); /* FF */
+        -webkit-transform: scale(1.5); /* Safari and Chrome */
+        -o-transform: scale(1.5); /* Opera */
+        position: relative;
+    }
+
+    #form-restaurant #article-service input[type="checkbox"]{
+        display: none;
+    }
+
+    #form-restaurant input[type="time"]{
+        font-size: 1.1em;
+        padding: 0.5em 0.5em;
+        width: 72%;
+        font-family: 'Spinnaker', sans-serif;
+        border: 1px solid grey;
+        border: 1px solid #c5c5c5
+    }
+
+    #form-restaurant textarea{
+        resize: none;
+        width: 100%;
+        height: 150px;
+        border-radius: 0.5em;
+        border-color: #c5c5c5;
+    }
+
+    input[type="submit"]{
+        display: block;
+        margin:auto;
+        margin-bottom: 1em;
+    }
+
+    #article-service div{
+        margin-top: 1em;
+    }
+
+    .slideCheck{
+        margin: 0 !important;
+        margin-left: 0.5em !important;
+    }
+
+    .change-password-successful{
+        background: #caf3aa;
+        color: green;
+        padding: 0.5em;
+        width: 80%;
+        margin: auto;
+        border: 1px solid green;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    .change-password-error{
+        background: #f3aaaa;
+        color: #ce0808;
+        padding: 0.5em;
+        width: 80%;
+        margin: auto;
+        border: 1px solid #ce0808;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+}
+
+
+
+

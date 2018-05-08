@@ -232,7 +232,7 @@ public class Users implements Serializable {
 
     @Override
     public String toString() {
-        return "DAO.Users[ idUser=" + idUser + " ]";
+        return "DTO.Users[ idUser=" + idUser + " ]";
     }
     
 }

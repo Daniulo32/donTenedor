@@ -20,6 +20,18 @@
         <servlet-name>changePassword</servlet-name>
         <servlet-class>servlet.changePassword</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>resgisterUpdateRestaurant</servlet-name>
+        <servlet-class>servlet.resgisterUpdateRestaurant</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>restaurantSV</servlet-name>
+        <servlet-class>servlet.restaurantSV</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>searchTown</servlet-name>
+        <servlet-class>servlet.searchTown</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerUser</servlet-name>
         <url-pattern>/registerUser</url-pattern>
@@ -39,6 +51,18 @@
     <servlet-mapping>
         <servlet-name>changePassword</servlet-name>
         <url-pattern>/changePassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>resgisterUpdateRestaurant</servlet-name>
+        <url-pattern>/resgisterUpdateRestaurant</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>restaurantSV</servlet-name>
+        <url-pattern>/restaurantSV</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>searchTown</servlet-name>
+        <url-pattern>/searchTown</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

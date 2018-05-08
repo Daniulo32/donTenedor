@@ -7,11 +7,14 @@
 $(function () {
 
     var error = $("#error").val();
-
-    if (error !== null) {
+    var tabRestaurant = window.localStorage.getItem("tabRestaurant");
+    
+    if (tabRestaurant === null) {
         $("#content-restaurant").load("views/restaurantPanel/misDatos.jsp", {"error": error});
     } else {
-        $("#content-restaurant").load("views/restaurantPanel/misDatos.jsp");
+        resetBackground();
+        $("#"+tabRestaurant).css({"background": "#F7A89B"});
+        $("#content-restaurant").load("views/restaurantPanel/" + tabRestaurant + ".jsp", {"error": error});
     }
 
     $("#tab-menu-restaurant ul li").each(function () {
@@ -22,12 +25,11 @@ $(function () {
         resetBackground();
         $(this).css({"background": "#F7A89B"});
         var page = $(this).attr("data-view");
+        window.localStorage.setItem("tabRestaurant", page);
         var error = $("#error").val();
-        if (error !== null) {
-            $("#content-restaurant").load("views/restaurantPanel/" + page + ".jsp", {"error": error});
-        } else {
-            $("#content-restaurant").load("views/restaurantPanel/" + page + ".jsp");
-        }
+
+        $("#content-restaurant").load("views/restaurantPanel/" + page + ".jsp", {"error": error});
+
     }
 
     function resetBackground() {

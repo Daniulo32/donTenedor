@@ -144,7 +144,7 @@ public class Comments implements Serializable {
 
     @Override
     public String toString() {
-        return "DAO.Comments[ idComment=" + idComment + " ]";
+        return "DTO.Comments[ idComment=" + idComment + " ]";
     }
     
 }

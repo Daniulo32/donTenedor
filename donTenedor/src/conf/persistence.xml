@@ -14,6 +14,19 @@
     <class>DTO.Reservations</class>
     <class>DTO.BannedUsers</class>
     <class>DTO.Poblacion</class>
+    <class>DAO.Restaurant</class>
+    <class>servlet.Provincia</class>
+    <class>servlet.Users</class>
+    <class>servlet.Comments</class>
+    <class>servlet.Offers</class>
+    <class>servlet.Reservations</class>
+    <class>servlet.IncidenceErrors</class>
+    <class>servlet.PhotoRestaurant</class>
+    <class>servlet.BannedUsers</class>
+    <class>servlet.IncidenceComment</class>
+    <class>servlet.Restaurant</class>
+    <class>servlet.Voting</class>
+    <class>servlet.Poblacion</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/donTenedor?zeroDateTimeBehavior=convertToNull"/>

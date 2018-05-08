@@ -74,7 +74,7 @@ public class PhotoRestaurantPK implements Serializable {
 
     @Override
     public String toString() {
-        return "DAO.PhotoRestaurantPK[ idRestaurant=" + idRestaurant + ", namePhoto=" + namePhoto + " ]";
+        return "DTO.PhotoRestaurantPK[ idRestaurant=" + idRestaurant + ", namePhoto=" + namePhoto + " ]";
     }
     
 }

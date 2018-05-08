@@ -98,7 +98,7 @@ public class BannedUsers implements Serializable {
 
     @Override
     public String toString() {
-        return "DAO.BannedUsers[ idUser=" + idUser + " ]";
+        return "DTO.BannedUsers[ idUser=" + idUser + " ]";
     }
     
 }

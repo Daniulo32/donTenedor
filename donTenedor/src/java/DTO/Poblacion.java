@@ -163,7 +163,7 @@ public class Poblacion implements Serializable {
 
     @Override
     public String toString() {
-        return "DAO.Poblacion[ idpoblacion=" + idpoblacion + " ]";
+        return "DTO.Poblacion[ idpoblacion=" + idpoblacion + " ]";
     }
     
 }

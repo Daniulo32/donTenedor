@@ -5,7 +5,9 @@
  */
 package servlet;
 
+import DAO.RestaurantJpaController;
 import DAO.UsersJpaController;
+import DTO.Restaurant;
 import DTO.Users;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -52,6 +54,8 @@ public class comprobarUsuario extends HttpServlet {
 
                             out.print("usuario");
                         } else {
+                            Restaurant restaurante = loginRestaurant(user, emf);
+                            sesion.setAttribute("restaurante", restaurante);
                             sesion.setAttribute("usuario", user);
 
                             out.print("restaurante");
@@ -104,6 +108,14 @@ public class comprobarUsuario extends HttpServlet {
         Users user = ctrUsuarios.getUser(usuario);
 
         return user;
+    }
+    
+    public Restaurant loginRestaurant(Users usuario, EntityManagerFactory emf) {
+        RestaurantJpaController ctrRestaurant = new RestaurantJpaController(emf);
+        
+        Restaurant restaurante = ctrRestaurant.getRestaurant(usuario);
+
+        return restaurante;
     }
 
     @Override

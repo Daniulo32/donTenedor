@@ -100,7 +100,7 @@ public class IncidenceComment implements Serializable {
 
     @Override
     public String toString() {
-        return "DAO.IncidenceComment[ idIncidence=" + idIncidence + " ]";
+        return "DTO.IncidenceComment[ idIncidence=" + idIncidence + " ]";
     }
     
 }

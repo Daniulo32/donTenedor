@@ -8,7 +8,9 @@ package servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -43,6 +45,25 @@ public class tools {
         byte[] encoded = Base64.encodeBase64(password.getBytes());
         String passwordEncryption = new String(encoded);
         return passwordEncryption;
+    }
+
+    public String formatDaysOpen(String[] daysOpen) {
+        String diasAbiertos = "";
+
+        for (int i = 0; daysOpen.length > i; i++) {
+            if (i == 0) {
+                diasAbiertos += daysOpen[i];
+            } else {
+                diasAbiertos += " - " + daysOpen[i];
+            }
+        }
+        return diasAbiertos;
+    }
+
+    public Date parseToTime(String time) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        Date hora = sdf.parse(time);
+        return hora;
     }
 
 }

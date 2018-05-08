@@ -113,7 +113,7 @@ public class IncidenceErrors implements Serializable {
 
     @Override
     public String toString() {
-        return "DAO.IncidenceErrors[ idIncidence=" + idIncidence + " ]";
+        return "DTO.IncidenceErrors[ idIncidence=" + idIncidence + " ]";
     }
     
 }

@@ -36,6 +36,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "Restaurant.findAll", query = "SELECT r FROM Restaurant r")
     , @NamedQuery(name = "Restaurant.findByIdRestaurant", query = "SELECT r FROM Restaurant r WHERE r.idRestaurant = :idRestaurant")
+    , @NamedQuery(name = "Restaurant.findByIdAdmin", query = "SELECT r FROM Restaurant r WHERE r.idAdmin = :idAdmin")    
     , @NamedQuery(name = "Restaurant.findByType", query = "SELECT r FROM Restaurant r WHERE r.type = :type")
     , @NamedQuery(name = "Restaurant.findByAddress", query = "SELECT r FROM Restaurant r WHERE r.address = :address")
     , @NamedQuery(name = "Restaurant.findByLongitude", query = "SELECT r FROM Restaurant r WHERE r.longitude = :longitude")
@@ -51,7 +52,8 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Restaurant.findByTerrace", query = "SELECT r FROM Restaurant r WHERE r.terrace = :terrace")
     , @NamedQuery(name = "Restaurant.findByHandicapped", query = "SELECT r FROM Restaurant r WHERE r.handicapped = :handicapped")
     , @NamedQuery(name = "Restaurant.findByCardPayment", query = "SELECT r FROM Restaurant r WHERE r.cardPayment = :cardPayment")
-    , @NamedQuery(name = "Restaurant.findByObservations", query = "SELECT r FROM Restaurant r WHERE r.observations = :observations")})
+    , @NamedQuery(name = "Restaurant.findByObservations", query = "SELECT r FROM Restaurant r WHERE r.observations = :observations")
+    , @NamedQuery(name = "Restaurant.findByNameRestaurant", query = "SELECT r FROM Restaurant r WHERE r.nameRestaurant = :nameRestaurant")})
 public class Restaurant implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -100,6 +102,8 @@ public class Restaurant implements Serializable {
     private int cardPayment;
     @Column(name = "observations")
     private String observations;
+    @Column(name = "nameRestaurant")
+    private String nameRestaurant;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idRestaurant")
     private List<Offers> offersList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idRestaurant")
@@ -272,6 +276,14 @@ public class Restaurant implements Serializable {
         this.observations = observations;
     }
 
+    public String getNameRestaurant() {
+        return nameRestaurant;
+    }
+
+    public void setNameRestaurant(String nameRestaurant) {
+        this.nameRestaurant = nameRestaurant;
+    }
+
     @XmlTransient
     public List<Offers> getOffersList() {
         return offersList;
@@ -363,7 +375,8 @@ public class Restaurant implements Serializable {
 
     @Override
     public String toString() {
-        return "DAO.Restaurant[ idRestaurant=" + idRestaurant + " ]";
+        return "DTO.Restaurant[ idRestaurant=" + idRestaurant + " ]";
     }
+
     
 }

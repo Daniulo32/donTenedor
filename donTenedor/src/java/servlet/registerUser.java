@@ -67,7 +67,7 @@ public class registerUser extends HttpServlet {
             out.print(e);
         }
         
-//        response.sendRedirect("index.jsp");
+        response.sendRedirect("index.jsp");
     }
 
     @Override

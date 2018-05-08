@@ -142,7 +142,7 @@ public class Offers implements Serializable {
 
     @Override
     public String toString() {
-        return "DAO.Offers[ idOffer=" + idOffer + " ]";
+        return "DTO.Offers[ idOffer=" + idOffer + " ]";
     }
     
 }

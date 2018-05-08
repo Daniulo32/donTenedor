@@ -9,11 +9,11 @@
 <input type="hidden" id="error" name="error" value="${requestScope.error}"/>
 <div id="tab-menu-restaurant">
     <ul>
-        <li data-view="misDatos">Mis datos</li>
-        <li data-view="restaurante">Restaurante</li>
-        <li data-view="fotosRestaurante">Fotos</li>
-        <li data-view="ubicacionRestaurante">Ubicación</li>
-        <li data-view="comentariosRestaurante">Comentarios</li>
+        <li data-view="misDatos" id="misDatos">Mis datos</li>
+        <li data-view="restaurante" id="restaurante">Restaurante</li>
+        <li data-view="fotosRestaurante" id="fotosRestaurante">Fotos</li>
+        <li data-view="ubicacionRestaurante" id="ubicacionRestaurante">Ubicación</li>
+        <li data-view="comentariosRestaurante" id="comentariosRestaurante">Comentarios</li>
     </ul>
     
     <div id="content-restaurant">

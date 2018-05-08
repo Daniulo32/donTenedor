@@ -499,4 +499,24 @@ public class RestaurantJpaController implements Serializable {
         }
     }
     
+    public Restaurant getRestaurant(Users user) {
+
+        EntityManager em = getEntityManager();
+
+        Restaurant restaurante = null;
+
+        Query query = em.createNamedQuery("Restaurant.findByIdAdmin");
+        query.setParameter("idAdmin", user);
+
+        try {
+            List lista = query.getResultList();
+            if (lista.size() > 0) {
+                restaurante = (Restaurant) lista.get(0);
+            }
+        } finally {
+            em.close();
+        }
+        return restaurante;
+    }
+    
 }

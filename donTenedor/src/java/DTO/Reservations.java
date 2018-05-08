@@ -157,7 +157,7 @@ public class Reservations implements Serializable {
 
     @Override
     public String toString() {
-        return "DAO.Reservations[ idReservation=" + idReservation + " ]";
+        return "DTO.Reservations[ idReservation=" + idReservation + " ]";
     }
     
 }

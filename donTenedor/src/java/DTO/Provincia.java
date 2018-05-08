@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "provincia")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Provincia.findAll", query = "SELECT p FROM Provincia p")
+    @NamedQuery(name = "Provincia.findAll", query = "SELECT p FROM Provincia p order by p.provincia")
     , @NamedQuery(name = "Provincia.findByIdprovincia", query = "SELECT p FROM Provincia p WHERE p.idprovincia = :idprovincia")
     , @NamedQuery(name = "Provincia.findByProvincia", query = "SELECT p FROM Provincia p WHERE p.provincia = :provincia")
     , @NamedQuery(name = "Provincia.findByProvinciaseo", query = "SELECT p FROM Provincia p WHERE p.provinciaseo = :provinciaseo")
@@ -141,7 +141,7 @@ public class Provincia implements Serializable {
 
     @Override
     public String toString() {
-        return "DAO.Provincia[ idprovincia=" + idprovincia + " ]";
+        return "DTO.Provincia[ idprovincia=" + idprovincia + " ]";
     }
     
 }
