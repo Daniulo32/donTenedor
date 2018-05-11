@@ -110,28 +110,7 @@ public class resgisterUpdateRestaurant extends HttpServlet {
             minusvalidos = 1;
         }
 
-        /*Creamos el objeto restaurant y le aplicamos los valores*/
-        Restaurant restaurante = new Restaurant();
-        restaurante.setNameRestaurant(nombrerestaurante);
-        restaurante.setType(tipoRestaurante);
-        restaurante.setProvince(provincia);
-        restaurante.setTown(poblacion);
-        restaurante.setHalfPrice(precioMedio);
-        restaurante.setPhone(telefono);
-        restaurante.setAddress(direccion);
-        restaurante.setEmail(email);
-        restaurante.setOpenDays(diasAbiertos);
-        restaurante.setScheduleOpen(horaApertura);
-        restaurante.setScheduleClose(horaCierre);
-        restaurante.setHomeService(servicioDomicilio);
-        restaurante.setWifi(wifi);
-        restaurante.setTerrace(terraza);
-        restaurante.setCardPayment(tarjeta);
-        restaurante.setHandicapped(minusvalidos);
-        restaurante.setObservations(observaciones);
-
         Users usuario = (Users) sesion.getAttribute("usuario");
-        restaurante.setIdAdmin(usuario);
 
         RestaurantJpaController ctrRestaurantes = new RestaurantJpaController(emf);
 
@@ -139,14 +118,53 @@ public class resgisterUpdateRestaurant extends HttpServlet {
 
         try {
             if (restaurant == null) {
+                /*Creamos el objeto restaurant y le aplicamos los valores*/
+                Restaurant restaurante = new Restaurant();
+                restaurante.setNameRestaurant(nombrerestaurante);
+                restaurante.setType(tipoRestaurante);
+                restaurante.setProvince(provincia);
+                restaurante.setTown(poblacion);
+                restaurante.setHalfPrice(precioMedio);
+                restaurante.setPhone(telefono);
+                restaurante.setAddress(direccion);
+                restaurante.setEmail(email);
+                restaurante.setOpenDays(diasAbiertos);
+                restaurante.setScheduleOpen(horaApertura);
+                restaurante.setScheduleClose(horaCierre);
+                restaurante.setHomeService(servicioDomicilio);
+                restaurante.setWifi(wifi);
+                restaurante.setTerrace(terraza);
+                restaurante.setCardPayment(tarjeta);
+                restaurante.setHandicapped(minusvalidos);
+                restaurante.setObservations(observaciones);
+                restaurante.setIdAdmin(usuario);
                 restaurante.setIdRestaurant(null);
+                
                 ctrRestaurantes.create(restaurante);
+                sesion.setAttribute("restaurante", restaurante);
             } else {
-                restaurante.setIdRestaurant(idRestaurant);
-                ctrRestaurantes.edit(restaurante);
+                restaurant.setNameRestaurant(nombrerestaurante);
+                restaurant.setType(tipoRestaurante);
+                restaurant.setProvince(provincia);
+                restaurant.setTown(poblacion);
+                restaurant.setHalfPrice(precioMedio);
+                restaurant.setPhone(telefono);
+                restaurant.setAddress(direccion);
+                restaurant.setEmail(email);
+                restaurant.setOpenDays(diasAbiertos);
+                restaurant.setScheduleOpen(horaApertura);
+                restaurant.setScheduleClose(horaCierre);
+                restaurant.setHomeService(servicioDomicilio);
+                restaurant.setWifi(wifi);
+                restaurant.setTerrace(terraza);
+                restaurant.setCardPayment(tarjeta);
+                restaurant.setHandicapped(minusvalidos);
+                restaurant.setObservations(observaciones);
+                
+                ctrRestaurantes.edit(restaurant);
+                sesion.setAttribute("restaurante", restaurant);
             }
             sesion.setAttribute("error", "no");
-            sesion.setAttribute("restaurante", restaurante);
             response.sendRedirect("index.jsp?view=restaurantPanel");
         } catch (Exception e) {
             sesion.setAttribute("error", "yes");

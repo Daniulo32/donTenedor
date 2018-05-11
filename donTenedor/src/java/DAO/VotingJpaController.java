@@ -39,8 +39,8 @@ public class VotingJpaController implements Serializable {
         if (voting.getVotingPK() == null) {
             voting.setVotingPK(new VotingPK());
         }
-        voting.getVotingPK().setIdRestaurant(voting.getRestaurant().getIdRestaurant());
         voting.getVotingPK().setIdUser(voting.getUsers().getIdUser());
+        voting.getVotingPK().setIdRestaurant(voting.getRestaurant().getIdRestaurant());
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -78,8 +78,8 @@ public class VotingJpaController implements Serializable {
     }
 
     public void edit(Voting voting) throws NonexistentEntityException, Exception {
-        voting.getVotingPK().setIdRestaurant(voting.getRestaurant().getIdRestaurant());
         voting.getVotingPK().setIdUser(voting.getUsers().getIdUser());
+        voting.getVotingPK().setIdRestaurant(voting.getRestaurant().getIdRestaurant());
         EntityManager em = null;
         try {
             em = getEntityManager();

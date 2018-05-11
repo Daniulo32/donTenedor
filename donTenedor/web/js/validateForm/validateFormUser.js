@@ -35,17 +35,17 @@ $(document).ready(function () {
         var letr;
         var letra;
 
-            numero = value.substr(0, value.length - 1);
-            letr = value.substr(value.length - 1, 1);
-            numero = numero % 23;
-            letra = 'TRWAGMYFPDXBNJZSQVHLCKET';
-            letra = letra.substring(numero, numero + 1);
-            
-            if (letra != letr.toUpperCase()) {
-                return false;
-            } else {
-                return true;
-            }
+        numero = value.substr(0, value.length - 1);
+        letr = value.substr(value.length - 1, 1);
+        numero = numero % 23;
+        letra = 'TRWAGMYFPDXBNJZSQVHLCKET';
+        letra = letra.substring(numero, numero + 1);
+
+        if (letra != letr.toUpperCase()) {
+            return false;
+        } else {
+            return true;
+        }
 
     }, "La letra no se corresponde");
 
@@ -95,6 +95,18 @@ $(document).ready(function () {
             date: {
                 required: "Debes indicar la fecha de nacimiento"
             }
+        },
+        errorPlacement: function (error, element) {
+            var ele = $(element),
+                    err = $(error),
+                    msg = err.text();
+            if (msg != null && msg !== '') {
+                ele.tooltipster('content', msg);
+                ele.tooltipster('open');
+            }
+        },
+        unhighlight: function (element, errorClass, validClass) {
+            $(element).removeClass(errorClass).addClass(validClass).tooltipster('close');
         }
     });
 

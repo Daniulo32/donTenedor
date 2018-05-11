@@ -13,7 +13,6 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import DTO.Restaurant;
-import DTO.Users;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -195,8 +194,8 @@ public class ProvinciaJpaController implements Serializable {
         List listaProvincias = new ArrayList();
         try {
             List lista = query.getResultList();
-            for(Object provincia : lista){
-                listaProvincias.add((Provincia)provincia);
+            for (Object provincia : lista) {
+                listaProvincias.add((Provincia) provincia);
             }
         } finally {
             em.close();

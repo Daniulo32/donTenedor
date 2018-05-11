@@ -52,6 +52,14 @@
         display: none;
     }
 
+    .errorLogin{
+        color: red;
+        display: block;
+        text-align: center;
+        margin-top: 1em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
 }/*Estilo para navegador*/
 
 @media only screen and (min-width:432px) and (max-width:800px){
@@ -129,6 +137,14 @@
 
     nav ul li a:hover{
         background: #3EACFA;
+    }
+    
+    .errorLogin{
+        color: red;
+        display: block;
+        text-align: center;
+        margin-top: 1em;
+        font-family: 'Spinnaker', sans-serif;
     }
 
 }/*Estilo para tablet*/
@@ -208,5 +224,13 @@
 
     nav ul li a:hover{
         background: #3EACFA;
+    }
+    
+    .errorLogin{
+        color: red;
+        display: block;
+        text-align: center;
+        margin-top: 1em;
+        font-family: 'Spinnaker', sans-serif;
     }
 }/*Estilo para movil*/

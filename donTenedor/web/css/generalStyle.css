@@ -185,7 +185,7 @@ h1{
     #login #linkRegistro{
         font-family: 'Spinnaker', sans-serif;
         text-align: center;
-        margin-top: 1.5em;
+        margin-top: 0.5em;
     }
 
     /*----------------------------------Termina el estilo para el login-----------------------------------------------------------*/
@@ -272,12 +272,6 @@ h1{
         left: 28px;
     }
 
-    .error{
-        position: absolute;
-        font-size: 0.8em;
-        margin-top: 0.2em;
-        color: red;
-    }
     /*----------------------------------Estilo para los botones-----------------------------------------------------------*/
     .boton-aceptar{
         background: #44a84a;
@@ -369,7 +363,7 @@ h1{
     #login #linkRegistro{
         font-family: 'Spinnaker', sans-serif;
         text-align: center;
-        margin-top: 1.5em;
+        margin-top: 0.5em;
     }
 
     /*----------------------------------Termina el estilo para el login-----------------------------------------------------------*/
@@ -455,13 +449,6 @@ h1{
 
     .slideCheck input[type=checkbox]:checked + label {
         left: 28px;
-    }
-
-    .error{
-        position: absolute;
-        font-size: 0.8em;
-        margin-top: 0.2em;
-        color: red;
     }
 
     /*----------------------------------Estilo para los botones-----------------------------------------------------------*/
@@ -564,7 +551,7 @@ h1{
     #login #linkRegistro{
         font-family: 'Spinnaker', sans-serif;
         text-align: center;
-        margin-top: 1.5em;
+        margin-top: 0.5em;
     }
 
     /*----------------------------------Termina el estilo para el login-----------------------------------------------------------*/

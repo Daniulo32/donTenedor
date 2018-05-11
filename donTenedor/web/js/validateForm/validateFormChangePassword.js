@@ -17,7 +17,7 @@ $("#form-change-password").validate({
                     idUser: function () {
                         return $("#idUser").val();
                     },
-                    check:function(){
+                    check: function () {
                         return "check";
                     }
                 }
@@ -42,6 +42,18 @@ $("#form-change-password").validate({
             equalTo: "Las Contraseñas no coinciden"
         },
         rNewpassword: "Debes repetir la nueva contraseña"
+    },
+    errorPlacement: function (error, element) {
+        var ele = $(element),
+                err = $(error),
+                msg = err.text();
+        if (msg != null && msg !== '') {
+            ele.tooltipster('content', msg);
+            ele.tooltipster('open');
+        }
+    },
+    unhighlight: function (element, errorClass, validClass) {
+        $(element).removeClass(errorClass).addClass(validClass).tooltipster('close');
     }
 
 });

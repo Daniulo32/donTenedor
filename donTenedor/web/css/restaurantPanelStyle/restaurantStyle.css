@@ -177,23 +177,25 @@
         margin-left: 0.5em !important;
     }
 
-    .change-password-successful{
+    .update-restaurant-successful{
         background: #caf3aa;
         color: green;
         padding: 0.5em;
         width: 80%;
         margin: auto;
+        margin-bottom: 0.5em;
         border: 1px solid green;
         border-radius: 0.5em;
         font-family: 'Spinnaker', sans-serif;
     }
 
-    .change-password-error{
+    .update-restaurant-error{
         background: #f3aaaa;
         color: #ce0808;
         padding: 0.5em;
         width: 80%;
         margin: auto;
+        margin-bottom: 0.5em;
         border: 1px solid #ce0808;
         border-radius: 0.5em;
         font-family: 'Spinnaker', sans-serif;
@@ -202,7 +204,7 @@
 
 @media only screen and (min-width:432px) and (max-width:800px){
     #diasAperturaMovil{
-        display: none;
+        display: none !important;
     }
     #section-restaurante h1{
         font-family: 'Spinnaker', sans-serif;
@@ -268,6 +270,7 @@
 
     #form-restaurant article #diasApertura{
         width: 100%;
+        margin-bottom: 2em;
     }
 
     #form-restaurant article #diasApertura label{
@@ -289,11 +292,13 @@
     #form-restaurant article:nth-child(4) div:nth-child(2){
         width: 45%;
         margin-left: 0;
-        margin-top: 1.5em;
     }
     #form-restaurant article:nth-child(4) div:nth-child(3){
         width: 45%;
-        margin-top: 1.5em;
+    }
+    
+    #form-restaurant article:nth-child(4) div:nth-child(3) input[type="time"]{
+        width: 45%;
     }
 
     #form-restaurant article #diasApertura div div{
@@ -336,7 +341,8 @@
         width: 100% !important;
     }
 
-    #form-restaurant input[type="text"],#form-restaurant input[type="email"],#form-restaurant input[type="time"]{
+    #form-restaurant input[type="text"],#form-restaurant input[type="email"],
+    #form-restaurant input[type="number"],#form-restaurant input[type="time"]{
         font-size: 1.1em;
         padding: 0.5em 0.5em;
         width: 100%;
@@ -494,7 +500,8 @@
         width: 100% !important;
     }
 
-    #form-restaurant input[type="text"],#form-restaurant input[type="email"],#form-restaurant input[type="time"]{
+    #form-restaurant input[type="text"],#form-restaurant input[type="email"],
+    #form-restaurant input[type="number"],#form-restaurant input[type="time"]{
         font-size: 1.1em;
         padding: 0.5em 0.5em;
         width: 100%;

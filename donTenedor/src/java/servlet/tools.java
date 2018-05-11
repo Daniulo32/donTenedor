@@ -54,7 +54,7 @@ public class tools {
             if (i == 0) {
                 diasAbiertos += daysOpen[i];
             } else {
-                diasAbiertos += " - " + daysOpen[i];
+                diasAbiertos += "-" + daysOpen[i];
             }
         }
         return diasAbiertos;

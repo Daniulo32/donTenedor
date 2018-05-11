@@ -7,14 +7,12 @@ package DAO;
 
 import DAO.exceptions.NonexistentEntityException;
 import DTO.Poblacion;
-import DTO.Provincia;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import DTO.Restaurant;
-import com.sun.javafx.scene.control.skin.VirtualFlow;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -188,23 +186,41 @@ public class PoblacionJpaController implements Serializable {
             em.close();
         }
     }
-    
-    public List<Poblacion> getPoblacionByProvincia(int idProvincia){
+
+    public List<Poblacion> getPoblacionByProvincia(int idProvincia) {
         EntityManager em = getEntityManager();
         List<Poblacion> listaPoblaciones = new ArrayList();
-        
+
         Query query = em.createNamedQuery("Poblacion.findByIdprovincia");
         query.setParameter("idprovincia", idProvincia);
+
+        try {
+            List lista = query.getResultList();
+            for (Object poblacion : lista) {
+                listaPoblaciones.add((Poblacion) poblacion);
+            }
+        } catch (Exception e) {
+        }
+
+        return listaPoblaciones;
+    }
+    
+    public Poblacion getPoblacionByNamePoblacion(String poblacion){
+        EntityManager em = getEntityManager();
+        
+        Poblacion pueblo = null;
+        Query query = em.createNamedQuery("Poblacion.findByPoblacion");
+        query.setParameter("poblacion", poblacion);
         
         try {
             List lista = query.getResultList();
-            for(Object poblacion : lista){
-                listaPoblaciones.add((Poblacion)poblacion);
+            if (lista.size() > 0) {
+                pueblo = (Poblacion) lista.get(0);
             }
         } catch (Exception e) {
         }
         
-        return listaPoblaciones;
+        return pueblo;
     }
-    
+
 }

@@ -36,10 +36,11 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "Restaurant.findAll", query = "SELECT r FROM Restaurant r")
     , @NamedQuery(name = "Restaurant.findByIdRestaurant", query = "SELECT r FROM Restaurant r WHERE r.idRestaurant = :idRestaurant")
-    , @NamedQuery(name = "Restaurant.findByIdAdmin", query = "SELECT r FROM Restaurant r WHERE r.idAdmin = :idAdmin")    
     , @NamedQuery(name = "Restaurant.findByType", query = "SELECT r FROM Restaurant r WHERE r.type = :type")
+    , @NamedQuery(name = "Restaurant.findByIdAdmin", query = "SELECT r FROM Restaurant r WHERE r.idAdmin = :idAdmin")
     , @NamedQuery(name = "Restaurant.findByAddress", query = "SELECT r FROM Restaurant r WHERE r.address = :address")
     , @NamedQuery(name = "Restaurant.findByLongitude", query = "SELECT r FROM Restaurant r WHERE r.longitude = :longitude")
+    , @NamedQuery(name = "Restaurant.findByNameRestaurant", query = "SELECT r FROM Restaurant r WHERE r.nameRestaurant = :nameRestaurant")
     , @NamedQuery(name = "Restaurant.findByLatitude", query = "SELECT r FROM Restaurant r WHERE r.latitude = :latitude")
     , @NamedQuery(name = "Restaurant.findByScheduleOpen", query = "SELECT r FROM Restaurant r WHERE r.scheduleOpen = :scheduleOpen")
     , @NamedQuery(name = "Restaurant.findByScheduleClose", query = "SELECT r FROM Restaurant r WHERE r.scheduleClose = :scheduleClose")
@@ -52,8 +53,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Restaurant.findByTerrace", query = "SELECT r FROM Restaurant r WHERE r.terrace = :terrace")
     , @NamedQuery(name = "Restaurant.findByHandicapped", query = "SELECT r FROM Restaurant r WHERE r.handicapped = :handicapped")
     , @NamedQuery(name = "Restaurant.findByCardPayment", query = "SELECT r FROM Restaurant r WHERE r.cardPayment = :cardPayment")
-    , @NamedQuery(name = "Restaurant.findByObservations", query = "SELECT r FROM Restaurant r WHERE r.observations = :observations")
-    , @NamedQuery(name = "Restaurant.findByNameRestaurant", query = "SELECT r FROM Restaurant r WHERE r.nameRestaurant = :nameRestaurant")})
+    , @NamedQuery(name = "Restaurant.findByObservations", query = "SELECT r FROM Restaurant r WHERE r.observations = :observations")})
 public class Restaurant implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -69,6 +69,8 @@ public class Restaurant implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "longitude")
     private Double longitude;
+    @Column(name = "nameRestaurant")
+    private String nameRestaurant;
     @Column(name = "latitude")
     private Double latitude;
     @Column(name = "schedule_open")
@@ -102,8 +104,6 @@ public class Restaurant implements Serializable {
     private int cardPayment;
     @Column(name = "observations")
     private String observations;
-    @Column(name = "nameRestaurant")
-    private String nameRestaurant;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idRestaurant")
     private List<Offers> offersList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idRestaurant")
@@ -115,12 +115,12 @@ public class Restaurant implements Serializable {
     @JoinColumn(name = "id_admin", referencedColumnName = "id_user")
     @ManyToOne(optional = false)
     private Users idAdmin;
-    @JoinColumn(name = "province", referencedColumnName = "idprovincia")
-    @ManyToOne
-    private Provincia province;
     @JoinColumn(name = "town", referencedColumnName = "idpoblacion")
     @ManyToOne
     private Poblacion town;
+    @JoinColumn(name = "province", referencedColumnName = "idprovincia")
+    @ManyToOne
+    private Provincia province;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "restaurant")
     private List<Voting> votingList;
 
@@ -170,6 +170,14 @@ public class Restaurant implements Serializable {
 
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
+    }
+
+    public String getNameRestaurant() {
+        return nameRestaurant;
+    }
+
+    public void setNameRestaurant(String nameRestaurant) {
+        this.nameRestaurant = nameRestaurant;
     }
 
     public Double getLatitude() {
@@ -276,14 +284,6 @@ public class Restaurant implements Serializable {
         this.observations = observations;
     }
 
-    public String getNameRestaurant() {
-        return nameRestaurant;
-    }
-
-    public void setNameRestaurant(String nameRestaurant) {
-        this.nameRestaurant = nameRestaurant;
-    }
-
     @XmlTransient
     public List<Offers> getOffersList() {
         return offersList;
@@ -328,20 +328,20 @@ public class Restaurant implements Serializable {
         this.idAdmin = idAdmin;
     }
 
-    public Provincia getProvince() {
-        return province;
-    }
-
-    public void setProvince(Provincia province) {
-        this.province = province;
-    }
-
     public Poblacion getTown() {
         return town;
     }
 
     public void setTown(Poblacion town) {
         this.town = town;
+    }
+
+    public Provincia getProvince() {
+        return province;
+    }
+
+    public void setProvince(Provincia province) {
+        this.province = province;
     }
 
     @XmlTransient
@@ -377,6 +377,5 @@ public class Restaurant implements Serializable {
     public String toString() {
         return "DTO.Restaurant[ idRestaurant=" + idRestaurant + " ]";
     }
-
     
 }

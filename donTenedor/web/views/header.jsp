@@ -24,12 +24,12 @@
         </div>
 
         <input type="button" value="Entrar" id="botonLogin" class="boton-login centrar-boton-login"/>
-
-        <p id="linkRegistro">Para Registrase diríjase a <a href="index.jsp?view=register">éste formulario</a></p>
-
-        <div class="textoErrores">
+        
+        <div class="errorLogin">
             <label id="textoError"></label>
         </div>
+        
+        <p id="linkRegistro">Para Registrase diríjase a <a href="index.jsp?view=register">éste formulario</a></p>
 
     </div>
 </div>

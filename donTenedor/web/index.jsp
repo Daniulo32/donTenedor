@@ -24,10 +24,13 @@
         <link href="css/formSearchStyle.css" rel="stylesheet" type="text/css"/>
         <link href="css/generalStyle.css" rel="stylesheet" type="text/css"/>
         <link href="css/headerStyle.css" rel="stylesheet" type="text/css"/>
-        <link href="css/indexStyle.css" rel="stylesheet" type="text/css"/>        
+        <link href="css/indexStyle.css" rel="stylesheet" type="text/css"/>
+        <link href="tooltipster/dist/css/tooltipster.bundle.min.css" rel="stylesheet" type="text/css"/>
         <script src="js/libraries/jquery-3.3.1.js" type="text/javascript"></script>
         <script src="js/libraries/jquery.validate.min.js" type="text/javascript"></script>
         <script src="js/headerJS.js" type="text/javascript"></script>
+        <script src="tooltipster/dist/js/tooltipster.bundle.min.js" type="text/javascript"></script>
+        <link href="tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" rel="stylesheet" type="text/css"/>
         <title>Don Tenedor, tu eliges, tu disfrutas...</title>
     </head>
     <body>

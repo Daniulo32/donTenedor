@@ -11,8 +11,23 @@
 <jsp:include page="/restaurantSV"/>
 <link href="css/restaurantPanelStyle/restaurantStyle.css" rel="stylesheet" type="text/css"/>
 <script src="js/restaurantJS.js" type="text/javascript"></script>
+<script src="js/validateForm/validateFormRestaurant.js" type="text/javascript"></script>
 <section id="section-restaurante">
     <h1>Datos Restaurante</h1>
+    <c:if test="${!empty sessionScope.error}">
+        <c:choose>
+            <c:when test="${sessionScope.error eq 'no'}">
+                <p id="error-change" class="update-restaurant-successful">
+                    Se modificaron los datos correctamente
+                </p>
+            </c:when>
+            <c:otherwise>
+                <p id="error-change" class="update-restaurant-error">
+                    Se produjo un error al modificar los datos
+                </p>
+            </c:otherwise>
+        </c:choose>
+    </c:if>
     <form  method="POST" action="resgisterUpdateRestaurant" id="form-restaurant" role="form">
         <article>
             <div>
@@ -61,14 +76,14 @@
                 <label>Precio Medio</label>
                 <c:choose>
                     <c:when test="${sessionScope.restaurante.halfPrice == null}">
-                        <input type="number" name="halfPrice" step="0.01" value="0.00"/>
+                        <input type="number" name="halfPrice" id="halfPrice" step="0.01" value="0.00"/>
                     </c:when>
                     <c:otherwise>
                         <fmt:formatNumber var="formatQuantity" value="${sessionScope.restaurante.halfPrice}" 
                                           minFractionDigits="2"/>
                         <c:set var="dateParts" value="${fn:split(formatQuantity, ',')}" />
                         <c:set var = "quantity" value = "${fn:join(dateParts, '.')}" />
-                        <input type="number" name="halfPrice" value="${quantity}"/>
+                        <input type="number" name="halfPrice" id="halfPrice" value="${quantity}"/>
                     </c:otherwise>
                 </c:choose>
 
@@ -82,44 +97,45 @@
             </div>
             <div>
                 <label>Dirección</label>
-                <input type="text" name="direccion" value="${sessionScope.restaurante.address}"/>
+                <input type="text" name="direccion" id="address" value="${sessionScope.restaurante.address}"/>
             </div>
             <div>
                 <label>E-mail</label>
-                <input type="email" name="email" value="${sessionScope.restaurante.email}"/>
+                <input type="email" name="email" id="email" value="${sessionScope.restaurante.email}"/>
             </div>
         </article>
 
         <article>
+            <c:set var="openDays" value="${sessionScope.restaurante.openDays}" />
             <div id="diasApertura">
                 <label>Dias Apertura</label>
                 <div>
                     <span>L</span>
-                    <input type="checkbox" name="daysOpen" value="L"/>
+                    <input type="checkbox" name="daysOpen" value="L" ${fn:containsIgnoreCase(openDays, 'L') ? 'checked':''}/>
                 </div>
                 <div>
                     <span>M</span>
-                    <input type="checkbox" name="daysOpen" value="M"/>
+                    <input type="checkbox" name="daysOpen" value="M" ${fn:containsIgnoreCase(openDays, 'M') ? 'checked':''}/>
                 </div>
                 <div>
                     <span>X</span>
-                    <input type="checkbox" name="daysOpen" value="X"/>
+                    <input type="checkbox" name="daysOpen" value="X" ${fn:containsIgnoreCase(openDays, 'X') ? 'checked':''}/>
                 </div>
                 <div>
                     <span>J</span>
-                    <input type="checkbox" name="daysOpen" value="J"/>
+                    <input type="checkbox" name="daysOpen" value="J" ${fn:containsIgnoreCase(openDays, 'J') ? 'checked':''}/>
                 </div>
                 <div>
                     <span>V</span>
-                    <input type="checkbox" name="daysOpen" value="V"/>
+                    <input type="checkbox" name="daysOpen" value="V" ${fn:containsIgnoreCase(openDays, 'V') ? 'checked':''}/>
                 </div>
                 <div>
                     <span>S</span>
-                    <input type="checkbox" name="daysOpen" value="S"/>
+                    <input type="checkbox" name="daysOpen" value="S" ${fn:containsIgnoreCase(openDays, 'S') ? 'checked':''}/>
                 </div>
                 <div>
                     <span>D</span>
-                    <input type="checkbox" name="daysOpen" value="D"/>
+                    <input type="checkbox" name="daysOpen" value="D" ${fn:containsIgnoreCase(openDays, 'D') ? 'checked':''}/>
                 </div>
             </div>
             <div id="diasAperturaMovil">
@@ -127,49 +143,49 @@
                 <div>
                     <span>L</span>
                     <div class="slideCheck">	
-                        <input type="checkbox" name="diasApertura" value ="L" id="lunes"/>
+                        <input type="checkbox" name="diasApertura" value ="L" id="lunes" ${fn:containsIgnoreCase(openDays, 'L') ? 'checked':''}/>
                         <label for="lunes"></label>
                     </div>
                 </div>
                 <div>
                     <span>M</span>
                     <div class="slideCheck">	
-                        <input type="checkbox" name="diasApertura" value ="M" id="martes"/>
+                        <input type="checkbox" name="diasApertura" value ="M" id="martes" ${fn:containsIgnoreCase(openDays, 'M') ? 'checked':''}/>
                         <label for="martes"></label>
                     </div>
                 </div>
                 <div>
                     <span>X</span>
                     <div class="slideCheck">	
-                        <input type="checkbox" name="diasApertura" value ="X" id="miercoles"/>
+                        <input type="checkbox" name="diasApertura" value ="X" id="miercoles" ${fn:containsIgnoreCase(openDays, 'X') ? 'checked':''}/>
                         <label for="miercoles"></label>
                     </div>
                 </div>
                 <div>
                     <span>J</span>
                     <div class="slideCheck">	
-                        <input type="checkbox" name="diasApertura" value ="J" id="jueves"/>
+                        <input type="checkbox" name="diasApertura" value ="J" id="jueves" ${fn:containsIgnoreCase(openDays, 'J') ? 'checked':''}/>
                         <label for="jueves"></label>
                     </div>
                 </div>
                 <div>
                     <span>V</span>
                     <div class="slideCheck">	
-                        <input type="checkbox" name="diasApertura" value ="V" id="viernes"/>
+                        <input type="checkbox" name="diasApertura" value ="V" id="viernes" ${fn:containsIgnoreCase(openDays, 'V') ? 'checked':''}/>
                         <label for="viernes"></label>
                     </div>
                 </div>
                 <div>
                     <span>S</span>
                     <div class="slideCheck">	
-                        <input type="checkbox" name="diasApertura" value ="S" id="sabado"/>
+                        <input type="checkbox" name="diasApertura" value ="S" id="sabado" ${fn:containsIgnoreCase(openDays, 'S') ? 'checked':''}/>
                         <label for="sabado"></label>
                     </div>
                 </div>
                 <div>
                     <span>D</span>
                     <div class="slideCheck">	
-                        <input type="checkbox" name="diasApertura" value ="D" id="domingo"/>
+                        <input type="checkbox" name="diasApertura" value ="D" id="domingo" ${fn:containsIgnoreCase(openDays, 'D') ? 'checked':''}/>
                         <label for="domingo"></label>
                     </div>
                 </div>
@@ -179,10 +195,10 @@
                 <c:choose>
                     <c:when test="${!empty sessionScope.restaurante.scheduleOpen}">
                         <fmt:formatDate var="hourOpen" pattern = "HH:mm" value = "${sessionScope.restaurante.scheduleOpen}" />
-                        <input type="time" name="hourOpen" value="${hourOpen}"/>
+                        <input type="time" name="hourOpen" id="hourOpen" value="${hourOpen}"/>
                     </c:when>
                     <c:otherwise>
-                        <input type="time" name="hourOpen"/>
+                        <input type="time" name="hourOpen" id="hourOpen"/>
                     </c:otherwise>
                 </c:choose>
             </div>
@@ -191,10 +207,10 @@
                 <c:choose>
                     <c:when test="${!empty sessionScope.restaurante.scheduleClose}">
                         <fmt:formatDate var="hourClose" pattern = "HH:mm" value = "${sessionScope.restaurante.scheduleClose}" />
-                        <input type="time" name="hourClose" value="${hourClose}"/>
+                        <input type="time" name="hourClose" id="hourClose" value="${hourClose}"/>
                     </c:when>
                     <c:otherwise>
-                        <input type="time" name="hourClose" />
+                        <input type="time" name="hourClose" id="hourClose" />
                     </c:otherwise>
                 </c:choose>
             </div>

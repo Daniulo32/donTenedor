@@ -5,6 +5,15 @@
  */
 
 $(function () {
+    $('.tooltip').tooltipster({
+        theme: 'tooltipster-noir'
+    });
+    $('#form-restaurant input').tooltipster({
+        trigger: 'custom', // default is 'hover' which is no good here
+        onlyOne: false, // allow multiple tips to be open at a time
+        position: 'top'  // display the tips to the right of the element
+    });
+
     $("#botonSubmit").click(inserIdPoblacion);
     $("#provincia").on("change", loadListPoblacion);
     loadListPoblacion();

@@ -13,8 +13,8 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import DTO.Users;
-import DTO.Provincia;
 import DTO.Poblacion;
+import DTO.Provincia;
 import DTO.Offers;
 import java.util.ArrayList;
 import java.util.List;
@@ -66,15 +66,15 @@ public class RestaurantJpaController implements Serializable {
                 idAdmin = em.getReference(idAdmin.getClass(), idAdmin.getIdUser());
                 restaurant.setIdAdmin(idAdmin);
             }
-            Provincia province = restaurant.getProvince();
-            if (province != null) {
-                province = em.getReference(province.getClass(), province.getIdprovincia());
-                restaurant.setProvince(province);
-            }
             Poblacion town = restaurant.getTown();
             if (town != null) {
                 town = em.getReference(town.getClass(), town.getIdpoblacion());
                 restaurant.setTown(town);
+            }
+            Provincia province = restaurant.getProvince();
+            if (province != null) {
+                province = em.getReference(province.getClass(), province.getIdprovincia());
+                restaurant.setProvince(province);
             }
             List<Offers> attachedOffersList = new ArrayList<Offers>();
             for (Offers offersListOffersToAttach : restaurant.getOffersList()) {
@@ -111,13 +111,13 @@ public class RestaurantJpaController implements Serializable {
                 idAdmin.getRestaurantList().add(restaurant);
                 idAdmin = em.merge(idAdmin);
             }
-            if (province != null) {
-                province.getRestaurantList().add(restaurant);
-                province = em.merge(province);
-            }
             if (town != null) {
                 town.getRestaurantList().add(restaurant);
                 town = em.merge(town);
+            }
+            if (province != null) {
+                province.getRestaurantList().add(restaurant);
+                province = em.merge(province);
             }
             for (Offers offersListOffers : restaurant.getOffersList()) {
                 Restaurant oldIdRestaurantOfOffersListOffers = offersListOffers.getIdRestaurant();
@@ -180,10 +180,10 @@ public class RestaurantJpaController implements Serializable {
             Restaurant persistentRestaurant = em.find(Restaurant.class, restaurant.getIdRestaurant());
             Users idAdminOld = persistentRestaurant.getIdAdmin();
             Users idAdminNew = restaurant.getIdAdmin();
-            Provincia provinceOld = persistentRestaurant.getProvince();
-            Provincia provinceNew = restaurant.getProvince();
             Poblacion townOld = persistentRestaurant.getTown();
             Poblacion townNew = restaurant.getTown();
+            Provincia provinceOld = persistentRestaurant.getProvince();
+            Provincia provinceNew = restaurant.getProvince();
             List<Offers> offersListOld = persistentRestaurant.getOffersList();
             List<Offers> offersListNew = restaurant.getOffersList();
             List<Comments> commentsListOld = persistentRestaurant.getCommentsList();
@@ -234,13 +234,13 @@ public class RestaurantJpaController implements Serializable {
                 idAdminNew = em.getReference(idAdminNew.getClass(), idAdminNew.getIdUser());
                 restaurant.setIdAdmin(idAdminNew);
             }
-            if (provinceNew != null) {
-                provinceNew = em.getReference(provinceNew.getClass(), provinceNew.getIdprovincia());
-                restaurant.setProvince(provinceNew);
-            }
             if (townNew != null) {
                 townNew = em.getReference(townNew.getClass(), townNew.getIdpoblacion());
                 restaurant.setTown(townNew);
+            }
+            if (provinceNew != null) {
+                provinceNew = em.getReference(provinceNew.getClass(), provinceNew.getIdprovincia());
+                restaurant.setProvince(provinceNew);
             }
             List<Offers> attachedOffersListNew = new ArrayList<Offers>();
             for (Offers offersListNewOffersToAttach : offersListNew) {
@@ -286,14 +286,6 @@ public class RestaurantJpaController implements Serializable {
                 idAdminNew.getRestaurantList().add(restaurant);
                 idAdminNew = em.merge(idAdminNew);
             }
-            if (provinceOld != null && !provinceOld.equals(provinceNew)) {
-                provinceOld.getRestaurantList().remove(restaurant);
-                provinceOld = em.merge(provinceOld);
-            }
-            if (provinceNew != null && !provinceNew.equals(provinceOld)) {
-                provinceNew.getRestaurantList().add(restaurant);
-                provinceNew = em.merge(provinceNew);
-            }
             if (townOld != null && !townOld.equals(townNew)) {
                 townOld.getRestaurantList().remove(restaurant);
                 townOld = em.merge(townOld);
@@ -301,6 +293,14 @@ public class RestaurantJpaController implements Serializable {
             if (townNew != null && !townNew.equals(townOld)) {
                 townNew.getRestaurantList().add(restaurant);
                 townNew = em.merge(townNew);
+            }
+            if (provinceOld != null && !provinceOld.equals(provinceNew)) {
+                provinceOld.getRestaurantList().remove(restaurant);
+                provinceOld = em.merge(provinceOld);
+            }
+            if (provinceNew != null && !provinceNew.equals(provinceOld)) {
+                provinceNew.getRestaurantList().add(restaurant);
+                provinceNew = em.merge(provinceNew);
             }
             for (Offers offersListNewOffers : offersListNew) {
                 if (!offersListOld.contains(offersListNewOffers)) {
@@ -429,15 +429,15 @@ public class RestaurantJpaController implements Serializable {
                 idAdmin.getRestaurantList().remove(restaurant);
                 idAdmin = em.merge(idAdmin);
             }
-            Provincia province = restaurant.getProvince();
-            if (province != null) {
-                province.getRestaurantList().remove(restaurant);
-                province = em.merge(province);
-            }
             Poblacion town = restaurant.getTown();
             if (town != null) {
                 town.getRestaurantList().remove(restaurant);
                 town = em.merge(town);
+            }
+            Provincia province = restaurant.getProvince();
+            if (province != null) {
+                province.getRestaurantList().remove(restaurant);
+                province = em.merge(province);
             }
             List<Reservations> reservationsList = restaurant.getReservationsList();
             for (Reservations reservationsListReservations : reservationsList) {
@@ -498,7 +498,7 @@ public class RestaurantJpaController implements Serializable {
             em.close();
         }
     }
-    
+
     public Restaurant getRestaurant(Users user) {
 
         EntityManager em = getEntityManager();
@@ -518,5 +518,5 @@ public class RestaurantJpaController implements Serializable {
         }
         return restaurante;
     }
-    
+
 }
