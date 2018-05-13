@@ -56,11 +56,11 @@
 
     #filesUpload{
         display: inline-block;
-        background: greenyellow;
         width: 55%;
         height: 12em;
         padding: 0.3em 0em;
         position: absolute;
+        overflow: auto;
     }
     #photo-restaurant #filesUpload #labelUpload{
         width: 100%;
@@ -100,6 +100,60 @@
         margin-top: 13em;
         width: 23%;
         color: red;
+    }
+
+    .nothing{
+        display: block;
+        text-align: center;
+        font-size: 1.6em;
+        margin-top: 2em;
+        font-family: 'Spinnaker', sans-serif;
+        color:#bebebe;
+    }
+
+    #listPhoto{
+        width: 80%;
+        margin:auto;
+    }
+
+    #listPhoto #container-photo{
+        width:76vw;
+        margin:auto;
+    }
+
+    #listPhoto .photoStyle{
+        display:inline-block;
+        background: red;
+        width: 24vw;
+        height: 20vw;
+        margin: auto;
+        margin:0.2em;
+        position: relative;
+    }
+
+    #listPhoto .photoStyle #delete-icon{
+        position: absolute;
+        right: 0;
+        width: 3em;
+        height: 3em;
+        margin-right: 0.5em;
+        margin-top: 0.5em;
+        border-radius: 0.5em;
+        background-image: url(/donTenedor/images/icons/icon-paper.png);
+        background-repeat: no-repeat;
+        background-size: 2em 2em;
+        background-position: center center;
+        background-color:rgba(255,255,255,.5);
+        
+    }
+    
+    #listPhoto .photoStyle #delete-icon:hover{
+        background-color:rgba(255,255,255,.8);
+        cursor: pointer;
+    }
+    #listPhoto .photoStyle > img{
+        width:100%;
+        height: 100%;
     }
 
 

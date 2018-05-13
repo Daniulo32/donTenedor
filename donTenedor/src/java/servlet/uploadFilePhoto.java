@@ -6,6 +6,7 @@
 package servlet;
 
 import DAO.PhotoRestaurantJpaController;
+import DAO.RestaurantJpaController;
 import DTO.PhotoRestaurant;
 import DTO.PhotoRestaurantPK;
 import DTO.Restaurant;
@@ -36,7 +37,7 @@ public class uploadFilePhoto extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final String DATA_DIRECTORY = "data";
     private static final int MAX_MEMORY_SIZE = 1024 * 1024 * 2;
-    private static final int MAX_REQUEST_SIZE = 1024 * 1024;
+    private static final int MAX_REQUEST_SIZE = 1024 * 1024 *4;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -52,6 +53,9 @@ public class uploadFilePhoto extends HttpServlet {
         //Obtenemos al restaurante de la sesion
         Restaurant restaurante = (Restaurant)sesion.getAttribute("restaurante");
         
+        if(restaurante == null){
+            response.sendRedirect("index.jsp?view=restaurantPanel");
+        }
         //Creamos el controlador de fotos para insertar las fotos en la base de datos
         PhotoRestaurantJpaController ctrPhoto = new PhotoRestaurantJpaController(emf);
         
@@ -112,8 +116,10 @@ public class uploadFilePhoto extends HttpServlet {
                     item.write(uploadedFile);
                 }
             }
-
-            // displays done.jsp page after upload finished
+            
+            RestaurantJpaController ctrRestaurant = new RestaurantJpaController(emf);
+            Restaurant restau = ctrRestaurant.findRestaurant(restaurante.getIdRestaurant());
+            sesion.setAttribute("restaurante", restau);
             response.sendRedirect("index.jsp?view=restaurantPanel");
 
         } catch (FileUploadException ex) {

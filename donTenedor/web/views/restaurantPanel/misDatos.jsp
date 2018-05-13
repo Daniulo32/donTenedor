@@ -8,7 +8,6 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <link href="css/restaurantPanelStyle/misDatosStyle.css" rel="stylesheet" type="text/css"/>
 <script src="js/validateForm/validateFormChangePassword.js" type="text/javascript"></script>
-
 <section id="section-mis-datos">
     <h1>Mis Datos</h1>
     <form  method="POST" action="#" id="form-update-user" role="form">

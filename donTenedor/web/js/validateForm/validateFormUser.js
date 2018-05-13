@@ -1,6 +1,11 @@
 
 $(document).ready(function () {
-    alert("entrnado");
+    $('#form-register input').tooltipster({
+        trigger: 'custom', // default is 'hover' which is no good here
+        onlyOne: false, // allow multiple tips to be open at a time
+        position: 'top'  // display the tips to the right of the element
+    });
+    
     jQuery.validator.addMethod("mayorEdad", function (value, element) {
         var hoy = new Date();
         var cumpleanos = new Date(value);

@@ -40,6 +40,10 @@
         <servlet-name>uploadFilePhoto</servlet-name>
         <servlet-class>servlet.uploadFilePhoto</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>deletePhoto</servlet-name>
+        <servlet-class>ajax.deletePhoto</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerUser</servlet-name>
         <url-pattern>/registerUser</url-pattern>
@@ -79,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>uploadFilePhoto</servlet-name>
         <url-pattern>/uploadFilePhoto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deletePhoto</servlet-name>
+        <url-pattern>/deletePhoto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

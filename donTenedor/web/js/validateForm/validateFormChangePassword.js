@@ -3,6 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+$('#form-change-password input').tooltipster({
+    trigger: 'custom', // default is 'hover' which is no good here
+    onlyOne: false, // allow multiple tips to be open at a time
+    position: 'top'  // display the tips to the right of the element
+});
+
 $("#form-change-password").validate({
     rules: {
         passwordActual: {
