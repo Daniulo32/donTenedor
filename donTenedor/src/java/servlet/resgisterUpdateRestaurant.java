@@ -51,7 +51,7 @@ public class resgisterUpdateRestaurant extends HttpServlet {
         }
 
         int telefono = 0;
-        if (request.getParameter("idRestaurant") != null && !request.getParameter("idRestaurant").isEmpty()) {
+        if (request.getParameter("telefono") != null && !request.getParameter("telefono").isEmpty()) {
             telefono = Integer.parseInt(request.getParameter("telefono"));
         }
         String diasAbiertos = "";

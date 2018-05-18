@@ -18,6 +18,7 @@ import DTO.Restaurant;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 
 /**
  *
@@ -176,5 +177,31 @@ public class PhotoRestaurantJpaController implements Serializable {
             em.close();
         }
     }
-    
+
+    public void resetFavoritePhoto(Restaurant restaurant) {
+        EntityManager em = getEntityManager();
+            Query query = em.createNamedQuery("PhotoRestaurant.resetFavorite",PhotoRestaurant.class);
+            query.setParameter("restaurant", restaurant);
+            em.getTransaction().begin();
+            query.executeUpdate();
+            em.getTransaction().commit();
+            em.close();
+    }
+
+    public void setFavoritePhoto(PhotoRestaurantPK photoPk) {
+        EntityManager em = getEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        try {
+            tx.begin();
+            Query query = em.createNamedQuery("PhotoRestaurant.setFavorite");
+            query.setParameter("photoPK", photoPk);
+            query.executeUpdate();
+            tx.commit();
+        } catch (Exception e) {
+        } finally {
+            em.close();
+        }
+
+    }
+
 }

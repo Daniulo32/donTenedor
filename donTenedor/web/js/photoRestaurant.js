@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
-    $(".photoStyle span").click(deletePhoto);
+    $(".photoStyle .delete-icon").click(deletePhoto);
+    $(".photoStyle .favorite-icon").click(favoritePhoto);
 
     var eventoChange;
     var files = $("#file")[0].files;
@@ -55,6 +56,24 @@ $(document).ready(function () {
                 }
             });
         }
+    }
+
+    function favoritePhoto() {
+
+        $(".photoStyle .favorite-icon").each(function () {
+            $(this).css({backgroundImage: "url(/donTenedor/images/icons/icon-star.png)"});
+        });
+        var foto = $(this).data("favorite");
+        $.ajax({
+            type: "post",
+            url: "favoritePhoto",
+            data: {photo: foto},
+            success: function (respuesta) {
+                console.log(respuesta);
+            }
+        });
+        $(this).css({backgroundImage: "url(/donTenedor/images/icons/icon-color-star.png)"});
+
     }
 
 });

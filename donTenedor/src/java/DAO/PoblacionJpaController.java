@@ -200,6 +200,8 @@ public class PoblacionJpaController implements Serializable {
                 listaPoblaciones.add((Poblacion) poblacion);
             }
         } catch (Exception e) {
+        }finally{
+            em.close();
         }
 
         return listaPoblaciones;
@@ -218,6 +220,8 @@ public class PoblacionJpaController implements Serializable {
                 pueblo = (Poblacion) lista.get(0);
             }
         } catch (Exception e) {
+        }finally{
+            em.close();
         }
         
         return pueblo;

@@ -12,7 +12,7 @@
         <li data-view="misDatos" id="misDatos">Mis datos</li>
         <li data-view="restaurante" id="restaurante">Restaurante</li>
         <li data-view="photosRestaurant" id="photosRestaurant">Fotos</li>
-        <li data-view="ubicacionRestaurante" id="ubicacionRestaurante">Ubicación</li>
+        <li data-view="positionRestaurant" id="positionRestaurant">Ubicación</li>
         <li data-view="comentariosRestaurante" id="comentariosRestaurante">Comentarios</li>
     </ul>
     

@@ -94,7 +94,6 @@
     label[class="error"]{
         position: absolute;
         background: none;
-        /* bottom: 0; */
         font-size: 0.8em;
         text-align: center;
         margin-top: 13em;
@@ -123,12 +122,444 @@
 
     #listPhoto .photoStyle{
         display:inline-block;
-        background: red;
         width: 24vw;
         height: 20vw;
         margin: auto;
         margin:0.2em;
         position: relative;
+    }
+
+    #listPhoto .photoStyle .delete-icon{
+        position: absolute;
+        right: 0;
+        width: 3em;
+        height: 3em;
+        margin-right: 0.5em;
+        margin-top: 0.5em;
+        border-radius: 0.5em;
+        background-image: url(/donTenedor/images/icons/icon-paper.png);
+        background-repeat: no-repeat;
+        background-size: 2em 2em;
+        background-position: center center;
+        background-color:rgba(255,255,255,.5);
+
+    }
+
+    #listPhoto .photoStyle .delete-icon:hover{
+        background-color:rgba(255,255,255,.8);
+        cursor: pointer;
+    }
+
+    #listPhoto .photoStyle .favorite-icon{
+        position: absolute;
+        left: 0;
+        width: 3em;
+        height: 3em;
+        margin-left: 0.5em;
+        margin-top: 0.5em;
+        border-radius: 0.5em;
+        background-image: url(/donTenedor/images/icons/icon-star.png);
+        background-repeat: no-repeat;
+        background-size: 2em 2em;
+        background-position: center center;
+        background-color:rgba(255,255,255,.5);
+
+    }
+
+    #listPhoto .photoStyle .favorite-icon:hover{
+        background-color:rgba(255,255,255,.8);
+        cursor: pointer;
+    }
+
+    #listPhoto .photoStyle .favorite-icon-color{
+        position: absolute;
+        left: 0;
+        width: 3em;
+        height: 3em;
+        margin-left: 0.5em;
+        margin-top: 0.5em;
+        border-radius: 0.5em;
+        background-image: url(/donTenedor/images/icons/icon-color-star.png);
+        background-repeat: no-repeat;
+        background-size: 2em 2em;
+        background-position: center center;
+        background-color:rgba(255,255,255,.5);
+
+    }
+
+    #listPhoto .photoStyle .favorite-icon-color:hover{
+        background-color:rgba(255,255,255,.8);
+        cursor: pointer;
+    }
+
+    #listPhoto .photoStyle > img{
+        width:100%;
+        height: 100%;
+    }
+
+    .nothingPhotos{
+        font-family: 'Spinnaker', sans-serif;
+        text-align: center;
+        display: block;
+        padding: 3em;
+        font-size: 2em;
+        color: #b5b5b5
+    }
+
+
+}
+
+@media only screen and (min-width:432px) and (max-width:800px){
+    hr{
+        margin-top: 0.5em;  
+    }
+    #photo-restaurant #form-photo-restaurant{
+        width: 80%;
+        margin: auto;
+    }
+
+    #photo-restaurant h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2em;
+        color: #c5c5c5;
+        margin: 0;
+        margin-left: 10%;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        border-bottom: 0.1em solid #c5c5c5;
+        width: 80%;
+    }
+
+    #photo-restaurant #file{
+        display: none;
+    }
+
+    #photo-restaurant #form-photo-restaurant > #buttonUpload {
+        text-align: center;
+        font-size: 1.25em;
+        font-weight: 700;
+        color: #2B7067;
+        font-family: 'Spinnaker', sans-serif;
+        display: inline-block;
+        width: 29%;
+        height: 10em;
+        background-image: url("/donTenedor/images/icons/icon-upload-dark.png");
+        background-repeat: no-repeat;
+        background-size: 6em 6em;
+        background-position: center center;
+
+    }
+
+    #photo-restaurant #form-photo-restaurant > #buttonUpload:hover {
+        color: #629B93;
+        background-color: #fbfbfb;
+        background-image: url("/donTenedor/images/icons/icon-upload-light.png");
+    }
+
+    #photo-restaurant #form-photo-restaurant > #buttonUpload {
+        cursor: pointer;
+    }
+
+    #filesUpload{
+        display: inline-block;
+        width: 55%;
+        height: 12em;
+        padding: 0.3em 0em;
+        position: absolute;
+        overflow: auto;
+    }
+    #photo-restaurant #filesUpload #labelUpload{
+        width: 100%;
+        color: #2B7067;
+        border-bottom: 3px solid #2B7067;
+        display: block;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    .boton-aceptar{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-right: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    #paper{
+        width: 1.5em;
+        vertical-align: middle;
+        margin-left: 0.5em;
+    }
+
+    .containerFile{
+        margin: 0.3em 1em;
+        border-bottom: 1px solid grey;
+        padding: 0.2em 0em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    label[class="error"]{
+        position: absolute;
+        background: none;
+        font-size: 0.8em;
+        text-align: center;
+        margin-top: 13em;
+        width: 23%;
+        color: red;
+    }
+
+    .nothing{
+        display: block;
+        text-align: center;
+        font-size: 1.6em;
+        margin-top: 2em;
+        font-family: 'Spinnaker', sans-serif;
+        color:#bebebe;
+    }
+
+    #listPhoto{
+        width: 80%;
+        margin:auto;
+    }
+
+    #listPhoto #container-photo{
+        width:76vw;
+        margin:auto;
+    }
+
+    #listPhoto .photoStyle{
+        display: inline-block;
+        width: 36vw;
+        height: 28vw;
+        margin: auto;
+        margin: 0.2em;
+        position: relative;
+    }
+
+#listPhoto .photoStyle #delete-icon{
+    position: absolute;
+    right: 0;
+    width: 3em;
+    height: 3em;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+    border-radius: 0.5em;
+    background-image: url(/donTenedor/images/icons/icon-paper.png);
+    background-repeat: no-repeat;
+    background-size: 2em 2em;
+    background-position: center center;
+    background-color:rgba(255,255,255,.5);
+
+}
+
+#listPhoto .photoStyle #delete-icon:hover{
+    background-color:rgba(255,255,255,.8);
+    cursor: pointer;
+}
+#listPhoto .photoStyle > img{
+    width:100%;
+    height: 100%;
+}
+
+#listPhoto .photoStyle .delete-icon{
+    position: absolute;
+    right: 0;
+    width: 3em;
+    height: 3em;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+    border-radius: 0.5em;
+    background-image: url(/donTenedor/images/icons/icon-paper.png);
+    background-repeat: no-repeat;
+    background-size: 2em 2em;
+    background-position: center center;
+    background-color:rgba(255,255,255,.5);
+
+}
+
+#listPhoto .photoStyle .delete-icon:hover{
+    background-color:rgba(255,255,255,.8);
+    cursor: pointer;
+}
+
+#listPhoto .photoStyle .favorite-icon{
+    position: absolute;
+    left: 0;
+    width: 3em;
+    height: 3em;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    border-radius: 0.5em;
+    background-image: url(/donTenedor/images/icons/icon-star.png);
+    background-repeat: no-repeat;
+    background-size: 2em 2em;
+    background-position: center center;
+    background-color:rgba(255,255,255,.5);
+
+}
+
+#listPhoto .photoStyle .favorite-icon:hover{
+    background-color:rgba(255,255,255,.8);
+    cursor: pointer;
+}
+
+#listPhoto .photoStyle .favorite-icon-color{
+    position: absolute;
+    left: 0;
+    width: 3em;
+    height: 3em;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    border-radius: 0.5em;
+    background-image: url(/donTenedor/images/icons/icon-color-star.png);
+    background-repeat: no-repeat;
+    background-size: 2em 2em;
+    background-position: center center;
+    background-color:rgba(255,255,255,.5);
+
+}
+
+#listPhoto .photoStyle .favorite-icon-color:hover{
+    background-color:rgba(255,255,255,.8);
+    cursor: pointer;
+}
+
+#listPhoto .photoStyle > img{
+    width:100%;
+    height: 100%;
+}
+
+.nothingPhotos{
+    font-family: 'Spinnaker', sans-serif;
+    text-align: center;
+    display: block;
+    padding: 1em;
+    font-size: 1.5em;
+    color: #b5b5b5;
+    margin-bottom: 4em;
+    margin-top: 4em;
+}
+}
+
+@media only screen and (max-width:432px){
+    hr{
+        margin-top: 3.5em;  
+    }
+    #photo-restaurant #form-photo-restaurant{
+        width: 80%;
+        margin: auto;
+    }
+
+    #photo-restaurant h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2em;
+        color: #c5c5c5;
+        margin: 0;
+        margin-left: 10%;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        border-bottom: 0.1em solid #c5c5c5;
+        width: 80%;
+    }
+
+    #photo-restaurant #file{
+        display: none;
+    }
+
+    #photo-restaurant #form-photo-restaurant > #buttonUpload {
+        text-align: center;
+        font-size: 1.25em;
+        font-weight: 700;
+        color: #2B7067;
+        font-family: 'Spinnaker', sans-serif;
+        display: block;
+        height: 10em;
+        background-image: url(/donTenedor/images/icons/icon-upload-dark.png);
+        background-repeat: no-repeat;
+        background-size: 6em 6em;
+        background-position: center center;
+
+    }
+
+    #photo-restaurant #form-photo-restaurant > #buttonUpload:hover {
+        color: #629B93;
+        background-color: #fbfbfb;
+        background-image: url("/donTenedor/images/icons/icon-upload-light.png");
+    }
+
+    #photo-restaurant #form-photo-restaurant > #buttonUpload {
+        cursor: pointer;
+    }
+
+    #filesUpload{
+        height: 12em;
+        padding: 0.3em 0em;
+        overflow: auto;
+    }
+    #photo-restaurant #filesUpload #labelUpload{
+        width: 100%;
+        color: #2B7067;
+        border-bottom: 3px solid #2B7067;
+        display: block;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    .boton-aceptar{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -6em;
+        margin-right: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    #paper{
+        width: 1.5em;
+        vertical-align: middle;
+        margin-left: 0.5em;
+    }
+
+    .containerFile{
+        margin: 0.3em 1em;
+        border-bottom: 1px solid grey;
+        padding: 0.2em 0em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    label[class="error"]{
+        position: absolute;
+        background: none;
+        /* bottom: 0; */
+        font-size: 0.8em;
+        text-align: center;
+        margin-top: 13em;
+        width: 23%;
+        color: red;
+    }
+
+    .nothing{
+        display: block;
+        text-align: center;
+        font-size: 1.6em;
+        margin-top: 2em;
+        font-family: 'Spinnaker', sans-serif;
+        color:#bebebe;
+    }
+
+    #listPhoto{
+        width: 80%;
+        margin:auto;
+    }
+
+    #listPhoto #container-photo{
+        width:76vw;
+        margin:auto;
+    }
+
+    #listPhoto .photoStyle{
+        display: block;
+        margin: auto;
+        margin: 0.2em;
+        position: relative
     }
 
     #listPhoto .photoStyle #delete-icon{
@@ -144,9 +575,9 @@
         background-size: 2em 2em;
         background-position: center center;
         background-color:rgba(255,255,255,.5);
-        
+
     }
-    
+
     #listPhoto .photoStyle #delete-icon:hover{
         background-color:rgba(255,255,255,.8);
         cursor: pointer;
@@ -156,14 +587,83 @@
         height: 100%;
     }
 
+    #listPhoto .photoStyle .delete-icon{
+        position: absolute;
+        right: 0;
+        width: 3em;
+        height: 3em;
+        margin-right: 0.5em;
+        margin-top: 0.5em;
+        border-radius: 0.5em;
+        background-image: url(/donTenedor/images/icons/icon-paper.png);
+        background-repeat: no-repeat;
+        background-size: 2em 2em;
+        background-position: center center;
+        background-color:rgba(255,255,255,.5);
 
-}
+    }
 
-@media only screen and (min-width:432px) and (max-width:800px){
+    #listPhoto .photoStyle .delete-icon:hover{
+        background-color:rgba(255,255,255,.8);
+        cursor: pointer;
+    }
 
-}
+    #listPhoto .photoStyle .favorite-icon{
+        position: absolute;
+        left: 0;
+        width: 3em;
+        height: 3em;
+        margin-left: 0.5em;
+        margin-top: 0.5em;
+        border-radius: 0.5em;
+        background-image: url(/donTenedor/images/icons/icon-star.png);
+        background-repeat: no-repeat;
+        background-size: 2em 2em;
+        background-position: center center;
+        background-color:rgba(255,255,255,.5);
 
-@media only screen and (max-width:432px){
+    }
 
+    #listPhoto .photoStyle .favorite-icon:hover{
+        background-color:rgba(255,255,255,.8);
+        cursor: pointer;
+    }
+
+    #listPhoto .photoStyle .favorite-icon-color{
+        position: absolute;
+        left: 0;
+        width: 3em;
+        height: 3em;
+        margin-left: 0.5em;
+        margin-top: 0.5em;
+        border-radius: 0.5em;
+        background-image: url(/donTenedor/images/icons/icon-color-star.png);
+        background-repeat: no-repeat;
+        background-size: 2em 2em;
+        background-position: center center;
+        background-color:rgba(255,255,255,.5);
+
+    }
+
+    #listPhoto .photoStyle .favorite-icon-color:hover{
+        background-color:rgba(255,255,255,.8);
+        cursor: pointer;
+    }
+
+    #listPhoto .photoStyle > img{
+        width:100%;
+        height: 100%;
+    }
+
+    .nothingPhotos{
+        font-family: 'Spinnaker', sans-serif;
+        text-align: center;
+        display: block;
+        padding: 1em;
+        font-size: 1.5em;
+        color: #b5b5b5;
+        margin-bottom: 4em;
+        margin-top: 4em;
+    }
 }
 

@@ -10,7 +10,7 @@
 
 <c:set var="controller"  value="${param.controller}"/>
 <c:set var="view"  value="${param.view}"/>
-
+<jsp:include page="initApplication"/>
 <c:if test="${!empty controller}">
     <jsp:include page="${controller}"/>
 </c:if>
@@ -28,8 +28,10 @@
         <link href="tooltipster/dist/css/tooltipster.bundle.min.css" rel="stylesheet" type="text/css"/>
         <script src="js/libraries/jquery-3.3.1.js" type="text/javascript"></script>
         <script src="js/libraries/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="js/libraries/jquery.easyPaginate.js" type="text/javascript"></script>
         <script src="js/headerJS.js" type="text/javascript"></script>
         <script src="tooltipster/dist/js/tooltipster.bundle.min.js" type="text/javascript"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVtD_zs_dCMbbXDEkf0ztuGUJGk3LgBpM&libraries=places" async defer></script>
         <link href="tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" rel="stylesheet" type="text/css"/>
         <title>Don Tenedor, tu eliges, tu disfrutas...</title>
     </head>

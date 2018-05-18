@@ -100,8 +100,8 @@ public class uploadFilePhoto extends HttpServlet {
                 if (!item.isFormField()) {
                     PhotoRestaurantPK  photoPK = new PhotoRestaurantPK();
                     photoPK.setIdRestaurant(restaurante.getIdRestaurant());
-                    
-                    String fileName = new File(item.getName()).getName();
+                    int keyPhoto = (int) Math.floor(Math.random()*99+1);
+                    String fileName = new File(keyPhoto+"-"+item.getName()).getName();
                     photoPK.setNamePhoto(fileName);
                     
                     PhotoRestaurant photo = new PhotoRestaurant();

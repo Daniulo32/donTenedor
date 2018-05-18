@@ -518,5 +518,109 @@ public class RestaurantJpaController implements Serializable {
         }
         return restaurante;
     }
+    
+    public List<Restaurant> findrestaurantProvinceTownType(String type, int province, int town){
+        EntityManager em = getEntityManager();
+        List listaRestaurantes = new ArrayList();
+        Query query = em.createNamedQuery("Restaurant.findByProvinceTownType");
+        query.setParameter("type", type);
+        query.setParameter("idTown", town);
+        query.setParameter("idProvince", province);
+        
+        try {
+            List lista = query.getResultList();
+            
+            for(Object restaurant : lista){
+                listaRestaurantes.add((Restaurant)restaurant);
+            }
+            
+        } finally {
+            em.close();
+        }
+        
+        return listaRestaurantes;
+    }
+    
+    public List<Restaurant> findrestaurantProvinceType(String type, int province){
+        EntityManager em = getEntityManager();
+        List listaRestaurantes = new ArrayList();
+        Query query = em.createNamedQuery("Restaurant.findByProvinceType");
+        query.setParameter("type", type);
+        query.setParameter("idProvince", province);
+        
+        try {
+            List lista = query.getResultList();
+            
+            for(Object restaurant : lista){
+                listaRestaurantes.add((Restaurant)restaurant);
+            }
+            
+        } finally {
+            em.close();
+        }
+        
+        return listaRestaurantes;
+    }
+    
+    public List<Restaurant> findrestaurantProvinceTown(int province, int town){
+        EntityManager em = getEntityManager();
+        List listaRestaurantes = new ArrayList();
+        Query query = em.createNamedQuery("Restaurant.findByProvinceTown");
+        query.setParameter("idTown", town);
+        query.setParameter("idProvince", province);
+        
+        try {
+            List lista = query.getResultList();
+            
+            for(Object restaurant : lista){
+                listaRestaurantes.add((Restaurant)restaurant);
+            }
+            
+        } finally {
+            em.close();
+        }
+        
+        return listaRestaurantes;
+    }
+    
+    public List<Restaurant> findrestaurantProvince(int province){
+        EntityManager em = getEntityManager();
+        List listaRestaurantes = new ArrayList();
+        Query query = em.createNamedQuery("Restaurant.findByProvince");
+        query.setParameter("idProvince", province);
+        
+        try {
+            List lista = query.getResultList();
+            
+            for(Object restaurant : lista){
+                listaRestaurantes.add((Restaurant)restaurant);
+            }
+            
+        } finally {
+            em.close();
+        }
+        
+        return listaRestaurantes;
+    }
+    
+    public List<Restaurant> findrestaurantType(String type){
+        EntityManager em = getEntityManager();
+        List listaRestaurantes = new ArrayList();
+        Query query = em.createNamedQuery("Restaurant.findByType");
+        query.setParameter("type", type);
+        
+        try {
+            List lista = query.getResultList();
+            
+            for(Object restaurant : lista){
+                listaRestaurantes.add((Restaurant)restaurant);
+            }
+            
+        } finally {
+            em.close();
+        }
+        
+        return listaRestaurantes;
+    }
 
 }

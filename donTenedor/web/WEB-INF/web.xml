@@ -44,6 +44,22 @@
         <servlet-name>deletePhoto</servlet-name>
         <servlet-class>ajax.deletePhoto</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>favoritePhoto</servlet-name>
+        <servlet-class>ajax.favoritePhoto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>savePositionRestaurant</servlet-name>
+        <servlet-class>ajax.savePositionRestaurant</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>searchRestaurant</servlet-name>
+        <servlet-class>servlet.searchRestaurant</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>initApplication</servlet-name>
+        <servlet-class>servlet.initApplication</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerUser</servlet-name>
         <url-pattern>/registerUser</url-pattern>
@@ -87,6 +103,22 @@
     <servlet-mapping>
         <servlet-name>deletePhoto</servlet-name>
         <url-pattern>/deletePhoto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>favoritePhoto</servlet-name>
+        <url-pattern>/favoritePhoto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>savePositionRestaurant</servlet-name>
+        <url-pattern>/savePositionRestaurant</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>searchRestaurant</servlet-name>
+        <url-pattern>/searchRestaurant</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>initApplication</servlet-name>
+        <url-pattern>/initApplication</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -28,6 +28,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "PhotoRestaurant.findAll", query = "SELECT p FROM PhotoRestaurant p")
     , @NamedQuery(name = "PhotoRestaurant.findByIdRestaurant", query = "SELECT p FROM PhotoRestaurant p WHERE p.photoRestaurantPK.idRestaurant = :idRestaurant")
     , @NamedQuery(name = "PhotoRestaurant.findByNamePhoto", query = "SELECT p FROM PhotoRestaurant p WHERE p.photoRestaurantPK.namePhoto = :namePhoto")
+    , @NamedQuery(name = "PhotoRestaurant.resetFavorite", query = "UPDATE PhotoRestaurant p set p.principalPhoto = 0 where p.restaurant = :restaurant")
+    , @NamedQuery(name = "PhotoRestaurant.setFavorite", query = "UPDATE PhotoRestaurant p set p.principalPhoto = 1 where p.photoRestaurantPK = :photoPK")
     , @NamedQuery(name = "PhotoRestaurant.findByPrincipalPhoto", query = "SELECT p FROM PhotoRestaurant p WHERE p.principalPhoto = :principalPhoto")})
 public class PhotoRestaurant implements Serializable {
 
