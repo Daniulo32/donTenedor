@@ -306,21 +306,20 @@
     }
 
     .voting{
-        width: 20%;
+        position: absolute;
         vertical-align: top;
-        display: inline-block;
-        height: 4em;
-        font-size: 4em;
-        text-align: center;
-        border-left: 1px solid #c5c5c5;
+        font-size: 3em;
+        background: rgba(0,0,0,.3);
+        top: 0;
+        margin-top: 1em;
+        width: 50%;
     }
 
     .voting label{
         text-align: center;
         display: block;
-        margin-top: 50%;
         font-family: 'Handlee', cursive;
-        color: #c5c5c5
+        color: #000000;
     }
     /*Termina el estilos para los restaurantes-------------------------------*/
 

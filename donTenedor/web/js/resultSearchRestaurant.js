@@ -7,9 +7,8 @@
 $(function () {
 
     $('#container-restaurant').easyPaginate({
-        paginateElement: 'div',
-        elementsPerPage: 10,
-        effect: 'climb'
+        paginateElement: '.showRestaurant',
+        elementsPerPage: 5
     });
 
 });

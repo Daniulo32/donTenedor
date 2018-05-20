@@ -73,12 +73,21 @@
         <c:when test="${!empty requestScope.listarestaurantes}">
             <article id="container-restaurant">
                 <c:forEach var="restaurante" items="${requestScope.listarestaurantes}">
+                    <c:set var="photo" value=""/>
                     <c:forEach var="foto" items="${restaurante.photoRestaurantList}">
                         <c:if test="${foto.principalPhoto == 1}">
                             <c:set var="photo" value="${foto.photoRestaurantPK.namePhoto}"/>
                         </c:if>
                     </c:forEach>
-                    <div class="showRestaurant">
+                    <div class="showRestaurant"
+                         data-wifi="${restaurante.wifi}"
+                         data-terrace="${restaurante.terrace}"
+                         data-type="${restaurante.type}"
+                         data-paycard="${restaurante.cardPayment}"
+                         data-handicapped="${restaurante.handicapped}"
+                         data-homeService="${restaurante.homeService}"
+                         data-halfPrice="${restaurante.halfPrice}"
+                         >
                         <div>
                             <c:choose>
                                 <c:when test="${!empty photo}">
