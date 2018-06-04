@@ -1,0 +1,301 @@
+/* 
+    Created on : 22-may-2018, 17:34:28
+    Author     : danieljimenez
+*/
+
+@media only screen and (min-width:800px){
+    
+    hr{
+        margin-top: 2em;
+    }
+    h2{
+        font-size: 2em;
+    }
+
+    #content-form-search{
+        position: relative;
+    }
+
+    .icon-info{
+        width: 2em;
+        vertical-align: middle;
+    }
+    #section-one-restaurant{
+        width: 80%;
+        margin:auto;
+    }
+    #section-one-restaurant > article > img{
+        width: 45%;
+        vertical-align: top;
+    }
+    #section-one-restaurant > article > #info-restaurant{
+        display: inline-block;
+        width: 50%;
+    }
+
+    #info-restaurant > label:first-child{
+        font-size: 1.6em;
+        text-align: center;
+        display: block;
+        font-family: 'Spinnaker', sans-serif;
+        color: #969696;
+    }
+
+    #info-restaurant #mail, #info-restaurant #tel, #info-restaurant #price{
+        font-size: 1.3em;
+        display: block;
+        font-family: 'Spinnaker', sans-serif;
+        color: #969696;
+        margin-left: 1em;
+        margin-top: 0.5em;
+    }
+
+    label> span{
+        margin-left: 0.5em;
+    }
+    #listService{
+        margin-bottom: 1.2em;
+    }
+
+    #listService label{
+        font-family: 'Spinnaker', sans-serif;
+        color: #969696;
+        border: 2px solid #969696;
+        font-size: 1em;
+        padding: 0.1em;
+        display: inline-block;
+        margin-left: 0.5em;
+        margin-top: 0.5em;
+    }
+    .icon-valore{
+        width: 1em;
+        vertical-align: middle;
+    }
+    #valore{
+        text-align: center;
+        font-size: 3em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        display: block;
+        font-family: 'Spinnaker', sans-serif;
+        color: #565656;
+    }
+    #valore span{
+        margin: 0;
+    }
+
+    #reserve{
+        text-decoration: none;
+        background: #2B7067;
+        font-family: 'Spinnaker', sans-serif;
+        color: #fff;
+        display: inline-block;
+        width: 10em;
+        text-align: center;
+        padding: 0.5em;
+        margin-left: 7em;
+    }
+
+}
+
+@media only screen and (min-width:432px) and (max-width:800px){
+    h2{
+        font-size: 2em;
+    }
+
+    #content-form-search{
+        position: relative;
+        margin-top: 6em;
+    }
+
+    .icon-info{
+        width: 2em;
+        vertical-align: middle;
+    }
+    #section-one-restaurant{
+        width: 90%;
+        margin:auto;
+    }
+
+    #section-one-restaurant > article{
+        position: relative;
+    }
+
+    #section-one-restaurant > article > img{
+        width: 100%;
+        vertical-align: top;
+    }
+    #section-one-restaurant > article > #info-restaurant{
+        width: 100%;
+    }
+
+    #info-restaurant > label:first-child{
+        margin-top: 1em;
+        font-size: 2em;
+        text-align: center;
+        display: block;
+        font-family: 'Spinnaker', sans-serif;
+        color: #969696;
+    }
+
+    #info-restaurant #mail, #info-restaurant #tel, #info-restaurant #price{
+        font-size: 1.3em;
+        display: block;
+        font-family: 'Spinnaker', sans-serif;
+        color: #969696;
+        margin-left: 1em;
+        margin-top: 0.5em;
+    }
+
+    label> span{
+        margin-left: 0.5em;
+    }
+    #listService{
+        margin-top: 1em;
+        margin-bottom: 1.2em;
+    }
+
+    #listService label{
+        font-family: 'Spinnaker', sans-serif;
+        color: #969696;
+        border: 2px solid #969696;
+        font-size: 1em;
+        padding: 0.1em;
+        display: inline-block;
+        margin-left: 0.5em;
+        margin-top: 0.5em;
+    }
+    .icon-valore{
+        width: 1em;
+        vertical-align: middle;
+    }
+    #valore{
+        top: 0;
+        margin-top: 2em !important;
+        margin-left: 0.5em;
+        position: absolute;
+        text-align: center;
+        font-size: 3em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        display: block;
+        font-family: 'Spinnaker', sans-serif;
+        color: #fff;
+    }
+    #valore span{
+        margin: 0;
+    }
+
+    #reserve{
+        text-decoration: none;
+        background: #2B7067;
+        font-family: 'Spinnaker', sans-serif;
+        color: #fff;
+        display: inline-block;
+        width: 10em;
+        text-align: center;
+        padding: 0.5em;
+        margin-left: 7em;
+    }
+}
+
+@media only screen and (max-width:432px){
+    h2{
+        font-size: 1.5em;
+    }
+
+    #content-form-search{
+        position: relative;
+        margin-top: 4em;
+    }
+
+    .icon-info{
+        width: 2em;
+        vertical-align: middle;
+    }
+    #section-one-restaurant{
+        width: 80%;
+        margin:auto;
+    }
+
+    #section-one-restaurant > article{
+        position: relative;
+    }
+
+    #section-one-restaurant > article > img{
+        width: 100%;
+        vertical-align: top;
+    }
+    #section-one-restaurant > article > #info-restaurant{
+        width: 100%;
+    }
+
+    #info-restaurant > label:first-child{
+        margin-top: 1em;
+        font-size: 2em;
+        text-align: center;
+        display: block;
+        font-family: 'Spinnaker', sans-serif;
+        color: #969696;
+        margin-bottom: 1em;
+    }
+
+    #info-restaurant #mail, #info-restaurant #tel, #info-restaurant #price{
+        font-size: 1.2em;
+        display: block;
+        font-family: 'Spinnaker', sans-serif;
+        color: #969696;
+        margin-left: 1em;
+        margin-top: 0.5em;
+    }
+
+    label> span{
+        margin-left: 0.5em;
+    }
+    #listService{
+        margin-top: 1em;
+        margin-bottom: 1.2em;
+    }
+
+    #listService label{
+        font-family: 'Spinnaker', sans-serif;
+        color: #969696;
+        border: 2px solid #969696;
+        font-size: 1em;
+        padding: 0.1em;
+        display: inline-block;
+        margin-left: 0.5em;
+        margin-top: 0.5em;
+    }
+    .icon-valore{
+        width: 0.8em;
+        vertical-align: middle;
+    }
+    #valore{
+        top: 0;
+        margin-top: 3em;
+        margin-left: 0.5em;
+        position: absolute;
+        text-align: center;
+        font-size: 1.5em;
+        display: block;
+        font-family: 'Spinnaker', sans-serif;
+        color: #fff;
+    }
+    #valore span{
+        margin: 0;
+    }
+
+    #reserve{
+        text-decoration: none;
+        background: #2B7067;
+        font-family: 'Spinnaker', sans-serif;
+        color: #fff;
+        display: inline-block;
+        width: 10em;
+        text-align: center;
+        padding: 0.5em;
+        margin-left: 7em;
+    }
+}
+

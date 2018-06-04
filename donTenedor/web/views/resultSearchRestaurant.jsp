@@ -6,14 +6,18 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <link href="css/resultSearchRestaurant.css" rel="stylesheet" type="text/css"/>
-<script src="js/resultSearchRestaurant.js" type="text/javascript"></script>
+<script src="js/resultSearchRestaurant.js?1" type="text/javascript"></script>
 <!DOCTYPE html>
+<aside>
+    <jsp:include page="formSearch.jsp"/>
+</aside>
 <aside id="aside-filters">
     <div id="filters">
         <h2>Filtros</h2>
-        <select name="type">
+        <select name="type" id="typeRestaurant">
             <option value="any">Tipo restaurante</option>
             <option value="espanol">Español</option>
             <option value="tapas">Bar Tapas</option>
@@ -23,7 +27,7 @@
             <option value="rapida">Comida Rápida</option>
             <option value="buffet">Buffet</option>
         </select>
-        <div>
+        <div class="filter">
             <span>Precio más bajo</span>
             <div class="slideCheck">	
                 <input type="checkbox" id="precioBajo" value ="1"/>
@@ -86,7 +90,8 @@
                          data-paycard="${restaurante.cardPayment}"
                          data-handicapped="${restaurante.handicapped}"
                          data-homeService="${restaurante.homeService}"
-                         data-halfPrice="${restaurante.halfPrice}"
+                         data-price="${restaurante.halfPrice}"
+                         data-id="${restaurante.idRestaurant}"
                          >
                         <div>
                             <c:choose>
@@ -110,11 +115,23 @@
                                 <label>
                                     <img src="images/icons/icon-coins.png" class="icon-info">
                                     <fmt:formatNumber var="price" type ="currency" maxIntegerDigits = "2" value = "${restaurante.halfPrice}" />
-                                    <span>Precio medio ${price} / Persona</span>
+                                    <span>Precio medio ${price} / Pers.</span>
                                 </label>
-                                <a href="#">Ver más</a>
+                                <a id="seeMore" href="index.jsp?view=viewOneRestaurant&controller=getOneRestaurant&idRestaurant=${restaurante.idRestaurant}">Ver más</a>
                             </div>
-                            <div class="voting"><label>5/10</label></div>
+                            <div class="voting">
+                                <c:set var="allVote" value="0"/>
+                                <c:forEach var="vote" items="${restaurante.votingList}">
+                                    <c:set var="allVote" value="${vote.vote + allVote}"/>
+                                </c:forEach>
+                                <fmt:formatNumber var="valoring"
+                                                  value="${(allVote*2)/fn:length(restaurante.votingList)}"
+                                                  maxFractionDigits="0" />
+                                <c:if test="${allVote == 0}">
+                                    <c:set var="valoring" value="0"/>
+                                </c:if>
+                                <label>${valoring}/10</label>
+                            </div>
                         </div>
                         <br>
                     </div>

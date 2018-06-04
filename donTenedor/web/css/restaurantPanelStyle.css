@@ -13,14 +13,14 @@ and open the template in the editor.
         margin-top: 0.5em;
     }
 
-    #tab-menu-restaurant ul{
+    #tab-menu-restaurant > ul{
         margin: 0;
         margin-left: 0.2em;
         border-bottom: 0.3em solid #F7A89B;
         padding: 0;
     }
 
-    #tab-menu-restaurant ul li{
+    #tab-menu-restaurant > ul li{
         margin: 0;
         display: inline-block;
         background: #DFDFDF;
@@ -32,11 +32,11 @@ and open the template in the editor.
         border-top-right-radius: 1em;
     }
 
-    #tab-menu-restaurant ul li:first-child{
+    #tab-menu-restaurant > ul li:first-child{
         background: #F7A89B;
     }
 
-    #tab-menu-restaurant ul li:hover{
+    #tab-menu-restaurant > ul li:hover{
         cursor: pointer;
         background: #F7A89B;
     }
@@ -48,7 +48,7 @@ and open the template in the editor.
         margin-top: 0.5em;
     }
 
-    #tab-menu-restaurant ul{
+    #tab-menu-restaurant > ul{
         margin: 0;
         margin-left: 0.2em;
         border-bottom: 0.3em solid #F7A89B;
@@ -56,7 +56,7 @@ and open the template in the editor.
         margin-top: 7em;
     }
 
-    #tab-menu-restaurant ul li{
+    #tab-menu-restaurant > ul li{
         margin: 0;
         display: inline-block;
         background: #DFDFDF;
@@ -68,11 +68,11 @@ and open the template in the editor.
         border-top-right-radius: 1em;
     }
 
-    #tab-menu-restaurant ul li:first-child{
+    #tab-menu-restaurant > ul li:first-child{
         background: #F7A89B;
     }
 
-    #tab-menu-restaurant ul li:hover{
+    #tab-menu-restaurant > ul li:hover{
         cursor: pointer;
         background: #F7A89B;
 
@@ -86,14 +86,14 @@ and open the template in the editor.
         margin-top: 0.5em;
     }
 
-    #tab-menu-restaurant ul{
+    #tab-menu-restaurant > ul{
         margin: 0;
         padding: 0;
         margin-top: 4em;
         width: 100%;
     }
 
-    #tab-menu-restaurant ul li{
+    #tab-menu-restaurant > ul li{
         margin: 0;
         display: block;
         background: #DFDFDF;
@@ -103,11 +103,11 @@ and open the template in the editor.
         border-bottom: solid 1px #777777;
     }
 
-    #tab-menu-restaurant ul li:first-child{
+    #tab-menu-restaurant > ul li:first-child{
         background: #F7A89B;
     }
 
-    #tab-menu-restaurant ul li:hover{
+    #tab-menu-restaurant > ul li:hover{
         cursor: pointer;
         background: #F7A89B;
 

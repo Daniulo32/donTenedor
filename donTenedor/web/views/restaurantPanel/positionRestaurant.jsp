@@ -22,5 +22,5 @@
     </div>
                <input type="hidden" name="longitude" id="longitude" value="${sessionScope.restaurante.longitude}"/>
                <input type="hidden" name="latitude" id="latitude" value="${sessionScope.restaurante.latitude}"/>
-    <div id="map"></div>
+               <div id="map"></div>
 </section>

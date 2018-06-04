@@ -114,7 +114,7 @@ $(function () {
         marker = new google.maps.Marker({
             position: {lat: principalLatitude, lng: principalLongitude},
             map: map,
-            title: 'Hello World!'
+            title: 'Esta es tu posición'
         });
     }
 

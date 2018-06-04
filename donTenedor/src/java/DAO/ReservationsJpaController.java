@@ -14,6 +14,8 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import DTO.Restaurant;
 import DTO.Users;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -192,6 +194,46 @@ public class ReservationsJpaController implements Serializable {
         } finally {
             em.close();
         }
+    }
+    
+    public List findReservationsRestaurantDate(Date date, int idRestaurant){
+        EntityManager em = getEntityManager();
+        List listaReservas = new ArrayList();
+        Query query = em.createNamedQuery("Reservations.findByDateRestaurant");
+        query.setParameter("idRestaurant", idRestaurant);
+        query.setParameter("reservationDate", date);
+        
+        try {
+            List lista = query.getResultList();
+            
+            for(Object reservation : lista){
+                listaReservas.add((Reservations)reservation);
+            }
+            
+        } finally {
+            em.close();
+        }
+        
+        return listaReservas;
+    }
+    
+    public Reservations findReservationPK(Restaurant restaurant, Users user){
+        EntityManager em = getEntityManager();
+        Query query = em.createNamedQuery("Reservations.findByPK");
+        query.setParameter("idRestaurant", restaurant);
+        query.setParameter("idUser", user);
+        
+        Reservations reserve = null;
+        
+        try {
+            List lista = query.getResultList();
+            if (lista.size() > 0) {
+                reserve = (Reservations) lista.get(0);
+            }
+        } finally {
+            em.close();
+        }
+        return reserve;
     }
     
 }

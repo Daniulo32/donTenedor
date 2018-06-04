@@ -164,6 +164,32 @@
         color: #c5c5c5
     }
     /*Termina el estilos para los restaurantes-------------------------------*/
+    /*Clases para los filtros-------------------------------*/
+    .hideRestaurant{
+        visibility: hidden;
+        position: absolute;
+    }
+
+    .blockRestaurant{
+        visibility:visible;
+        position: relative;
+    }
+    /*Termian las clases para los filtros-------------------------------*/
+    #seeMore{
+        text-decoration: none;
+        background: #2B7067;
+        font-family: 'Spinnaker', sans-serif;
+        color:#fff;
+        display: block;
+        width: 7em;
+        text-align: center;
+        padding: 0.5em;
+        margin-left: 13em;
+    }
+
+    #content-form-search{
+        position: inherit;
+    }
 }
 
 @media only screen and (min-width:432px) and (max-width:800px){
@@ -214,7 +240,7 @@
     #aside-filters{
         display: block;
         padding-bottom: 2em;
-        margin-top: 7em;
+        margin-top: 1em;
         width: 100%;
     }
 
@@ -260,6 +286,10 @@
         padding-top: 1em;
     }
 
+    #aside-filters #filters > div{
+        display: inline-block;
+    }
+
     #aside-filters > div > div span {
         display: inline-block;
         width: 12em;
@@ -273,6 +303,7 @@
     .showRestaurant{
         margin: auto;
         border-bottom: 1px solid #DFDFDF;
+        position: relative;
     }
 
     .showRestaurant div img{
@@ -282,18 +313,18 @@
 
     .dataRestaurant{
         vertical-align: top;
-        width: 40%;
+        width: 46%;
         display: inline-block;
     }
 
     .dataRestaurant label{
         display: block;
         margin-bottom: 1em;
-        margin-left: 1em;
+        margin-left: 0.5em;
     }
 
     .dataRestaurant label span{
-        font-size: 1.2em;
+        font-size: 1em;
         font-family: 'Spinnaker', sans-serif;
         color: #777777;
         margin-left: 1em;
@@ -311,19 +342,44 @@
         font-size: 3em;
         background: rgba(0,0,0,.3);
         top: 0;
-        margin-top: 1em;
-        width: 50%;
+        width: 52%;
     }
 
     .voting label{
         text-align: center;
         display: block;
         font-family: 'Handlee', cursive;
-        color: #000000;
+        color: white;
+        text-shadow: 3px 2px 13px #000;
     }
     /*Termina el estilos para los restaurantes-------------------------------*/
+    /*Clases para los filtros-------------------------------*/
+    .hideRestaurant{
+        visibility: hidden;
+        position: absolute;
+    }
 
+    .blockRestaurant{
+        visibility:visible;
+        position: relative;
+    }
+    /*Termian las clases para los filtros-------------------------------*/
+    #seeMore{
+        text-decoration: none;
+        background: #2B7067;
+        font-family: 'Spinnaker', sans-serif;
+        color:#fff;
+        display: block;
+        width: 7em;
+        text-align: center;
+        padding: 0.5em;
+        margin:auto;
+    }
 
+    #content-form-search{
+        position: inherit;
+        margin-top: 6em;
+    }
 
 }
 
@@ -334,7 +390,7 @@
     #setion-search-restaurant{
         width: 90%;
         margin:auto;
-        margin-top: 5em;
+        margin-top: 0em;
     }
 
     #setion-search-restaurant .h1-search{
@@ -373,6 +429,155 @@
         color: #c5c5c5;
     }
 
+    /*Estilos para los filtros------------------------------------------------*/
+    #aside-filters{
+        display: block;
+        padding-bottom: 2em;
+        margin-top: 1em;
+        width: 100%;
+    }
+
+    #aside-filters input[type="checkbox"]{
+        visibility: hidden;
+    }
+
+    #aside-filters h2{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 1.2em;
+        color: #777777;
+        border-bottom: 1px solid #777777;
+        width: 90%;
+        margin: auto;
+    }
+
+    #aside-filters select{
+        -webkit-appearance: button;
+        -webkit-border-radius: 0px;
+        -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        -webkit-padding-end: 20px;
+        -webkit-padding-start: 2px;
+        -webkit-user-select: none;
+        background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(white, white 40%, white);
+        background-position: 97% center;
+        background-repeat: no-repeat;
+        border: 1px solid #d8d8d8;
+        color: #555;
+        font-size: inherit;
+        overflow: hidden;
+        padding: 0.4em 0.2em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 92%;
+        margin-left: 1em;
+        margin-top: 1em;;
+    }
+    #aside-filters > div{
+        width: 95%;
+        margin: auto;
+        border: 1px solid #777777;
+        padding-bottom: 1em;
+        padding-top: 1em;
+    }
+
+    #aside-filters #filters > div{
+        display: inline-block;
+    }
+
+    #aside-filters > div > div span {
+        display: inline-block;
+        width: 12em;
+        margin-top: 0.5em;
+        margin-left: 1em;
+        font-family: 'Spinnaker', sans-serif;
+
+    }
+    /*Termina el estilos para los filtros-------------------------------------*/
+    /*Estilos para los restaurantes-------------------------------------------*/
+    .showRestaurant{
+        margin: auto;
+        border-bottom: 1px solid #DFDFDF;
+        position: relative;
+    }
+
+    .showRestaurant > div{
+        border-bottom: 1px solid grey;
+        padding-bottom: 1em;
+    }
+
+    .showRestaurant div img{
+        width: 20em;
+        height: 15em;
+    }
+
+    .dataRestaurant{
+        vertical-align: top;
+        width: 95%;
+        display: inline-block;
+    }
+
+    .dataRestaurant label{
+        display: block;
+        margin-bottom: 1em;
+        margin-left: 0.5em;
+    }
+
+    .dataRestaurant label span{
+        font-size: 1em;
+        font-family: 'Spinnaker', sans-serif;
+        color: #777777;
+        margin-left: 1em;
+    }
+
+    .dataRestaurant .icon-info{
+        width: 2em;
+        height: 2em;
+        vertical-align: middle;
+    }
+
+    .voting{
+        position: absolute;
+        vertical-align: top;
+        font-size: 3em;
+        background: rgba(0,0,0,.3);
+        top: 0;
+        width: 95%;
+    }
+
+    .voting label{
+        text-align: center;
+        display: block;
+        font-family: 'Handlee', cursive;
+        color: white;
+        text-shadow: 3px 2px 13px #000;
+    }
+    /*Termina el estilos para los restaurantes-------------------------------*/
+    /*Clases para los filtros-------------------------------*/
+    .hideRestaurant{
+        visibility: hidden;
+        position: absolute;
+    }
+
+    .blockRestaurant{
+        visibility:visible;
+        position: relative;
+    }
+    /*Termian las clases para los filtros-------------------------------*/
+    #seeMore{
+        text-decoration: none;
+        background: #2B7067;
+        font-family: 'Spinnaker', sans-serif;
+        color:#fff;
+        display: block;
+        width: 7em;
+        text-align: center;
+        padding: 0.5em;
+        margin:auto;
+    }
+    
+    #content-form-search{
+        position: relative;
+        margin-top: 4em;
+    }
 
 }
 

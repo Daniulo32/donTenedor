@@ -1,0 +1,285 @@
+/* 
+    Created on : 29-may-2018, 17:59:20
+    Author     : danieljimenez
+*/
+@media only screen and (min-width:800px){
+
+    #section-misReservas{
+        width: 80%;
+        margin:auto;
+    }
+
+    #section-misReservas h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2em;
+        color: #c5c5c5;
+        margin: 0;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        border-bottom: 0.1em solid #c5c5c5;
+    }
+
+    #content-reservations table{
+        width: 95%;
+        margin:auto;
+        border-collapse: collapse;
+    }
+
+    #content-reservations table th{
+        background: #2B7067;
+        padding: 0.5em 0em;
+        border-right: 2px solid #c5c5c5;
+        color: #fff;
+        font-family: 'Ubuntu Condensed', sans-serif;
+    }
+
+    #content-reservations table th:last-child{
+        border-right: none;
+    }
+
+    #content-reservations table td{
+        font-family: 'Spinnaker', sans-serif;
+        padding: 0.7em 0em;
+        border-bottom: 2px solid #c5c5c5;
+        text-align: center;
+    }
+
+    #content-reservations table tr:hover td{
+        background: #f2f2f2;
+    }
+
+    #cancel{
+        background: #cd3d3d;
+        text-decoration: none;
+        color: #fff;
+        padding: 0.5em 1.2em;
+    }
+
+    #cancel:hover{
+        background: #c5c5c5;
+    }
+
+    .sinConfirmar{
+        color: #3a90d6;
+    }
+
+    .confirmado{
+        color: #7cb548;
+    }
+
+    .rechazado{
+        color:#dc6448;
+    }
+
+    /*-----------------------Estilo para las estrellas-----------------------*/
+    .clasificacion{
+        direction: rtl;/* right to left */
+        unicode-bidi: bidi-override;/* bidi de bidireccional */
+    }
+    .clasificacion label{ color:grey;}
+    .clasificacion input[type = "radio"]{ display:none;}
+    .clasificacion label:hover{color:orange;}
+    .clasificacion label:hover ~ label{color:orange;}
+    .clasificacion input[type = "radio"]:checked ~ label{color:orange;}
+    /*------------------Termina el estilo para las estrellas------------------*/
+
+    .nothing-reserve{
+        color:#959595;
+        font-size: 2em;
+        padding: 5em 0em !important;
+        border:none !important;
+    }
+
+}
+
+@media only screen and (min-width:432px) and (max-width:800px){
+    #section-misReservas{
+        width: 90%;
+        margin:auto;
+    }
+
+    #section-misReservas h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2em;
+        color: #c5c5c5;
+        margin: 0;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        border-bottom: 0.1em solid #c5c5c5;
+    }
+
+    #content-reservations table{
+        width: 100%;
+        margin:auto;
+        border-collapse: collapse;
+    }
+
+    #content-reservations table th{
+        background: #2B7067;
+        padding: 0.5em 0em;
+        border-right: 2px solid #c5c5c5;
+        color: #fff;
+        font-family: 'Ubuntu Condensed', sans-serif;
+    }
+
+    #content-reservations table th:last-child{
+        border-right: none;
+    }
+
+    #content-reservations table td{
+        font-family: 'Spinnaker', sans-serif;
+        padding: 0.7em 0em;
+        border-bottom: 2px solid #c5c5c5;
+        text-align: center;
+    }
+
+    #content-reservations table tr:hover td{
+        background: #f2f2f2;
+    }
+
+    #cancel{
+        background: #cd3d3d;
+        text-decoration: none;
+        color: #fff;
+        padding: 0.5em 1.2em;
+    }
+
+    #cancel:hover{
+        background: #c5c5c5;
+    }
+
+    .sinConfirmar{
+        color: #3a90d6;
+    }
+
+    .confirmado{
+        color: #7cb548;
+    }
+
+    .rechazado{
+        color:#dc6448;
+    }
+
+    /*-----------------------Estilo para las estrellas-----------------------*/
+    .clasificacion{
+        direction: rtl;/* right to left */
+        unicode-bidi: bidi-override;/* bidi de bidireccional */
+    }
+    .clasificacion label{ color:grey;}
+    .clasificacion input[type = "radio"]{ display:none;}
+    .clasificacion label:hover{color:orange;}
+    .clasificacion label:hover ~ label{color:orange;}
+    .clasificacion input[type = "radio"]:checked ~ label{color:orange;}
+    /*------------------Termina el estilo para las estrellas------------------*/
+
+    .nothing-reserve{
+        color:#959595;
+        font-size: 2em;
+        padding: 5em 0em !important;
+        border:none !important;
+    }
+}
+
+@media only screen and (max-width:432px){
+    #section-misReservas{
+        width: 80%;
+        margin:auto;
+    }
+
+    #section-misReservas h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2em;
+        color: #c5c5c5;
+        margin: 0;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        border-bottom: 0.1em solid #c5c5c5;
+    }
+
+    #content-reservations table{
+        width: 95%;
+        margin:auto;
+        border-collapse: collapse;
+    }
+
+    #content-reservations table th{
+        display: none;
+    }
+
+    #content-reservations table td:first-child{
+        background: #2B7067;
+        color:#FFF;
+        border:none;
+        margin-top: 1em;
+    }
+
+    #content-reservations table td{
+        display: block;
+        font-family: 'Spinnaker', sans-serif;
+        padding: 0.7em 0em;
+        border-bottom: 2px solid #c5c5c5;
+        text-align: center;
+    }
+
+    #content-reservations table td:nth-child(2){
+        background-image: url(../..//images/icons/icon-calendar.png);
+        background-position: 5% center;
+        background-repeat: no-repeat;
+        background-size: 2em;
+    }
+
+    #content-reservations table td:nth-child(3){
+        background-image: url(../..//images/icons/icon-clock.png);
+        background-position: 5% center;
+        background-repeat: no-repeat;
+        background-size: 2em;
+    }
+
+    #cancel{
+        background: #cd3d3d;
+        text-decoration: none;
+        color: #fff;
+        padding: 0.5em 1.2em;
+    }
+
+    #cancel:hover{
+        background: #c5c5c5;
+    }
+
+    .sinConfirmar{
+        color: #3a90d6;
+    }
+
+    .confirmado{
+        color: #7cb548;
+    }
+
+    .rechazado{
+        color:#dc6448;
+    }
+
+    /*-----------------------Estilo para las estrellas-----------------------*/
+    .clasificacion{
+        direction: rtl;/* right to left */
+        unicode-bidi: bidi-override;/* bidi de bidireccional */
+    }
+    .clasificacion label{ color:grey;}
+    .clasificacion input[type = "radio"]{ display:none;}
+    .clasificacion label:hover{color:orange;}
+    .clasificacion label:hover ~ label{color:orange;}
+    .clasificacion input[type = "radio"]:checked ~ label{color:orange;}
+    /*------------------Termina el estilo para las estrellas------------------*/
+
+    .nothing-reserve{
+        color:#959595;
+        font-size: 2em;
+        padding: 5em 0em !important;
+        border:none !important;
+    }
+}
+
+
+
+
+
+

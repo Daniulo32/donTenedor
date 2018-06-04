@@ -60,6 +60,62 @@
         <servlet-name>initApplication</servlet-name>
         <servlet-class>servlet.initApplication</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>getOneRestaurant</servlet-name>
+        <servlet-class>servlet.getOneRestaurant</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>getMapRestaurant</servlet-name>
+        <servlet-class>servlet.oneRestaurant.getMapRestaurant</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>dataRestaurant</servlet-name>
+        <servlet-class>servlet.dataRestaurant</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>getHoursRestaurant</servlet-name>
+        <servlet-class>ajax.getHoursRestaurant</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>checkEmail</servlet-name>
+        <servlet-class>ajax.checkEmail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>checkSession</servlet-name>
+        <servlet-class>core.checkSession</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>makeReserver</servlet-name>
+        <servlet-class>servlet.makeReserver</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>goEmail</servlet-name>
+        <servlet-class>core.goEmail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateSessionUser</servlet-name>
+        <servlet-class>core.updateSessionUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cancelReservation</servlet-name>
+        <servlet-class>servlet.cancelReservation</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sendVote</servlet-name>
+        <servlet-class>ajax.sendVote</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateStatusReservation</servlet-name>
+        <servlet-class>ajax.updateStatusReservation</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateSessionRestaurant</servlet-name>
+        <servlet-class>core.updateSessionRestaurant</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sendComment</servlet-name>
+        <servlet-class>servlet.sendComment</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerUser</servlet-name>
         <url-pattern>/registerUser</url-pattern>
@@ -119,6 +175,62 @@
     <servlet-mapping>
         <servlet-name>initApplication</servlet-name>
         <url-pattern>/initApplication</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getOneRestaurant</servlet-name>
+        <url-pattern>/getOneRestaurant</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getMapRestaurant</servlet-name>
+        <url-pattern>/getMapRestaurant</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>dataRestaurant</servlet-name>
+        <url-pattern>/views/oneRestaurant/dataRestaurant</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getHoursRestaurant</servlet-name>
+        <url-pattern>/getHoursRestaurant</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>checkEmail</servlet-name>
+        <url-pattern>/checkEmail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>checkSession</servlet-name>
+        <url-pattern>/checkSession</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>makeReserver</servlet-name>
+        <url-pattern>/makeReserver</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>goEmail</servlet-name>
+        <url-pattern>/goEmail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateSessionUser</servlet-name>
+        <url-pattern>/updateSessionUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cancelReservation</servlet-name>
+        <url-pattern>/cancelReservation</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sendVote</servlet-name>
+        <url-pattern>/sendVote</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateStatusReservation</servlet-name>
+        <url-pattern>/updateStatusReservation</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateSessionRestaurant</servlet-name>
+        <url-pattern>/updateSessionRestaurant</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sendComment</servlet-name>
+        <url-pattern>/sendComment</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

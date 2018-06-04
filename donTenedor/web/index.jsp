@@ -8,9 +8,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<%--<jsp:include page="checkSession"/>--%>
+<jsp:include page="initApplication"/>
+
 <c:set var="controller"  value="${param.controller}"/>
 <c:set var="view"  value="${param.view}"/>
-<jsp:include page="initApplication"/>
+
+<c:if test="${(sessionScope.usuario == null) && ((param.view eq 'userPanel') || (param.view eq 'restaurantPanel'))}">
+    <c:redirect url="index.jsp"/>
+</c:if>
+
 <c:if test="${!empty controller}">
     <jsp:include page="${controller}"/>
 </c:if>
@@ -25,11 +32,13 @@
         <link href="css/generalStyle.css" rel="stylesheet" type="text/css"/>
         <link href="css/headerStyle.css" rel="stylesheet" type="text/css"/>
         <link href="css/indexStyle.css" rel="stylesheet" type="text/css"/>
+        <link href="css/jquery.flipster.min.css" rel="stylesheet" type="text/css"/>
         <link href="tooltipster/dist/css/tooltipster.bundle.min.css" rel="stylesheet" type="text/css"/>
         <script src="js/libraries/jquery-3.3.1.js" type="text/javascript"></script>
+        <script src="js/libraries/jquery-ui.min.js" type="text/javascript"></script>
         <script src="js/libraries/jquery.validate.min.js" type="text/javascript"></script>
-        <script src="js/libraries/jquery.easyPaginate.js" type="text/javascript"></script>
         <script src="js/headerJS.js" type="text/javascript"></script>
+        <script src="js/libraries/jquery.flipster.min.js" type="text/javascript"></script>
         <script src="tooltipster/dist/js/tooltipster.bundle.min.js" type="text/javascript"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVtD_zs_dCMbbXDEkf0ztuGUJGk3LgBpM&libraries=places" async defer></script>
         <link href="tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" rel="stylesheet" type="text/css"/>

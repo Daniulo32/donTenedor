@@ -1,0 +1,43 @@
+/* 
+    Created on : 22-may-2018, 20:31:17
+    Author     : danieljimenez
+*/
+
+@media only screen and (min-width:800px){
+    .nothingPhotos{
+        width: 95%;
+        display: block;
+        margin:auto;
+    }
+    
+    .imgCarrousel{
+        width: 40em;
+    }
+
+}
+
+@media only screen and (min-width:432px) and (max-width:800px){
+    .nothingPhotos{
+        width: 95%;
+        display: block;
+        margin:auto;
+    }
+    
+    .imgCarrousel{
+        width: 40em;
+    }
+}
+
+@media only screen and (max-width:432px){
+    .nothingPhotos{
+        width: 95%;
+        display: block;
+        margin:auto;
+    }
+    
+    .imgCarrousel{
+        width: 20em;
+    }
+}
+
+

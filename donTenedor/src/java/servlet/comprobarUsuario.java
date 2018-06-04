@@ -51,13 +51,11 @@ public class comprobarUsuario extends HttpServlet {
 
                         if (user.getRole() == 0) {
                             sesion.setAttribute("usuario", user);
-
                             out.print("usuario");
                         } else {
                             Restaurant restaurante = loginRestaurant(user, emf);
                             sesion.setAttribute("restaurante", restaurante);
                             sesion.setAttribute("usuario", user);
-
                             out.print("restaurante");
                         }
 

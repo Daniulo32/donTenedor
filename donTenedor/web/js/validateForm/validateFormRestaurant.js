@@ -1,15 +1,13 @@
 $(document).ready(function () {
 
     jQuery.validator.addMethod("formatPrice", function (value, element) {
-
+        
         var datos = value.split(".");
 
         if (datos[0] === "0") {
             return false;
-            console.log(datos[0]);
         } else {
             return true;
-            console.log(datos[0]);
         }
 
     });

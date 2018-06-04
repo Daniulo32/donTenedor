@@ -13,6 +13,7 @@
         <li data-view="restaurante" id="restaurante">Restaurante</li>
         <li data-view="photosRestaurant" id="photosRestaurant">Fotos</li>
         <li data-view="positionRestaurant" id="positionRestaurant">Ubicación</li>
+        <li data-view="reservesRestaurant" id="reservesRestaurant">Reservas</li>
         <li data-view="comentariosRestaurante" id="comentariosRestaurante">Comentarios</li>
     </ul>
     

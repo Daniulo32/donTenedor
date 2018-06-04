@@ -30,11 +30,34 @@ public class tools {
 
     public Date convertStringToDate(String dateString) {
         Date date = null;
-        Date formatteddate = null;
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-M-dd");
 
         try {
             date = df.parse(dateString);
+        } catch (Exception ex) {
+
+        }
+        return date;
+    }
+    
+    public String convertDateToString(Date date) {
+        String dateString = null;
+        SimpleDateFormat df = new SimpleDateFormat("dd-M-yyyy");
+
+        try {
+            dateString = df.format(date);
+        } catch (Exception ex) {
+
+        }
+        return dateString;
+    }
+    
+    public String convertHourToString(Date dateString) {
+        String date = null;
+        SimpleDateFormat df = new SimpleDateFormat("HH:mm");
+
+        try {
+            date = df.format(dateString);
         } catch (Exception ex) {
 
         }

@@ -199,7 +199,7 @@ h1{
     }
 
     /*----------------------------------Termina el estilo para el login-----------------------------------------------------------*/
-    
+
     .message-successful{
         background: #caf3aa;
         display: block;
@@ -222,6 +222,16 @@ h1{
         border: 1px solid #ce0808;
         border-radius: 0.5em;
         font-family: 'Spinnaker', sans-serif;
+    }
+
+    .hola{
+        display: block;
+        background: #f99e9e;
+        padding: 0.2em 1em;
+        border: 1px solid #ff5757;
+        color: #f31919;
+        border-radius: 0.5em;
+        font-size: 1.2em;
     }
 
 }
@@ -329,7 +339,7 @@ h1{
         background: #bcbebc;
         color:white;
     }
-    
+
     .boton-aceptar:disabled{
         background: #c5c5c5;
     }
@@ -415,7 +425,29 @@ h1{
     }
 
     /*----------------------------------Termina el estilo para el login-----------------------------------------------------------*/
+    .message-successful{
+        background: #caf3aa;
+        display: block;
+        color: green;
+        padding: 0.5em;
+        margin: auto;
+        margin-bottom: 1em;
+        border: 1px solid green;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
 
+    .message-error{
+        background: #f3aaaa;
+        display: block;
+        color: #ce0808;
+        padding: 0.5em;
+        margin: auto;
+        margin-bottom: 1em;
+        border: 1px solid #ce0808;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
 
 }
 
@@ -613,4 +645,27 @@ h1{
     }
 
     /*----------------------------------Termina el estilo para el login-----------------------------------------------------------*/
+    .message-successful{
+        background: #caf3aa;
+        display: block;
+        color: green;
+        padding: 0.5em;
+        margin: auto;
+        margin-bottom: 1em;
+        border: 1px solid green;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    .message-error{
+        background: #f3aaaa;
+        display: block;
+        color: #ce0808;
+        padding: 0.5em;
+        margin: auto;
+        margin-bottom: 1em;
+        border: 1px solid #ce0808;
+        border-radius: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+    }
 }

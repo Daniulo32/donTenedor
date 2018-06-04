@@ -16,7 +16,7 @@
                 <input type="text" name="subname" placeholder="Apellidos"/>
             </div>
             <div>
-                <input type="text" name="mail" placeholder="E-mail">
+                <input type="text" name="mail" id="email" placeholder="E-mail">
             </div>
         </article>
 

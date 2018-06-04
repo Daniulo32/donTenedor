@@ -53,13 +53,26 @@ $(document).ready(function () {
         }
 
     }, "La letra no se corresponde");
+    
 
     $("#form-register").validate({
 
         rules: {
             name: "required",
             subname: "required",
-            mail: {required: true, email: true},
+            mail: {
+                required: true,
+                email: true,
+                remote: {
+                    url: "checkEmail",
+                    type: "post",
+                    data: {
+                        email: function(){
+                            return $("#email").val();
+                        }
+                    }
+                }
+            },
             dni: {
                 required: true,
                 minlength: 9,
@@ -84,7 +97,8 @@ $(document).ready(function () {
             subname: "Los apellidos son oligatorios",
             mail: {
                 required: "El E-mail es obligatorio",
-                email: "El formato del Email no es correcto"
+                email: "El formato del Email no es correcto",
+                remote:"El Email ya se encuentra registrado"
             },
             dni: {
                 required: "El DNI es obligatorio",

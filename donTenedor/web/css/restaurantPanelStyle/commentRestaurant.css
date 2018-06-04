@@ -1,0 +1,263 @@
+/* 
+    Created on : 01-jun-2018, 19:20:34
+    Author     : danieljimenez
+*/
+@media only screen and (min-width:800px){
+
+    .message-error{
+        margin-top: 1em;
+    }
+    .message-successful{
+        margin-top: 1em;
+    }
+
+    #section-comment{
+        width: 80%;
+        margin:auto;
+    }
+
+    #send-comment{
+        border-bottom: 2px solid #b0b0b0;
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+    }
+
+    #send-comment label{
+        display: block;
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+        padding: 1em 0em;
+    }
+
+    #send-comment #comment{
+        display: block;
+        width: 100%;
+        resize: none;
+        border-radius: 0.5em;
+        height: 10em;
+        margin-bottom: 1em;
+    }
+    #content-comment{
+        height: 30em;
+        overflow-y: auto;
+    }
+    .comment{
+        border-bottom: 1px solid #b0b0b0;
+    }
+
+    .comment .info-comment{
+        display: inline-block;
+        border-right: 1px solid #b0b0b0;
+        width: 30%;
+    }
+
+    .comment .info-comment img{
+        width: 3em;
+        vertical-align: middle;
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+
+    .comment .info-comment .user-comment{
+        display: inline-block;
+        margin-left: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+        width: 75%;
+    }
+
+    .comment .info-comment .date-comment{
+        display: inline-block;
+        font-family: 'Spinnaker', sans-serif;
+        width: 7em;
+    }
+
+    .comment .info-comment .icon-calendar{
+        width: 2em;
+        display: inline-block;
+        margin: 0;
+        margin-bottom: 1em;
+        vertical-align: middle;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .body-comment{
+        position: absolute;
+        margin-left: 1em;
+        margin-top: 1em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+}
+
+@media only screen and (min-width:432px) and (max-width:800px){
+    .message-error{
+        margin-top: 1em;
+    }
+    .message-successful{
+        margin-top: 1em;
+    }
+
+    #section-comment{
+        width: 95%;
+        margin:auto;
+    }
+
+    #send-comment{
+        border-bottom: 2px solid #b0b0b0;
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+    }
+
+    #send-comment label{
+        display: block;
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+        padding: 1em 0em;
+    }
+
+    #send-comment #comment{
+        display: block;
+        width: 100%;
+        resize: none;
+        border-radius: 0.5em;
+        height: 10em;
+        margin-bottom: 1em;
+    }
+    #content-comment{
+        height: 30em;
+        overflow-y: auto;
+    }
+    .comment{
+        border-bottom: 1px solid #b0b0b0;
+    }
+
+    .comment .info-comment{
+        display: inline-block;
+        border-right: 1px solid #b0b0b0;
+        width: 45%;
+    }
+
+    .comment .info-comment img{
+        width: 3em;
+        vertical-align: middle;
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+
+    .comment .info-comment .user-comment{
+        display: inline-block;
+        margin-left: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+        width: 75%;
+    }
+
+    .comment .info-comment .date-comment{
+        display: inline-block;
+        font-family: 'Spinnaker', sans-serif;
+        width: 7em;
+    }
+
+    .comment .info-comment .icon-calendar{
+        width: 2em;
+        display: inline-block;
+        margin: 0;
+        margin-bottom: 1em;
+        vertical-align: middle;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .body-comment{
+        position: absolute;
+        margin-left: 1em;
+        margin-top: 1em;
+        font-family: 'Spinnaker', sans-serif;
+    }
+}
+
+@media only screen and (max-width:432px){
+    .message-error{
+        margin-top: 1em;
+    }
+    .message-successful{
+        margin-top: 1em;
+    }
+
+    #section-comment{
+        width: 95%;
+        margin:auto;
+    }
+
+    #send-comment{
+        border-bottom: 2px solid #b0b0b0;
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+    }
+
+    #send-comment label{
+        display: block;
+        width: 100%;
+        font-family: 'Spinnaker', sans-serif;
+        padding: 1em 0em;
+    }
+
+    #send-comment #comment{
+        display: block;
+        width: 100%;
+        resize: none;
+        border-radius: 0.5em;
+        height: 10em;
+        margin-bottom: 1em;
+    }
+    #content-comment{
+        height: 30em;
+        overflow-y: auto;
+    }
+    .comment{
+        border-bottom: 1px solid #b0b0b0;
+    }
+
+    .comment .info-comment{
+        border-right: 1px solid #b0b0b0;
+        border-left: 1px solid #b0b0b0;
+    }
+
+    .comment .info-comment img{
+        width: 3em;
+        vertical-align: middle;
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+
+    .comment .info-comment .user-comment{
+        display: inline-block;
+        margin-left: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+        width: 75%;
+    }
+
+    .comment .info-comment .date-comment{
+        display: inline-block;
+        font-family: 'Spinnaker', sans-serif;
+        width: 7em;
+    }
+
+    .comment .info-comment .icon-calendar{
+        width: 2em;
+        display: inline-block;
+        margin: 0;
+        margin-bottom: 1em;
+        vertical-align: middle;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .body-comment{
+        padding-bottom: 1em;
+        padding-left: 0.5em;
+        font-family: 'Spinnaker', sans-serif;
+        display: block;
+        border-right: 1px solid #b0b0b0;
+        border-left: 1px solid #b0b0b0;
+    }
+}
