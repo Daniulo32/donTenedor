@@ -11,6 +11,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
+import java.util.Calendar;
 import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -87,6 +88,16 @@ public class tools {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
         Date hora = sdf.parse(time);
         return hora;
+    }
+    
+    public static Date maxTime(Date date) {    
+        Calendar cal = Calendar.getInstance();  
+        cal.setTime(date);  
+        cal.set(Calendar.HOUR_OF_DAY, 23);  
+        cal.set(Calendar.MINUTE, 59);  
+        cal.set(Calendar.SECOND, 59);  
+        cal.set(Calendar.MILLISECOND, 0);  
+        return cal.getTime(); 
     }
 
 }

@@ -164,5 +164,24 @@ public class OffersJpaController implements Serializable {
             em.close();
         }
     }
-    
+
+    public Offers findOfferByRestaurant(Restaurant restaurant) {
+
+        Offers o = null;
+        EntityManager em = getEntityManager();
+
+        Query query = em.createNamedQuery("Offers.findByIdRestaurant");
+        query.setParameter("idRestaurant", restaurant);
+        try {
+            List lista = query.getResultList();
+            if (lista.size() > 0) {
+                o = (Offers) lista.get(0);
+            }
+        } finally {
+            em.close();
+        }
+        return o;
+
+    }
+
 }

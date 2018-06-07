@@ -116,6 +116,30 @@
         <servlet-name>sendComment</servlet-name>
         <servlet-class>servlet.sendComment</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>reportComment</servlet-name>
+        <servlet-class>ajax.reportComment</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>checkReportComment</servlet-name>
+        <servlet-class>core.checkReportComment</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>registerOffert</servlet-name>
+        <servlet-class>servlet.registerOffert</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteOffert</servlet-name>
+        <servlet-class>ajax.deleteOffert</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>checkOffer</servlet-name>
+        <servlet-class>ajax.checkOffer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sendContact</servlet-name>
+        <servlet-class>servlet.sendContact</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerUser</servlet-name>
         <url-pattern>/registerUser</url-pattern>
@@ -231,6 +255,30 @@
     <servlet-mapping>
         <servlet-name>sendComment</servlet-name>
         <url-pattern>/sendComment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>reportComment</servlet-name>
+        <url-pattern>/reportComment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>checkReportComment</servlet-name>
+        <url-pattern>/checkReportComment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registerOffert</servlet-name>
+        <url-pattern>/registerOffert</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteOffert</servlet-name>
+        <url-pattern>/deleteOffert</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>checkOffer</servlet-name>
+        <url-pattern>/checkOffer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sendContact</servlet-name>
+        <url-pattern>/sendContact</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

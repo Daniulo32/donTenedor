@@ -171,4 +171,23 @@ public class IncidenceCommentJpaController implements Serializable {
         }
     }
     
+    public IncidenceComment findIncidenceByIdComment(Comments comment){
+        EntityManager em = getEntityManager();
+
+        IncidenceComment incidence = null;
+
+        Query query = em.createNamedQuery("IncidenceComment.findByIdComment");
+        query.setParameter("idComment", comment);
+
+        try {
+            List lista = query.getResultList();
+            if (lista.size() > 0) {
+                incidence = (IncidenceComment) lista.get(0);
+            }
+        } finally {
+            em.close();
+        }
+        return incidence;
+    }
+    
 }

@@ -8,6 +8,7 @@
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<fmt:formatDate var="now" value="${requestScope.today}" pattern="yyyy-MM-dd"/>
 <link href="css/resultSearchRestaurant.css" rel="stylesheet" type="text/css"/>
 <script src="js/resultSearchRestaurant.js?1" type="text/javascript"></script>
 <!DOCTYPE html>
@@ -117,6 +118,16 @@
                                     <fmt:formatNumber var="price" type ="currency" maxIntegerDigits = "2" value = "${restaurante.halfPrice}" />
                                     <span>Precio medio ${price} / Pers.</span>
                                 </label>
+
+                                <c:forEach var="offer" items="${restaurante.offersList}">
+                                    <fmt:formatDate var="dateCurrent" value="${offer.endDate}" pattern="yyyy-MM-dd"/>
+                                    <c:if test="${dateCurrent eq now}">
+                                        <label class="offerLabel">
+                                            <span>${offer.percentage}% de descuento en su ticket</span>
+                                        </label>
+                                    </c:if>
+                                </c:forEach>
+
                                 <a id="seeMore" href="index.jsp?view=viewOneRestaurant&controller=getOneRestaurant&idRestaurant=${restaurante.idRestaurant}">Ver más</a>
                             </div>
                             <div class="voting">

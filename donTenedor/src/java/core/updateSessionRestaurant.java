@@ -5,10 +5,14 @@
  */
 package core;
 
+import DAO.OffersJpaController;
 import DAO.RestaurantJpaController;
+import DTO.Offers;
 import DTO.Restaurant;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Calendar;
+import java.util.Date;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.servlet.ServletException;
@@ -16,6 +20,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import servlet.tools;
 
 /**
  *
@@ -36,16 +41,32 @@ public class updateSessionRestaurant extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
+
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("donTenedorPU");
         RestaurantJpaController ctrRestaurant = new RestaurantJpaController(emf);
+        OffersJpaController ctrOffer = new OffersJpaController(emf);
+        tools t = new tools();
         HttpSession session = request.getSession();
-        
+
         Restaurant restaurant = (Restaurant) session.getAttribute("restaurante");
-        
+
         Restaurant restaurante = ctrRestaurant.findRestaurant(restaurant.getIdRestaurant());
+
+        Date today = new Date();
+        Calendar cal = Calendar.getInstance();
+        try {
+            for (Offers offer : restaurante.getOffersList()) {
+                Date checkDate = t.maxTime(offer.getEndDate());
+                
+                if (checkDate.before(today)) {
+                    ctrOffer.destroy(offer.getIdOffer());
+                }
+            }
+        } catch (Exception e) {
+        }
         
-        session.setAttribute("restaurante", restaurante);
+        Restaurant rest = ctrRestaurant.findRestaurant(restaurant.getIdRestaurant());
+        session.setAttribute("restaurante", rest);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

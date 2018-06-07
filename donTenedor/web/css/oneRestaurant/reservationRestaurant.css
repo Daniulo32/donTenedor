@@ -70,6 +70,13 @@
         border: 0;
         font-size: 1em;
     }
+
+    #labelOffer{
+        display: block;
+        color: red;
+        padding-top: 1em;
+        font-family: 'Spinnaker', sans-serif;
+    }
 }
 
 @media only screen and (min-width:432px) and (max-width:800px){
@@ -149,10 +156,18 @@
         display: block;
         margin-top: 2em;
     }
+    
+    #labelOffer{
+        display: block;
+        color: red;
+        padding-top: 1em;
+        font-family: 'Spinnaker', sans-serif;
+        text-align: center;
+    }
 }
 
 @media only screen and (max-width:432px){
-     h2{
+    h2{
         font-size: 1.2em;
     }
 
@@ -227,6 +242,14 @@
         margin: auto;
         display: block;
         margin-top: 2em;
+    }
+    
+    #labelOffer{
+        display: block;
+        color: red;
+        padding-top: 1em;
+        font-family: 'Spinnaker', sans-serif;
+        text-align: center;
     }
 }
 

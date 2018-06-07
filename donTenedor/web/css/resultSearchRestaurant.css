@@ -176,6 +176,8 @@
     }
     /*Termian las clases para los filtros-------------------------------*/
     #seeMore{
+        display: block;
+        margin: auto;
         text-decoration: none;
         background: #2B7067;
         font-family: 'Spinnaker', sans-serif;
@@ -184,7 +186,10 @@
         width: 7em;
         text-align: center;
         padding: 0.5em;
-        margin-left: 13em;
+    }
+    
+    .offerLabel span{
+        color:red !important;
     }
 
     #content-form-search{

@@ -9,6 +9,7 @@ import DAO.RestaurantJpaController;
 import DTO.Restaurant;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -62,6 +63,8 @@ public class searchRestaurant extends HttpServlet {
             listaRestaurantes = ctrRestaurant.findrestaurantProvinceTownType(type, idProvince, idPoblacion);
         }
         if(listaRestaurantes != null){
+            Date today = new Date();
+            request.setAttribute("today", today);
             request.setAttribute("listarestaurantes", listaRestaurantes);
         }else{
             response.sendRedirect("index.jsp?view=principal");

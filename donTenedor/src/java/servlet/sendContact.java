@@ -3,30 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package core;
+package servlet;
 
-import DAO.ReservationsJpaController;
-import DAO.UsersJpaController;
-import DTO.Reservations;
-import DTO.Users;
+import core.goEmail;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
-import java.util.HashMap;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import servlet.tools;
 
 /**
  *
  * @author danieljimenez
  */
-public class updateSessionUser extends HttpServlet {
+public class sendContact extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,45 +33,24 @@ public class updateSessionUser extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        goEmail send = new goEmail();
+        HttpSession session = request.getSession();
+        
+        String message = request.getParameter("message");
+        String email = request.getParameter("email");
+        String name = request.getParameter("name");
+        
+        String mensaje = "Mensaje de : "+name +"<br><br>"+"Email: "+email+ "<br>"
+                + "<br><br>"+ message;
         try {
-            EntityManagerFactory emf = Persistence.createEntityManagerFactory("donTenedorPU");
-            HttpSession session = request.getSession();
-            UsersJpaController ctrUsers = new UsersJpaController(emf);
-            tools t = new tools();
-            Users user = (Users) session.getAttribute("usuario");
-
-            Users usuario = ctrUsers.findUsers(user.getIdUser());
-            Date today = new Date();
-            
-            //Delete reserve if is uncofirmed and date is old
-            ReservationsJpaController ctrReservation = new ReservationsJpaController(emf);
-            for (Reservations reserve : usuario.getReservationsList()) {
-                Date checkDate = t.maxTime(reserve.getReservationDate());
-                if (checkDate.before(today) && reserve.getStatus().equals("Sin Confirmar")) {
-                    ctrReservation.destroy(reserve.getIdReservation());
-                }
-            }
-
-            //update session user
-            Users usu = ctrUsers.findUsers(user.getIdUser());
-
-            HashMap listDatesReservation = new HashMap();
-
-            for (Reservations reserve : usu.getReservationsList()) {
-                Date checkDate = t.maxTime(reserve.getReservationDate());
-                if (checkDate.after(today)) {
-                    listDatesReservation.put(reserve.getIdReservation(), false);
-                } else {
-                    listDatesReservation.put(reserve.getIdReservation(), true);
-                }
-            }
-            session.setAttribute("usuario", usu);
-            session.setAttribute("listDatesReservation", listDatesReservation);
-            
+        send.send("dontenedorrestaurant@gmail.com", "Mensaje de contacto", mensaje);
+        session.setAttribute("message", "Se ha recibido su mensaje, nos pondremos en contacto con usted cuanto antes");
         } catch (Exception e) {
-
+             session.setAttribute("error","Error al enviar su mensaje, intentelo de nuevo mas tarde");
         }
-
+        
+        response.sendRedirect("index.jsp?view=contact");
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

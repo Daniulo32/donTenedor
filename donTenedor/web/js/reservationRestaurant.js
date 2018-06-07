@@ -9,7 +9,7 @@ $(function () {
     var idRestaurant = $("#idRestaurant").val();
 
     $("#dateReserve").change(getHours);
-
+    $("#dateReserve").change(checkOffer);
     function getHours() {
         var date = $("#dateReserve").val();
 
@@ -34,6 +34,23 @@ $(function () {
             }
         });
 
+    }
+    
+    function checkOffer(){
+        $("#labelOffer").remove();
+        var date = $("#dateReserve").val();
+        var datas = {idRestaurant: idRestaurant, date: date};
+        
+        $.ajax({
+            url: 'checkOffer',
+            data: datas,
+            success: function (datos) {
+                console.log(datos);
+                if(datos !== ""){
+                    $("#form-reserve").append("<label id='labelOffer'>Este día tiene un descuento del "+datos+"% en su factura</label>");
+                }
+            }
+        });
     }
 
 

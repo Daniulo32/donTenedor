@@ -1,0 +1,138 @@
+/* 
+    Created on : 07-jun-2018, 17:48:10
+    Author     : danieljimenez
+*/
+
+@media only screen and (min-width:800px){
+
+    #section-contact{
+        width: 80%;
+        margin: auto;
+    }
+
+    #section-contact h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2em;
+        color: #c5c5c5;
+        border-bottom: 0.1em solid #c5c5c5;
+    }
+
+    #section-contact label{
+        display: block;
+        margin-bottom: 1em;
+        color:#919191;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #section-contact input[type="text"]{
+        font-size: 1.1em;
+        margin-bottom: 1em;
+        padding: 0.5em 0.5em;
+        width: 50%;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #section-contact textarea{
+        width: 90%;
+        height: 300px;
+        margin-bottom: 2em;
+        resize: none;
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 1em;
+        padding: 0.5em;
+        border-radius: 0.5em;
+        border-color:  #919191;
+    }
+}
+
+@media only screen and (min-width:432px) and (max-width:800px){
+    #section-contact{
+        width: 80%;
+        margin: auto;
+        padding-top: 6em;
+    }
+
+    #section-contact h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2em;
+        color: #c5c5c5;
+        border-bottom: 0.1em solid #c5c5c5;
+    }
+
+    #section-contact label{
+        display: block;
+        margin-bottom: 1em;
+        color:#919191;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #section-contact input[type="text"]{
+        font-size: 1.1em;
+        margin-bottom: 1em;
+        padding: 0.5em 0.5em;
+        width: 50%;
+        font-family: 'Spinnaker', sans-serif;
+        border: 1px solid #c5c5c5;
+    }
+
+    #section-contact textarea{
+        width: 90%;
+        height: 300px;
+        margin-bottom: 2em;
+        resize: none;
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 1em;
+        padding: 0.5em;
+        border-radius: 0.5em;
+        border-color:  #919191;
+    }
+}
+
+@media only screen and (max-width:432px){
+    #section-contact{
+        width: 80%;
+        margin: auto;
+        padding-top: 4em;
+    }
+
+    #section-contact h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2em;
+        color: #c5c5c5;
+        border-bottom: 0.1em solid #c5c5c5;
+    }
+
+    #section-contact label{
+        display: block;
+        margin-bottom: 1em;
+        color:#919191;
+        font-family: 'Spinnaker', sans-serif;
+    }
+
+    #section-contact input[type="text"]{
+        font-size: 1.1em;
+        margin-bottom: 1em;
+        padding: 0.5em 0.5em;
+        width: 90%;
+        font-family: 'Spinnaker', sans-serif;
+        border: 1px solid #c5c5c5;
+    }
+
+    #section-contact textarea{
+        width: 90%;
+        height: 300px;
+        margin-bottom: 2em;
+        resize: none;
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 1em;
+        padding: 0.5em;
+        border-radius: 0.5em;
+        border-color:  #919191;
+    }
+    
+    .boton-aceptar{
+        display: block;
+        margin:auto;
+    }
+}
+

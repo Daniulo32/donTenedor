@@ -3,30 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package core;
+package ajax;
 
-import DAO.ReservationsJpaController;
-import DAO.UsersJpaController;
-import DTO.Reservations;
-import DTO.Users;
+import DAO.RestaurantJpaController;
+import DTO.Offers;
+import DTO.Restaurant;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
-import java.util.HashMap;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import servlet.tools;
 
 /**
  *
  * @author danieljimenez
  */
-public class updateSessionUser extends HttpServlet {
+public class checkOffer extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,45 +38,21 @@ public class updateSessionUser extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        try {
-            EntityManagerFactory emf = Persistence.createEntityManagerFactory("donTenedorPU");
-            HttpSession session = request.getSession();
-            UsersJpaController ctrUsers = new UsersJpaController(emf);
-            tools t = new tools();
-            Users user = (Users) session.getAttribute("usuario");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("donTenedorPU");
+        tools t = new tools();
+        RestaurantJpaController ctrRestaurant = new RestaurantJpaController(emf);
 
-            Users usuario = ctrUsers.findUsers(user.getIdUser());
-            Date today = new Date();
-            
-            //Delete reserve if is uncofirmed and date is old
-            ReservationsJpaController ctrReservation = new ReservationsJpaController(emf);
-            for (Reservations reserve : usuario.getReservationsList()) {
-                Date checkDate = t.maxTime(reserve.getReservationDate());
-                if (checkDate.before(today) && reserve.getStatus().equals("Sin Confirmar")) {
-                    ctrReservation.destroy(reserve.getIdReservation());
-                }
+        int idRestaurant = Integer.parseInt(request.getParameter("idRestaurant"));
+        Restaurant restaurant = ctrRestaurant.findRestaurant(idRestaurant);
+        Date dateReserve = t.convertStringToDate(request.getParameter("date"));
+        
+        String percentage = "";
+        for (Offers offer : restaurant.getOffersList()) {
+            if (!offer.getStartDate().after(dateReserve) && !offer.getEndDate().before(dateReserve)) {
+                percentage = offer.getPercentage()+"";
             }
-
-            //update session user
-            Users usu = ctrUsers.findUsers(user.getIdUser());
-
-            HashMap listDatesReservation = new HashMap();
-
-            for (Reservations reserve : usu.getReservationsList()) {
-                Date checkDate = t.maxTime(reserve.getReservationDate());
-                if (checkDate.after(today)) {
-                    listDatesReservation.put(reserve.getIdReservation(), false);
-                } else {
-                    listDatesReservation.put(reserve.getIdReservation(), true);
-                }
-            }
-            session.setAttribute("usuario", usu);
-            session.setAttribute("listDatesReservation", listDatesReservation);
-            
-        } catch (Exception e) {
-
         }
-
+        out.print(percentage);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

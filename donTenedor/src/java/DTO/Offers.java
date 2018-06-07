@@ -6,6 +6,7 @@
 package DTO;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,6 +18,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -29,11 +32,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Offers.findAll", query = "SELECT o FROM Offers o")
     , @NamedQuery(name = "Offers.findByIdOffer", query = "SELECT o FROM Offers o WHERE o.idOffer = :idOffer")
-    , @NamedQuery(name = "Offers.findByPercentage", query = "SELECT o FROM Offers o WHERE o.percentage = :percentage")
-    , @NamedQuery(name = "Offers.findByPrice", query = "SELECT o FROM Offers o WHERE o.price = :price")
-    , @NamedQuery(name = "Offers.findByPeople", query = "SELECT o FROM Offers o WHERE o.people = :people")
-    , @NamedQuery(name = "Offers.findByDescription", query = "SELECT o FROM Offers o WHERE o.description = :description")})
+    , @NamedQuery(name = "Offers.findByIdRestaurant", query = "SELECT o FROM Offers o WHERE o.idRestaurant = :idRestaurant")
+    , @NamedQuery(name = "Offers.findByPercentage", query = "SELECT o FROM Offers o WHERE o.percentage = :percentage")})
 public class Offers implements Serializable {
+
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -45,14 +47,12 @@ public class Offers implements Serializable {
     @Column(name = "percentage")
     private int percentage;
     @Basic(optional = false)
-    @Column(name = "price")
-    private int price;
-    @Basic(optional = false)
-    @Column(name = "people")
-    private int people;
-    @Basic(optional = false)
-    @Column(name = "description")
-    private String description;
+    @Column(name = "start_date")
+    @Temporal(TemporalType.DATE)
+    private Date startDate;
+    @Column(name = "end_date")
+    @Temporal(TemporalType.DATE)
+    private Date endDate;
     @JoinColumn(name = "id_restaurant", referencedColumnName = "id_restaurant")
     @ManyToOne(optional = false)
     private Restaurant idRestaurant;
@@ -64,12 +64,11 @@ public class Offers implements Serializable {
         this.idOffer = idOffer;
     }
 
-    public Offers(Integer idOffer, int percentage, int price, int people, String description) {
+    public Offers(Integer idOffer, int percentage, Date startDate, Date endDate) {
         this.idOffer = idOffer;
         this.percentage = percentage;
-        this.price = price;
-        this.people = people;
-        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
 
     public Integer getIdOffer() {
@@ -88,36 +87,28 @@ public class Offers implements Serializable {
         this.percentage = percentage;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public int getPeople() {
-        return people;
-    }
-
-    public void setPeople(int people) {
-        this.people = people;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public Restaurant getIdRestaurant() {
         return idRestaurant;
     }
 
     public void setIdRestaurant(Restaurant idRestaurant) {
         this.idRestaurant = idRestaurant;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     @Override
@@ -144,5 +135,5 @@ public class Offers implements Serializable {
     public String toString() {
         return "DTO.Offers[ idOffer=" + idOffer + " ]";
     }
-    
+
 }

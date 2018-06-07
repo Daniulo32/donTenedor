@@ -5,14 +5,13 @@
  */
 package core;
 
-import DAO.ReservationsJpaController;
-import DAO.UsersJpaController;
-import DTO.Reservations;
-import DTO.Users;
+import DAO.IncidenceCommentJpaController;
+import DTO.Comments;
+import DTO.IncidenceComment;
+import DTO.Restaurant;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
-import java.util.HashMap;
+import java.util.ArrayList;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.servlet.ServletException;
@@ -20,13 +19,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import servlet.tools;
 
 /**
  *
  * @author danieljimenez
  */
-public class updateSessionUser extends HttpServlet {
+public class checkReportComment extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,45 +39,24 @@ public class updateSessionUser extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        try {
-            EntityManagerFactory emf = Persistence.createEntityManagerFactory("donTenedorPU");
-            HttpSession session = request.getSession();
-            UsersJpaController ctrUsers = new UsersJpaController(emf);
-            tools t = new tools();
-            Users user = (Users) session.getAttribute("usuario");
-
-            Users usuario = ctrUsers.findUsers(user.getIdUser());
-            Date today = new Date();
+        HttpSession session = request.getSession();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("donTenedorPU");
+        
+        IncidenceCommentJpaController ctrIncidenceComment = new IncidenceCommentJpaController(emf);
+        
+        Restaurant restaurant = (Restaurant)session.getAttribute("restaurante");
+        ArrayList listIncidences = new ArrayList();
+        
+       for(Comments comment : restaurant.getCommentsList()){
+           IncidenceComment incidence = ctrIncidenceComment.findIncidenceByIdComment(comment);
             
-            //Delete reserve if is uncofirmed and date is old
-            ReservationsJpaController ctrReservation = new ReservationsJpaController(emf);
-            for (Reservations reserve : usuario.getReservationsList()) {
-                Date checkDate = t.maxTime(reserve.getReservationDate());
-                if (checkDate.before(today) && reserve.getStatus().equals("Sin Confirmar")) {
-                    ctrReservation.destroy(reserve.getIdReservation());
-                }
-            }
-
-            //update session user
-            Users usu = ctrUsers.findUsers(user.getIdUser());
-
-            HashMap listDatesReservation = new HashMap();
-
-            for (Reservations reserve : usu.getReservationsList()) {
-                Date checkDate = t.maxTime(reserve.getReservationDate());
-                if (checkDate.after(today)) {
-                    listDatesReservation.put(reserve.getIdReservation(), false);
-                } else {
-                    listDatesReservation.put(reserve.getIdReservation(), true);
-                }
-            }
-            session.setAttribute("usuario", usu);
-            session.setAttribute("listDatesReservation", listDatesReservation);
-            
-        } catch (Exception e) {
-
-        }
-
+           if(incidence != null){
+               listIncidences.add(comment);
+           }
+           
+       }
+       
+       session.setAttribute("listIncidences", listIncidences);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -41,6 +41,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Reservations.findByStatus", query = "SELECT r FROM Reservations r WHERE r.status = :status")})
 public class Reservations implements Serializable {
 
+    @Column(name = "discount")
+    private Integer discount;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -144,6 +147,14 @@ public class Reservations implements Serializable {
         return hash;
     }
 
+    public Integer getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Integer discount) {
+        this.discount = discount;
+    }
+
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
@@ -161,5 +172,5 @@ public class Reservations implements Serializable {
     public String toString() {
         return "DTO.Reservations[ idReservation=" + idReservation + " ]";
     }
-    
+
 }

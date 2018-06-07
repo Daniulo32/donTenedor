@@ -9,6 +9,8 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -27,11 +29,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "IncidenceComment.findAll", query = "SELECT i FROM IncidenceComment i")
     , @NamedQuery(name = "IncidenceComment.findByIdIncidence", query = "SELECT i FROM IncidenceComment i WHERE i.idIncidence = :idIncidence")
+        , @NamedQuery(name = "IncidenceComment.findByIdComment", query = "SELECT i FROM IncidenceComment i WHERE i.idComment = :idComment")
     , @NamedQuery(name = "IncidenceComment.findByObservation", query = "SELECT i FROM IncidenceComment i WHERE i.observation = :observation")})
 public class IncidenceComment implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id_incidence")
     private Integer idIncidence;

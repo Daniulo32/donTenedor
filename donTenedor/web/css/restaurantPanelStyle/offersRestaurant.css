@@ -1,0 +1,287 @@
+/* 
+    Created on : 05-jun-2018, 18:18:52
+    Author     : danieljimenez
+*/
+@media only screen and (min-width:800px){
+    hr{
+        margin-top: 2em;
+    }
+    .h1Grey{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2em;
+        color: #c5c5c5;
+        border-bottom: 0.1em solid #c5c5c5;
+    }
+
+    #section-offerts{
+        width: 80%;
+        margin:auto;
+    }
+
+    #article-form-offerts div{
+        display: inline-block;
+        margin-right: 2em;
+    }
+
+    #article-form-offerts div:nth-child(3){
+        width: 10%;
+    }
+
+    #article-form-offerts div label{
+        display: block;
+        font-family: 'Spinnaker', sans-serif;
+        color: #2B7067;
+    }
+
+    input[type="date"]{
+        font-family: 'Spinnaker', sans-serif;
+        padding: 0.5em 2em;
+        font-size: 1.1em;
+    }
+
+    input[type="number"]{
+        font-family: 'Spinnaker', sans-serif;
+        padding: 0.5em 1em;
+        width: 50%;
+        font-size: 1.1em;
+    }
+
+
+    .table-offert{
+        width: 80%;
+        margin: auto;
+        border-collapse: collapse;
+    }
+
+    .table-offert th{
+        background: #2B7067;
+        color: #FFF;
+        padding: 0.5em 0em;
+        width: 30%;
+        border-right: 2px solid #c5c5c5;
+        font-family: 'Spinnaker', sans-serif;
+    }
+    .table-offert th:last-child{
+        border-right: none;
+    }
+
+    .table-offert th:nth-child(3){
+        width: 20%;
+    }
+
+    .table-offert td{
+        padding: 0.5em 0em;
+        font-family: 'Spinnaker', sans-serif;
+        text-align: center;
+        border-bottom: 1px solid #c5c5c5;
+    }
+
+    .nothing-offert{
+        text-align: center;
+        color: #c5c5c5;
+        padding: 5em 0em;
+
+    }
+}
+
+@media only screen and (min-width:432px) and (max-width:800px){
+    hr{
+        margin-top: 2em;
+    }
+    .h1Grey{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2em;
+        color: #c5c5c5;
+        border-bottom: 0.1em solid #c5c5c5;
+    }
+
+    #section-offerts{
+        width: 80%;
+        margin:auto;
+    }
+
+    #article-form-offerts div{
+        display: inline-block;
+        margin-right: 2em;
+    }
+
+    #article-form-offerts div:nth-child(3){
+        width: 10%;
+    }
+
+    #article-form-offerts div label{
+        display: block;
+        font-family: 'Spinnaker', sans-serif;
+        color: #2B7067;
+    }
+
+    input[type="date"]{
+        font-family: 'Spinnaker', sans-serif;
+        padding: 0.5em 1em;
+        font-size: 1.1em;
+        border: 1px solid grey;
+    }
+
+    input[type="number"]{
+        font-family: 'Spinnaker', sans-serif;
+        padding: 0.5em 1em;
+        width: 50%;
+        font-size: 1.1em;
+        border: 1px solid grey;
+    }
+
+    .boton-aceptar{
+        display: block;
+        margin:auto;
+        margin-top: 2.5em;
+        padding: 0.5em 4em;
+    }
+
+    .table-offert{
+        width: 100%;
+        margin: auto;
+        border-collapse: collapse;
+    }
+
+    .table-offert th{
+        background: #2B7067;
+        color: #FFF;
+        padding: 0.5em 0em;
+        width: 30%;
+        border-right: 2px solid #c5c5c5;
+        font-family: 'Spinnaker', sans-serif;
+    }
+    .table-offert th:last-child{
+        border-right: none;
+    }
+
+    .table-offert th:nth-child(3){
+        width: 20%;
+    }
+
+    .table-offert td{
+        padding: 0.5em 0em;
+        font-family: 'Spinnaker', sans-serif;
+        text-align: center;
+        border-bottom: 1px solid #c5c5c5;
+    }
+
+    .nothing-offert{
+        text-align: center;
+        color: #c5c5c5;
+        padding: 5em 0em;
+
+    }
+}
+
+@media only screen and (max-width:432px){
+    hr{
+        margin-top: 2em;
+    }
+    .h1Grey{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2em;
+        color: #c5c5c5;
+        border-bottom: 0.1em solid #c5c5c5;
+    }
+
+    #section-offerts{
+        width: 80%;
+        margin:auto;
+    }
+
+    #article-form-offerts div{
+        display: inline-block;
+        margin-right: 2em;
+    }
+
+    #article-form-offerts div:nth-child(3){
+        width: 10%;
+    }
+
+    #article-form-offerts div label{
+        display: block;
+        font-family: 'Spinnaker', sans-serif;
+        color: #2B7067;
+    }
+
+    input[type="date"]{
+        font-family: 'Spinnaker', sans-serif;
+        padding: 0.5em 3em;
+        font-size: 1.1em;
+        border: 1px solid grey;
+        margin-bottom: 1em;
+        background-image: url(../../images/icons/icon-calendarStart.png), -webkit-linear-gradient(white, white 40%, white);
+        background-position: 97% center;
+        background-repeat: no-repeat;
+        background-size: 2em;
+    }
+
+    input[type="number"]{
+        font-family: 'Spinnaker', sans-serif;
+        padding: 0.5em 2.9em;
+        font-size: 1.1em;
+        border: 1px solid grey;
+        background-image: url(../../images/icons/icon-percent.png), -webkit-linear-gradient(white, white 40%, white);
+        background-position: 97% center;
+        background-repeat: no-repeat;
+        background-size: 2em;
+    }
+
+    .boton-aceptar{
+        display: block;
+        margin:auto;
+        margin-top: 2.5em;
+        padding: 0.5em 4em;
+    }
+
+    .table-offert{
+        width: 100%;
+        margin: auto;
+        border-collapse: collapse;
+    }
+
+    .table-offert th{
+        display: none;
+    }
+
+    .table-offert td{
+        display: block;
+        padding: 0.5em 0em;
+        font-family: 'Spinnaker', sans-serif;
+        text-align: center;
+        border-bottom: 1px solid #c5c5c5;
+    }
+
+    .table-offert tr td:first-child{
+        background-image: url(../../images/icons/icon-calendarStart.png), -webkit-linear-gradient(white, white 40%, white);
+        background-position: 97% center;
+        background-repeat: no-repeat;
+        background-size: 2em;
+        border-top: 2px solid #2B7067;
+    }
+    
+    .table-offert tr td:nth-child(2){
+        background-image: url(../../images/icons/icon-calendarEnd.png), -webkit-linear-gradient(white, white 40%, white);
+        background-position: 97% center;
+        background-repeat: no-repeat;
+        background-size: 2em;
+    }
+    
+    .table-offert tr td:nth-child(3){
+        background-image: url(../../images/icons/icon-percent.png), -webkit-linear-gradient(white, white 40%, white);
+        background-position: 97% center;
+        background-repeat: no-repeat;
+        background-size: 2em;
+    }
+
+    .nothing-offert{
+        text-align: center;
+        color: #c5c5c5;
+        padding: 5em 0em;
+
+    }
+}
+
+
+
