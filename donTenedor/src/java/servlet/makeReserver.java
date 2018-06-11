@@ -14,7 +14,9 @@ import DTO.Restaurant;
 import DTO.Users;
 import core.goEmail;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.servlet.ServletException;
@@ -63,7 +65,6 @@ public class makeReserver extends HttpServlet {
                 Date hourReserve = t.parseToTime(request.getParameter("hourReservation"));
                 int nPeople = Integer.parseInt(request.getParameter("nPeople"));
 
-
                 Reservations reserve = new Reservations();
 
                 reserve.setIdUser(user);
@@ -73,15 +74,19 @@ public class makeReserver extends HttpServlet {
                 reserve.setReservationDate(dateReserve);
                 reserve.setConfirmation(0);
                 reserve.setStatus("Sin Confirmar");
-                
+
                 /*Comprobar si hay ofertas para la fecha de la reserva*/
                 OffersJpaController ctrOffers = new OffersJpaController(emf);
-                Offers offer = ctrOffers.findOfferByRestaurant(restaurant);
+                List<Offers> offerList = ctrOffers.findOfferByRestaurant(restaurant);
 
-                if (offer != null) {
-                    if (!offer.getStartDate().after(dateReserve) && !offer.getEndDate().before(dateReserve)) {
-                       reserve.setDiscount(offer.getPercentage());
+                if (offerList != null) {
+
+                    for (Offers offer : offerList) {
+                        if (!offer.getStartDate().after(dateReserve) && !offer.getEndDate().before(dateReserve)) {
+                            reserve.setDiscount(offer.getPercentage());
+                        }
                     }
+
                 }
                 /*----------------------------------------------------*/
 

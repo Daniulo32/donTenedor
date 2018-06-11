@@ -622,5 +622,26 @@ public class RestaurantJpaController implements Serializable {
         
         return listaRestaurantes;
     }
+    
+    public List findRouteTapas(Double longitude, Double latitude){
+        EntityManager em = getEntityManager();
+        List listaRestaurantes = new ArrayList();
+        Query query = em.createNativeQuery("SELECT *,( 6371 * acos(cos(radians(36.741791)) * cos(radians(latitude)) * cos(radians(longitude) - radians(-5.166280)) + sin(radians(36.741791)) * sin(radians(latitude)))) AS distance FROM Restaurant r HAVING distance < 7 and r.type = 'tapas' ORDER BY distance");
+        query.setParameter("longitude", longitude);
+        query.setParameter("latitude", latitude);
+        
+        try {
+            List lista = query.getResultList();
+            
+            for(Object restaurant : lista){
+                listaRestaurantes.add(restaurant);
+            }
+            
+        } finally {
+            em.close();
+        }
+        
+        return listaRestaurantes;
+    }
 
 }

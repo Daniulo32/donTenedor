@@ -3,22 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servlet;
+package ajax;
 
-import core.goEmail;
+import DAO.RestaurantJpaController;
+import DTO.Restaurant;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import org.json.JSONObject;
 
 /**
  *
  * @author danieljimenez
  */
-public class sendContact extends HttpServlet {
+public class routeTapas extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,25 +36,20 @@ public class sendContact extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("application/json");
         PrintWriter out = response.getWriter();
-        goEmail send = new goEmail();
-        HttpSession session = request.getSession();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("donTenedorPU");
         
-        String message = request.getParameter("menssage");
-        String email = request.getParameter("email");
-        String name = request.getParameter("name");
+        RestaurantJpaController ctrRestaurant = new RestaurantJpaController(emf);
         
-        String mensaje = "Mensaje de : "+name +"<br><br>"+"Email: "+email+ "<br>"
-                + "<br><br>"+ message;
-        try {
-        send.send("dontenedorrestaurant@gmail.com", "Mensaje de contacto", mensaje);
-        session.setAttribute("message", "Se ha recibido su mensaje, nos pondremos en contacto con usted cuanto antes");
-        } catch (Exception e) {
-             session.setAttribute("error","Error al enviar su mensaje, intentelo de nuevo mas tarde");
-        }
+        Double latitude = Double.parseDouble(request.getParameter("latitude"));
+        Double longitude = Double.parseDouble(request.getParameter("longitude"));
         
-        response.sendRedirect("index.jsp?view=contact");
+        List listaRestaurantes = ctrRestaurant.findRouteTapas(longitude, latitude);
+        
+        String json = new Gson().toJson(listaRestaurantes);
+        
+        out.print(json);
         
     }
 

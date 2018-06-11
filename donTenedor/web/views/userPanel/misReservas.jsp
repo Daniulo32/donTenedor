@@ -19,6 +19,7 @@
     <article id="content-reservations">
         <table>
             <tr>
+                <th></th>
                 <th>Nombre Restaurante</th>
                 <th>Fecha reserva</th>
                 <th>Hora Reserva</th>
@@ -29,6 +30,11 @@
                 <c:when test="${!empty user.reservationsList}">
                     <c:forEach var="reserve" items="${user.reservationsList}">
                         <tr class="one-reserve" data-idReserve="${reserve.idReservation}">
+                            <td>
+                                <a href="imprimirPdf?id=${reserve.idReservation}">
+                                    <img src="images/icons/icon-pdf.png" width="30em"/>
+                                </a>
+                            </td>
                             <td>${reserve.idRestaurant.nameRestaurant}</td>
                             <fmt:formatDate var="fecha" pattern = "dd-MM-yyyy" 
                                             value ="${reserve.reservationDate}"/>

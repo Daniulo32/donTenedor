@@ -36,6 +36,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "Restaurant.findAll", query = "SELECT r FROM Restaurant r")
     , @NamedQuery(name = "Restaurant.findByIdRestaurant", query = "SELECT r FROM Restaurant r WHERE r.idRestaurant = :idRestaurant")
+//    , @NamedQuery(name = "Restaurant.findByIdRoute", query = "SELECT r, ( 6371 * acos(cos(radians(:latitude)) * cos(radians(latitude)) * cos(radians(longitude) - radians(:longitude)) + sin(radians(:latitude)) * sin(radians(latitude)))) AS distance FROM Restaurant r HAVING distance < 7 ORDER BY distance")
     , @NamedQuery(name = "Restaurant.findByType", query = "SELECT r FROM Restaurant r WHERE r.type = :type")
     , @NamedQuery(name = "Restaurant.findByProvince", query = "SELECT r FROM Restaurant r WHERE r.province.idprovincia = :idProvince")
     , @NamedQuery(name = "Restaurant.findByProvinceTown", query = "SELECT r FROM Restaurant r WHERE r.province.idprovincia = :idProvince AND r.town.idpoblacion = :idTown")

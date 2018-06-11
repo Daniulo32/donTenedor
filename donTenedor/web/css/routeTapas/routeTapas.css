@@ -1,0 +1,26 @@
+/* 
+    Created on : 07-jun-2018, 22:17:43
+    Author     : danieljimenez
+*/
+
+@media only screen and (min-width:800px){
+    #section-route-tapas{
+        width: 80%;
+        margin: auto;
+    }
+    #section-route-tapas h1{
+        font-family: 'Spinnaker', sans-serif;
+        font-size: 2em;
+        color: #c5c5c5;
+        border-bottom: 0.1em solid #c5c5c5;
+    }
+}
+
+@media only screen and (min-width:432px) and (max-width:800px){
+
+}
+
+@media only screen and (max-width:432px){
+
+}
+

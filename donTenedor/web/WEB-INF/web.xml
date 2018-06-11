@@ -140,6 +140,14 @@
         <servlet-name>sendContact</servlet-name>
         <servlet-class>servlet.sendContact</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>imprimirPdf</servlet-name>
+        <servlet-class>servlet.imprimirPdf</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>routeTapas</servlet-name>
+        <servlet-class>ajax.routeTapas</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerUser</servlet-name>
         <url-pattern>/registerUser</url-pattern>
@@ -279,6 +287,14 @@
     <servlet-mapping>
         <servlet-name>sendContact</servlet-name>
         <url-pattern>/sendContact</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>imprimirPdf</servlet-name>
+        <url-pattern>/imprimirPdf</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>routeTapas</servlet-name>
+        <url-pattern>/routeTapas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

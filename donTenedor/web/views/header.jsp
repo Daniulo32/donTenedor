@@ -58,7 +58,7 @@
 
     <nav>
         <ul>
-            <li><a href="#">Ver Rutas</a></li>
+            <li><a href="index.jsp?view=routeTapas">Ver Rutas</a></li>
             <li><a href="index.jsp?view=contact">Contactar</a></li>
                 <c:if test="${!empty sessionScope.usuario}">
                 <li><a href="logOut">Cerrar Sesion</a></li>

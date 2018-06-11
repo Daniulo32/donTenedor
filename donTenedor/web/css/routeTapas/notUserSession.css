@@ -1,0 +1,38 @@
+/* 
+    Created on : 07-jun-2018, 22:20:28
+    Author     : danieljimenez
+*/
+@media only screen and (min-width:800px){
+    #article-notUser img{
+        display: inline-block;
+    }
+    #article-notUser div{
+        display: inline-block;
+        width: 70%;
+        vertical-align: top;
+        text-align: center;
+        font-family: 'Spinnaker', sans-serif;
+    }
+    #article-notUser div p{
+        margin-top: 3em;
+        font-size: 1.5em;
+        color: #afafaf;
+    }
+    
+    #fotoRestaurante{
+        display: block !important;
+        width: 100%;
+        margin: auto;
+    }
+    
+}
+
+@media only screen and (min-width:432px) and (max-width:800px){
+
+}
+
+@media only screen and (max-width:432px){
+
+}
+
+

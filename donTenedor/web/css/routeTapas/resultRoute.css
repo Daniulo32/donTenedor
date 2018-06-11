@@ -1,0 +1,26 @@
+/* 
+    Created on : 09-jun-2018, 16:46:11
+    Author     : danieljimenez
+*/
+
+@media only screen and (min-width:800px){
+    
+   #mapRoute{
+        width: 60em;
+        height: 33em;
+        background-image: url(../..//images/loading_map.gif);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 16em;
+        border: 1px solid grey;
+    }
+    
+}
+
+@media only screen and (min-width:432px) and (max-width:800px){
+
+}
+
+@media only screen and (max-width:432px){
+
+}
